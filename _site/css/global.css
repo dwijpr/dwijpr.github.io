@@ -1,0 +1,89 @@
+/* override main */
+
+.site-header{
+    margin-top: 30px;
+    text-align: right;
+    border: none;
+}
+
+.site-header > .wrapper{
+    position: relative;
+    top: 18px;
+}
+
+.site-footer{
+    padding: 20px 0;
+    border: none;
+}
+
+.page-content{
+    padding: 0;
+}
+
+.page-content > .wrapper{
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
+div.photoframe{
+    position: relative;
+    top: -4px;
+    display: inline-block;
+    width: 72px;
+    border: 1px solid grey;
+    border-radius: 36px;
+}
+div.photoframe img{
+    border-radius: 50%;
+}
+a.site-title{
+    float: none;
+}
+
+.page-content > .wrapper{
+    margin: 0 10px;
+}
+
+@media (min-width: 768px){
+    .main-content{
+        padding: 2%;
+    }
+
+    .page-content > .wrapper{
+        margin: 0 auto;
+    }
+
+    p{
+        line-height: 1.675em;
+    }
+}
+
+div.toc{
+    margin: 10px 0;
+}
+
+.highlight-wrapper{
+    margin-bottom: 10px;
+    max-height: 400px;
+    overflow: auto;
+    border: 1px solid rgba(0, 0, 0, .5);
+}
+.highlight-wrapper pre{
+    border: none;
+}
+.highlight-wrapper pre, .highlight-wrapper .highlight{
+    margin-bottom: 0px;
+}
+
+.main-content pre
+, .main-content code
+, .main-content pre *
+, .main-content code *{
+    font-family: 'Ubuntu Mono', 'Courier New', monospace;
+    font-size: 13px;
+    word-spacing: initial;
+    word-wrap: initial;
+}
+
+.table.table-not-full{
+    width: initial;
+}

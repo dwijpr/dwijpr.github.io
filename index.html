@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<br>
+<h1 class="text-primary">Daftar Isi</h1>
+
+<div class="toc">
+  {% for post in site.posts %}
+    <div class="row">
+      <div class="col-sm-3 visible-sm-offset-3 hidden-xs text-info">
+        {{ post.date | date: "%b %-d, %Y" }}
+      </div>
+      <div class="col-xs-4 visible-xs text-info">
+        {{ post.date | date: "%-d/%-m %Y" }}
+      </div>
+      <div class="col-xs-8 col-sm-9">
+            <a href="{{ post.url | remove_first:'/' }}">{{ post.title }}</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<p>berlangganan <a href="{{ "feed.xml" }}">via RSS</a></p>

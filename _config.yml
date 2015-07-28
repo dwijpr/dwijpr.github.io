@@ -1,0 +1,13 @@
+# Site settings
+title: Catatan Dwi Prabowo
+email: dwijpr@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+    Sedikit demi sedikit lama-lama menjadi bukit
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://dwiprabowo.github.io" # the base hostname & protocol for your site
+twitter_username: dwjpr
+github_username:  dwiprabowo
+
+# Build settings
+markdown: kramdown
+permalink: none
