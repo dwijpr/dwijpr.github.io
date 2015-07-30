@@ -6,9 +6,30 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jul 2015 06:03:52 +0700</pubDate>
-    <lastBuildDate>Wed, 29 Jul 2015 06:03:52 +0700</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2015 09:39:29 +0700</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2015 09:39:29 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Script Bash untuk Integrasi dengan Git</title>
+        <description>&lt;h1 id=&quot;script-bash-untuk-intergrasi-dengan-git&quot;&gt;Script &lt;em&gt;Bash&lt;/em&gt; untuk Intergrasi dengan &lt;em&gt;Git&lt;/em&gt;&lt;/h1&gt;
+
+&lt;p&gt;Sehari-hari saya menggunakan &lt;strong&gt;gnome-terminal&lt;/strong&gt; untuk melakukan pekerjaan
+saya. Selain itu saya juga menggunakan hampir selalu menggunakan program untuk
+mengontrol versi kode yang dikenal dengan &lt;strong&gt;Git&lt;/strong&gt;. Lalu, bagaimana agar kedua
+program ini bisa terintegrasi sehingga dapat mempermudah pekerjaan saya?&lt;/p&gt;
+
+&lt;h5 id=&quot;begin-with-the-end&quot;&gt;Begin with the End&lt;/h5&gt;
+
+&lt;p&gt;Nantinya &lt;strong&gt;gnome-terminal&lt;/strong&gt; akan mampu mendeteksi apakah dia berapa pada sebuah direktori yang terhubung dengan &lt;strong&gt;Git&lt;/strong&gt; atau tidak, mampu mendeteksi nama branch yang sedang digunakan, dan juga mampu medeteksi &lt;em&gt;state&lt;/em&gt; dari branch
+tersebut.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2015 16:33:42 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/script-bash-untuk-integrasi-dengan-git.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/script-bash-untuk-integrasi-dengan-git.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Mencoba Bit Field</title>
