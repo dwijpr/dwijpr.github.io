@@ -4,11 +4,31 @@
     margin-top: 30px;
     text-align: right;
     border: none;
+    overflow: hidden;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.site-header *{
+    text-decoration: none !important;
 }
 
 .site-header > .wrapper{
     position: relative;
     top: 18px;
+}
+
+.home{
+    font-weight: bold;
+    font-size: 108px;
+    font-family: sans-serif;
+    position: absolute;
+    top: -36px;
+}
+
+.site-title{
+    float: none;
+    display: inline-block;
 }
 
 .site-footer{
@@ -35,8 +55,38 @@ div.photoframe{
 div.photoframe img{
     border-radius: 50%;
 }
-a.site-title{
-    float: none;
+
+.site-header .visible-xs .site-title{
+    font-size: 20px;
+}
+
+.site-header .hidden-xs .photoframe{
+    background: grey;
+    transition: all .5s ease;
+}
+.site-header:hover .hidden-xs .photoframe{
+    background: transparent;
+}
+
+.site-header .hidden-xs .photoframe img{
+    opacity: .5;
+    transition: all .5s ease;
+}
+.site-header:hover .hidden-xs .photoframe img{
+    opacity: 1;
+}
+
+.site-header .hidden-xs .site-title{
+    position: relative;
+    right: -100px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.site-header:hover .hidden-xs .site-title{
+    right: 0px;
+    opacity: 1;
+    visibility: visible;
 }
 
 .page-content > .wrapper{
