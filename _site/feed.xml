@@ -6,8 +6,8 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2015 09:48:42 +0700</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2015 09:48:42 +0700</lastBuildDate>
+    <pubDate>Fri, 31 Jul 2015 09:34:32 +0700</pubDate>
+    <lastBuildDate>Fri, 31 Jul 2015 09:34:32 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -15,14 +15,132 @@
         <description>&lt;h1 id=&quot;script-bash-untuk-intergrasi-dengan-git&quot;&gt;Script &lt;em&gt;Bash&lt;/em&gt; untuk Intergrasi dengan &lt;em&gt;Git&lt;/em&gt;&lt;/h1&gt;
 
 &lt;p&gt;Sehari-hari saya menggunakan &lt;strong&gt;gnome-terminal&lt;/strong&gt; untuk melakukan pekerjaan
-saya. Selain itu saya juga menggunakan hampir selalu menggunakan program untuk
-mengontrol versi kode yang dikenal dengan &lt;strong&gt;Git&lt;/strong&gt;. Lalu, bagaimana agar kedua
+saya. Selain itu saya juga hampir selalu menggunakan program untuk
+mengontrol versi kode yang dikenal dengan &lt;strong&gt;Git&lt;/strong&gt;. Lalu, 
+muncul keinginan untuk mengintegrasikan keduanya, 
+bagaimana agar kedua
 program ini bisa terintegrasi sehingga dapat mempermudah pekerjaan saya?&lt;/p&gt;
 
-&lt;h5 id=&quot;begin-with-the-end&quot;&gt;Begin with the End&lt;/h5&gt;
+&lt;h5 id=&quot;begin-with-the-end&quot;&gt;&lt;em&gt;Begin with the End&lt;/em&gt;&lt;/h5&gt;
 
-&lt;p&gt;Nantinya &lt;strong&gt;gnome-terminal&lt;/strong&gt; akan mampu mendeteksi apakah dia berapa pada sebuah direktori yang terhubung dengan &lt;strong&gt;Git&lt;/strong&gt; atau tidak, mampu mendeteksi nama branch yang sedang digunakan, dan juga mampu medeteksi &lt;em&gt;state&lt;/em&gt; dari branch
+&lt;p&gt;Nantinya &lt;strong&gt;gnome-terminal&lt;/strong&gt; akan mampu mendeteksi apakah dia berada pada sebuah 
+direktori yang terhubung dengan &lt;strong&gt;Git&lt;/strong&gt; atau tidak, mampu mendeteksi nama &lt;em&gt;branch&lt;/em&gt;
+yang sedang digunakan, dan juga mampu medeteksi &lt;em&gt;state&lt;/em&gt; dari &lt;em&gt;branch&lt;/em&gt;
 tersebut.&lt;/p&gt;
+
+&lt;div id=&quot;bash-git-video-wrapper&quot;&gt;
+    &lt;style&gt;
+        #bash-git-video-wrapper{
+            max-width: 100%;
+            overflow-x: auto;
+            text-align: center;
+        }
+        #bash-git-video-wrapper video{
+            display: inline-block;
+        }
+    &lt;/style&gt;
+
+    &lt;video width=&quot;550&quot; height=&quot;300&quot; controls=&quot;&quot;&gt;
+      &lt;source src=&quot;/assets/vid/bash-git.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+      Your browser does not support the video tag.
+    &lt;/video&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Pertama-tama &lt;em&gt;script&lt;/em&gt; dimulai dengan memodifikasi tampilan &lt;strong&gt;bash prompt&lt;/strong&gt;, yang biasa nya terlihat seperti&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+user@comp:~$ █
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;menjadi seperti&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+( ~ ) &amp;gt; █
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Membuat &lt;em&gt;function&lt;/em&gt; menggunakan &lt;strong&gt;bash script&lt;/strong&gt; dapat dilakukan dengan cara seperti
+biasa menulis program menggunakan bahasa pemrograman lainnya.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+function _prompt_command(){
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Untuk mengubah tampilan &lt;em&gt;prompt&lt;/em&gt; diperlukan variabel &lt;strong&gt;bash&lt;/strong&gt; yang dikenal dengan
+&lt;em&gt;identifier&lt;/em&gt; &lt;code&gt;PS1&lt;/code&gt;. Cara &lt;em&gt;assign&lt;/em&gt; nilai pada variabel &lt;strong&gt;bash&lt;/strong&gt; memerlukan
+kata kunci &lt;code&gt;export&lt;/code&gt;. Membuat tampilan &lt;code&gt;( ~ )&lt;/code&gt; faktanya memerlukan kode
+yang cukup panjang sehingga saya memisah &lt;em&gt;assign&lt;/em&gt; nilai variabel &lt;code&gt;PS1&lt;/code&gt;
+ini dengan cara &lt;em&gt;append&lt;/em&gt; nilai ke variabel. Fungsi lengkap nya akan tampak seperti ini&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot; style=&quot;background: #ffffff&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;
+&lt;span style=&quot;color: #A90D91&quot;&gt;function&lt;/span&gt; _prompt_command&lt;span style=&quot;color: #000000&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;{&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\n\[\e[1;31m\]( &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[1;33m\]\W \[\e[1;31m\]) &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[1;32m\]&amp;gt; &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[0m\] &amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;}&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;PROMPT_COMMAND=&lt;/span&gt;_prompt_command
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Langkah selanjutnya adalah menambahkan integrasi ke &lt;strong&gt;Git&lt;/strong&gt;. Supaya lebih rapi
+saya membuat sebuah fungsi lagi khusus untuk fungsionalitas deteksi &lt;strong&gt;Git&lt;/strong&gt; ini.
+Dan nantinya fungsi tersebut dapat dengah mudah dimasukan kedalam fungsi 
+&lt;em&gt;_promp_command&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot; style=&quot;background: #ffffff&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;
+&lt;span style=&quot;color: #A90D91&quot;&gt;function&lt;/span&gt; _prompt_command&lt;span style=&quot;color: #000000&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;{&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\n\[\e[1;31m\]( &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[1;33m\]\W \[\e[1;31m\]) &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16;font-size: 18px !important;&quot;&gt;&amp;quot;`_git_prompt`&amp;quot;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[1;32m\]&amp;gt; &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[0m\] &amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;}&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;PROMPT_COMMAND=&lt;/span&gt;_prompt_command
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Keseluruhan kode yang dapat digunakan, dan tinggal ditambahkan ke akhir berkas &lt;em&gt;.bashrc&lt;/em&gt;
+akan tampak seperti berikut&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot; style=&quot;background: #ffffff&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;&lt;span style=&quot;color: #177500&quot;&gt;# ====================================================================&lt;/span&gt;
+
+&lt;span style=&quot;color: #A90D91&quot;&gt;function&lt;/span&gt; _git_prompt&lt;span style=&quot;color: #000000&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;{&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;local &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;git_status=&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;`git status -unormal 2&amp;gt;&amp;amp;1`&amp;quot;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; ! &lt;span style=&quot;color: #000000&quot;&gt;[[&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;$git_status&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt;~ Not&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;a&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;git&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;repo &lt;span style=&quot;color: #000000&quot;&gt;]]&lt;/span&gt;; &lt;span style=&quot;color: #A90D91&quot;&gt;then&lt;/span&gt;
+        &lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;[[&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;$git_status&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt;~ nothing&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;to&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;commit &lt;span style=&quot;color: #000000&quot;&gt;]]&lt;/span&gt;; &lt;span style=&quot;color: #A90D91&quot;&gt;then&lt;/span&gt;
+            &lt;span style=&quot;color: #A90D91&quot;&gt;local &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;ansi=&lt;/span&gt;42
+        &lt;span style=&quot;color: #A90D91&quot;&gt;elif&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;[[&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;$git_status&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt;~ nothing&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;added&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;to&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;commit&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;but&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;untracked&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;files&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;present &lt;span style=&quot;color: #000000&quot;&gt;]]&lt;/span&gt;; &lt;span style=&quot;color: #A90D91&quot;&gt;then&lt;/span&gt;
+            &lt;span style=&quot;color: #A90D91&quot;&gt;local &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;ansi=&lt;/span&gt;43
+        &lt;span style=&quot;color: #A90D91&quot;&gt;else&lt;/span&gt;
+            &lt;span style=&quot;color: #A90D91&quot;&gt;local &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;ansi=&lt;/span&gt;41
+        &lt;span style=&quot;color: #A90D91&quot;&gt;fi&lt;/span&gt;
+        &lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;[[&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;$git_status&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt;~ On&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;branch&lt;span style=&quot;color: #C41A16&quot;&gt;\ &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;([&lt;/span&gt;^&lt;span style=&quot;color: #000000&quot;&gt;[&lt;/span&gt;:space:&lt;span style=&quot;color: #000000&quot;&gt;]]&lt;/span&gt;+&lt;span style=&quot;color: #000000&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;]]&lt;/span&gt;; &lt;span style=&quot;color: #A90D91&quot;&gt;then&lt;/span&gt;
+            &lt;span style=&quot;color: #000000&quot;&gt;branch=&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;${&lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;BASH_REMATCH&lt;/span&gt;[1]&lt;span style=&quot;color: #C41A16&quot;&gt;}&lt;/span&gt;
+        &lt;span style=&quot;color: #A90D91&quot;&gt;else&lt;/span&gt;
+            &lt;span style=&quot;color: #000000&quot;&gt;branch=&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;(`git describe --all --contains --abbrev=4 HEAD 2&amp;gt; /dev/null ||&lt;/span&gt;
+&lt;span style=&quot;color: #C41A16&quot;&gt;                echo HEAD`)&amp;quot;&lt;/span&gt;
+        &lt;span style=&quot;color: #A90D91&quot;&gt;fi&lt;/span&gt;
+        &lt;span style=&quot;color: #A90D91&quot;&gt;echo&lt;/span&gt; -n &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[0;37;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;$ansi&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&amp;#39;;1m\]&amp;#39;&amp;quot; &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;$branch&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt; &amp;quot;&amp;#39;\[\e[0m\] &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;fi&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;}&lt;/span&gt;
+
+&lt;span style=&quot;color: #A90D91&quot;&gt;function&lt;/span&gt; _prompt_command&lt;span style=&quot;color: #000000&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;{&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\n\[\e[1;31m\]( &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[1;33m\]\W \[\e[1;31m\]) &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;`_git_prompt`&amp;quot;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[1;32m\]&amp;gt; &amp;#39;&lt;/span&gt;
+    &lt;span style=&quot;color: #A90D91&quot;&gt;export &lt;/span&gt;&lt;span style=&quot;color: #000000&quot;&gt;PS1=$PS1&lt;/span&gt;&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;\[\e[0m\] &amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;}&lt;/span&gt;
+&lt;span style=&quot;color: #000000&quot;&gt;PROMPT_COMMAND=&lt;/span&gt;_prompt_command
+
+&lt;span style=&quot;color: #177500&quot;&gt;# ====================================================================&lt;/span&gt;
+&lt;span style=&quot;color: #177500&quot;&gt;# Git Integration&lt;/span&gt;
+&lt;span style=&quot;color: #177500&quot;&gt;# ====================================================================&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Saya sebenarnya belum terlalu men-&lt;em&gt;debug&lt;/em&gt; fungsi &lt;em&gt;_git_prompt&lt;/em&gt;, kode
+tersebut merupakan hasil &lt;em&gt;pengembaraan&lt;/em&gt; saya di &lt;strong&gt;Google&lt;/strong&gt;, sudah cukup lama
+sehingga saya lupa sumber aslinya. Seluruh tampilan karakter dalam variabel
+&lt;code&gt;PS1&lt;/code&gt; juga bisa diubah, dan disesuaikan dengan keinginan.&lt;/p&gt;
 </description>
         <pubDate>Thu, 30 Jul 2015 16:33:42 +0700</pubDate>
         <link>http://dwiprabowo.github.io/script-bash-untuk-integrasi-dengan-git.html</link>
