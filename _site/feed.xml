@@ -6,9 +6,85 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Jul 2015 21:01:57 +0700</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2015 21:01:57 +0700</lastBuildDate>
+    <pubDate>Sun, 09 Aug 2015 08:30:44 +0700</pubDate>
+    <lastBuildDate>Sun, 09 Aug 2015 08:30:44 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Cara Cepat Memulai Pemrograman Komputer</title>
+        <description>&lt;h1 id=&quot;cara-cepat-memulai-pemrograman-komputer&quot;&gt;Cara Cepat Memulai Pemrograman Komputer&lt;/h1&gt;
+
+&lt;p&gt;Selama lebih dari 5 tahun menggeluti dunia pemrograman komputer, saya telah
+menggunakan sedikitnya 3 bahasa pemrograman. Bahasa pemrograman tersebut antara
+lain adalah Java, PHP, dan Ruby. &lt;strong&gt;Java&lt;/strong&gt; bagi saya adalah bahasa pemrograman
+yang menemani saya memahami tentang &lt;em&gt;object oriented programming&lt;/em&gt;, Java juga
+menjadi bahasa pertama untuk saya bekerja. &lt;strong&gt;PHP&lt;/strong&gt; telah membawa saya untuk
+bekerja pada beberapa tempat didampingi oleh &lt;strong&gt;PHP framework&lt;/strong&gt; favorit saya
+&lt;strong&gt;Codeigniter&lt;/strong&gt;. Yang terakhir adalah &lt;strong&gt;Ruby&lt;/strong&gt;, bahasa pemrograman ini
+mengajarkan saya tentang betapa luasnya dunia pemrograman komputer ini.&lt;/p&gt;
+
+&lt;p&gt;Namun jika ada pertanyaan&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Bahasa Pemrograman apa yang paling baik untuk mulai belajar pemrograman?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Maka saya akan menjawab &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;kenapa-javascript&quot;&gt;Kenapa JavaScript?&lt;/h3&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;cepat-untuk-memulai&quot;&gt;Cepat Untuk Memulai&lt;/h5&gt;
+
+&lt;p&gt;Setiap kali melakukan &lt;em&gt;fresh install&lt;/em&gt; sistem operasi, baik itu &lt;strong&gt;windows&lt;/strong&gt; atau
+&lt;strong&gt;ubuntu&lt;/strong&gt;, hampir bisa dipastikan jika sistem operasi tersebut sudah memiliki
+program yang biasa disebut dengan &lt;strong&gt;&lt;em&gt;browser&lt;/em&gt;&lt;/strong&gt;. Browser yang tersedia saat ini
+hampir semuanya memiliki fitur &lt;em&gt;JavaScript Console&lt;/em&gt;. Fitur ini dapat digunakan
+untuk menulis kode &lt;em&gt;JavaScript&lt;/em&gt; dan juga meng-&lt;em&gt;interpret&lt;/em&gt; kode tersebut.&lt;/p&gt;
+
+&lt;h5 id=&quot;multi-platform&quot;&gt;&lt;em&gt;Multi Platform&lt;/em&gt;&lt;/h5&gt;
+
+&lt;p&gt;Selama &lt;em&gt;browser&lt;/em&gt; yang digunakan memiliki fitur &lt;em&gt;JavaScript Console&lt;/em&gt; ini, kode
+javascript bisa dijalankan tanpa memperdulikan sistem operasi apa yang
+digunakan. Jika memang &lt;em&gt;browser&lt;/em&gt; yang ada pada sistem operasi saat ini tidak
+memiliki fitur &lt;em&gt;JavaScript Console&lt;/em&gt; ini, &lt;em&gt;browser&lt;/em&gt; yang memiliki fitur ini
+sangat mudah didapatkan dan di &lt;em&gt;install&lt;/em&gt; pada sistem operasi, dan yang paling
+penting adalah aplikasi ini kebanyakan tidak memerlukan biaya untuk 
+mendapatkannya, alias &lt;strong&gt;Gratis&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jika dibandingkan dengan bahasa pemrograman lain, &lt;em&gt;JavaScript&lt;/em&gt; akan menang
+mutlak dari dua sisi tersebut. Misalkan bahasa pemrograman &lt;strong&gt;Python&lt;/strong&gt; yang
+sudah &lt;strong&gt;pre-installed&lt;/strong&gt; di&lt;strong&gt;Ubuntu&lt;/strong&gt; tidak terdapat pada sistem operasi windows
+pertama kali &lt;em&gt;install&lt;/em&gt;. Begitu juga bahasa &lt;strong&gt;Batch&lt;/strong&gt; dari windows yang tidak
+bisa berjalan secara &lt;em&gt;native&lt;/em&gt; pada sistem operasi &lt;strong&gt;Ubuntu&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jadi menurut saya, bahasa pemrograman &lt;strong&gt;JavaScript&lt;/strong&gt; adalah salah satu bahasa yang baik untuk memulai belajar. Tanpa perlu memperhatikan berbagai hal yang
+mungkin saja malah menjadi penghambat dalam proses belajar, bahasa pemrograman
+ini mungkin bisa menjadi jawabannya. Hal ini dikarenakan pengalaman pribadi
+saya, yang sering kali tidak sabar untuk melihat hasil dari sesuatu yang baru
+saya pelajari.&lt;/p&gt;
+
+&lt;p&gt;Jadi langkah tercepat untuk belajar pemrograman adalah,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Jalankan aplikasi &lt;em&gt;Browser&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Buka &lt;strong&gt;JavaScript Console&lt;/strong&gt; / &lt;strong&gt;Browser Console&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Buat program untuk menuliskan “Hello World” &lt;code&gt;console.log(&#39;Hello World&#39;);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;People says “Programming is easy …” It’s a Trap!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sun, 09 Aug 2015 14:23:36 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/cara-cepat-memulai-pemrograman-komputer.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/cara-cepat-memulai-pemrograman-komputer.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Script Bash untuk Integrasi dengan Git</title>

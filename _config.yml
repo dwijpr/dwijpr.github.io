@@ -11,3 +11,4 @@ github_username:  dwijpr
 # Build settings
 markdown: kramdown
 permalink: none
+host: 0.0.0.0
