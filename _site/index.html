@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
     <title>
         
-            Catatan Dwi Prabowo
+            Catatan dwijpr
         
     </title>
     <meta 
@@ -25,6 +24,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!--
     <link 
         rel="stylesheet" 
@@ -45,7 +45,7 @@
     <link 
         rel="alternate" 
         type="application/rss+xml" 
-        title="Catatan Dwi Prabowo" 
+        title="Catatan dwijpr" 
         href="feed.xml" 
     />
 
@@ -54,20 +54,89 @@
     <script src="assets/thirdparty/smiley.js/smileys.js"></script>
 </head>
 
+    <body id="top">
+        <style>
+    .container-front-page h1{
+        font-family: Lato, Arial;
+        letter-spacing: .1725em;
+        font-weight: lighter;
+    }
+    #main-image{
+        max-width: 180px;
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, .3);
+    }
+    #toggle-catatan{
+        font-size: 2em;
+    }
+    .fade-big-wrapper{
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        padding: 2px 10px;
+    }
+</style>
 
-  <body>
+<div style="margin-top: 20px;"></div>
 
-    <header class="site-header">
+<div class="container container-front-page" id="useless-front">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>dwijpr</h1>
+            <div id="main-image-wrapper">
+                <img 
+                    src="assets/img/myphoto.png" 
+                    id="main-image" 
+                    class="img-circle img-responsive"
+                >
+                <p class="lead">
+                    <div class="fade-big-wrapper">
+                        <span class="fade-big text-info">#Programmer</span> 
+                    </div>
+                    <div class="fade-big-wrapper">
+                        <span class="fade-big text-info">#Magelang</span> 
+                    </div>
+                    <div class="fade-big-wrapper">
+                        <span class="fade-big text-info">#Komputer</span> 
+                    </div>
+                    <div class="fade-big-wrapper">
+                        <span class="fade-big text-info">#Koding</span> 
+                    </div>
+                    <div class="fade-big-wrapper">
+                        <span class="fade-big text-info">#BelajarMenulis</span> 
+                    </div>
+                    <div class="fade-big-wrapper">
+                        <span class="fade-big text-info">#Blogging</span> 
+                    </div>
+                </p>
+                <hr>
+                <a href="#top">
+                    <div class="btn btn-primary btn-sm" id="toggle-catatan">
+                        <span>
+                            <i class="fa fa-paperclip"></i> 
+                        </span>
+                        catatan
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 40px;"></div>
+
+        <div id="the-blog" style="display: none;">
+            <header class="site-header">
     <a href="/">
         <div class="hidden-xs wrapper">
             <div class="home">~</div>
-            <div class="site-title">Catatan Dwi Prabowo</div>
+            <div class="site-title">Catatan dwijpr</div>
             <div class="photoframe">
                 <img src="assets/img/myphoto-small.png">
             </div>
         </div>
         <div class="visible-xs wrapper">
-            <div class="site-title">Catatan Dwi Prabowo</div>
+            <div class="site-title">Catatan dwijpr</div>
             <div class="photoframe">
                 <img src="assets/img/myphoto-small.png">
             </div>
@@ -75,10 +144,9 @@
     </a>
 </header>
 
-
-    <div class="page-content">
-      <div class="wrapper">
-        <br>
+            <div class="page-content">
+                <div class="wrapper">
+                    <br>
 <h1 class="text-primary">Daftar Isi</h1>
 
 <div class="toc">
@@ -147,17 +215,16 @@
 
 <p>berlangganan <a href="feed.xml">via RSS</a></p>
 
-      </div>
-    </div>
-
-    <footer class="site-footer">
+                </div>
+            </div>
+            <footer class="site-footer">
     <div class="wrapper">
         <div class="footer-col-wrapper">
             <div class="footer-col  footer-col-1">
             <ul class="contact-list">
                 <li>
                     <a href="/">
-                        Catatan Dwi Prabowo
+                        Catatan dwijpr
                     </a>
                 </li>
                 <li>
@@ -215,7 +282,14 @@
     </div>
 </footer>
 
-
-  </body>
-
+        </div>
+        <script>
+            $("#toggle-catatan").on('click', function(){
+                $("#useless-front").fadeOut(500);
+                setTimeout(function(){
+                    $("#the-blog").fadeIn();
+                }, 600);
+            });
+        </script>
+    </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body id="top">
+        {% include ganteng.html %}
+        <div id="the-blog" style="display: none;">
+            {% include header.html %}
+            <div class="page-content">
+                <div class="wrapper">
+                    {{ content }}
+                </div>
+            </div>
+            {% include footer.html %}
+        </div>
+        <script>
+            $("#toggle-catatan").on('click', function(){
+                $("#useless-front").fadeOut(500);
+                setTimeout(function(){
+                    $("#the-blog").fadeIn();
+                }, 600);
+            });
+        </script>
+    </body>
+</html>

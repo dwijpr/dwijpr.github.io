@@ -1,5 +1,13 @@
 /* override main */
 
+body{
+    background: #F4F4F4;
+}
+
+hr{
+    border-top: 1px solid black;
+}
+
 .site-header{
     margin-top: 30px;
     text-align: right;
@@ -78,7 +86,7 @@ div.photoframe img{
 
 .site-header .hidden-xs .site-title{
     position: relative;
-    right: -100px;
+    right: -80px;
     visibility: hidden;
     opacity: 0;
     transition: all .5s ease;
