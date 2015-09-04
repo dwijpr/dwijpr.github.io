@@ -3,7 +3,7 @@
     {% include head.html %}
     <body id="top">
         {% include ganteng.html %}
-        <div id="the-blog" style="display: none;">
+        <div id="the-blog" class="hidden">
             {% include header.html %}
             <div class="page-content">
                 <div class="wrapper">
@@ -13,12 +13,15 @@
             {% include footer.html %}
         </div>
         <script>
-            $("#toggle-catatan").on('click', function(){
-                $("#useless-front").fadeOut(500);
-                setTimeout(function(){
-                    $("#the-blog").fadeIn();
-                }, 600);
-            });
+            window.onload = function(){
+                var toggleCatatan = document.querySelector("#toggle-catatan");
+                var theBlog = document.querySelector("#the-blog");
+                var uselessFront = document.querySelector("#useless-front");
+                toggleCatatan.onclick = function(){
+                    theBlog.className = "";
+                    uselessFront.className = uselessFront.className+" hidden";
+                }
+            }
         </script>
     </body>
 </html>
