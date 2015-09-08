@@ -55,7 +55,8 @@
 </head>
 
     <body id="top">
-        <style>
+        <div class="hidden-xs">
+            <style>
     .container-front-page h1{
         font-family: Lato, Arial;
         letter-spacing: .1725em;
@@ -82,12 +83,13 @@
 <div class="container container-front-page" id="useless-front">
     <div class="row">
         <div class="col-xs-12 text-center">
-            <h1>dwijpr</h1>
+            <h1>Catatan dwijpr</h1>
             <div id="main-image-wrapper">
                 <img 
                     src="assets/img/myphoto.png" 
                     id="main-image" 
                     class="img-circle img-responsive"
+                    style="opacity: .7;" 
                 >
                 <p class="lead">
                     <div class="fade-big-wrapper">
@@ -109,24 +111,25 @@
                         <span class="fade-big text-info">#Blogging</span> 
                     </div>
                 </p>
-                <hr>
-                <a href="javascript:void(0);">
-                    <div class="btn btn-primary btn-sm" id="toggle-catatan">
-                        <span>
-                            <i class="fa fa-paperclip"></i> 
-                        </span>
-                        catatan
-                    </div>
-                </a>
+                <!--
+                    <a href="javascript:void(0);">
+                        <div class="btn btn-primary btn-sm" id="toggle-catatan">
+                            <span>
+                                <i class="fa fa-paperclip"></i> 
+                            </span>
+                            catatan
+                        </div>
+                    </a>
+                -->
             </div>
         </div>
     </div>
 </div>
 
-<div style="margin-bottom: 40px;"></div>
-
-        <div id="the-blog" class="hidden">
-            <header class="site-header">
+        </div>
+        <div id="the-blog">
+            <div class="visible-xs">
+                <header class="site-header">
     <a href="/">
         <div class="hidden-xs wrapper">
             <div class="home">~</div>
@@ -144,6 +147,7 @@
     </a>
 </header>
 
+            </div>
             <div class="page-content">
                 <div class="wrapper">
                     <br>
@@ -284,15 +288,15 @@
 
         </div>
         <script>
-            window.onload = function(){
-                var toggleCatatan = document.querySelector("#toggle-catatan");
-                var theBlog = document.querySelector("#the-blog");
-                var uselessFront = document.querySelector("#useless-front");
-                toggleCatatan.onclick = function(){
-                    theBlog.className = "";
-                    uselessFront.className = uselessFront.className+" hidden";
-                }
-            }
+            // window.onload = function(){
+            //     var toggleCatatan = document.querySelector("#toggle-catatan");
+            //     var theBlog = document.querySelector("#the-blog");
+            //     var uselessFront = document.querySelector("#useless-front");
+            //     toggleCatatan.onclick = function(){
+            //         theBlog.className = "";
+            //         uselessFront.className = uselessFront.className+" hidden";
+            //     }
+            // }
         </script>
     </body>
 </html>

@@ -2,9 +2,13 @@
 <html>
     {% include head.html %}
     <body id="top">
-        {% include ganteng.html %}
-        <div id="the-blog" class="hidden">
-            {% include header.html %}
+        <div class="hidden-xs">
+            {% include ganteng.html %}
+        </div>
+        <div id="the-blog">
+            <div class="visible-xs">
+                {% include header.html %}
+            </div>
             <div class="page-content">
                 <div class="wrapper">
                     {{ content }}
@@ -13,15 +17,15 @@
             {% include footer.html %}
         </div>
         <script>
-            window.onload = function(){
-                var toggleCatatan = document.querySelector("#toggle-catatan");
-                var theBlog = document.querySelector("#the-blog");
-                var uselessFront = document.querySelector("#useless-front");
-                toggleCatatan.onclick = function(){
-                    theBlog.className = "";
-                    uselessFront.className = uselessFront.className+" hidden";
-                }
-            }
+            // window.onload = function(){
+            //     var toggleCatatan = document.querySelector("#toggle-catatan");
+            //     var theBlog = document.querySelector("#the-blog");
+            //     var uselessFront = document.querySelector("#useless-front");
+            //     toggleCatatan.onclick = function(){
+            //         theBlog.className = "";
+            //         uselessFront.className = uselessFront.className+" hidden";
+            //     }
+            // }
         </script>
     </body>
 </html>
