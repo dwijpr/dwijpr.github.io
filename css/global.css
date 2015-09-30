@@ -145,3 +145,11 @@ div.toc{
 .table.table-not-full{
     width: initial;
 }
+
+a{
+    color: #1756a9;
+}
+
+a:visited{
+    color: #2a7ae2;
+}
