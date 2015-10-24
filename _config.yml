@@ -9,6 +9,7 @@ twitter_username: dwjpr
 github_username:  dwijpr
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
+markdown: redcarpet
 permalink: none
 host: 0.0.0.0

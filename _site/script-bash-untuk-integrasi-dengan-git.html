@@ -79,7 +79,7 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="main-content">
-    <h1 id="script-bash-untuk-intergrasi-dengan-git">Script <em>Bash</em> untuk Intergrasi dengan <em>Git</em></h1>
+    <h1>Script <em>Bash</em> untuk Intergrasi dengan <em>Git</em></h1>
 
 <p>Sehari-hari saya menggunakan <strong>gnome-terminal</strong> untuk melakukan pekerjaan
 saya. Selain itu saya juga hampir selalu menggunakan program untuk
@@ -88,7 +88,7 @@ muncul keinginan untuk mengintegrasikan keduanya,
 bagaimana agar kedua
 program ini bisa terintegrasi sehingga dapat mempermudah pekerjaan saya?</p>
 
-<h5 id="begin-with-the-end"><em>Begin with the End</em></h5>
+<h5><em>Begin with the End</em></h5>
 
 <p>Nantinya <strong>gnome-terminal</strong> akan mampu mendeteksi apakah dia berada pada sebuah 
 direktori yang terhubung dengan <strong>Git</strong> atau tidak, mampu mendeteksi nama <em>branch</em>
@@ -107,32 +107,23 @@ tersebut.</p>
         }
     </style>
 
-    <video width="550" height="300" controls="">
-      <source src="/assets/vid/bash-git.mp4" type="video/mp4" />
+    <video width="550" height="300" controls>
+      <source src="/assets/vid/bash-git.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 </div>
 
 <p>Pertama-tama <em>script</em> dimulai dengan memodifikasi tampilan <strong>bash prompt</strong>, yang biasa nya terlihat seperti</p>
-
-<p><code>
-user@comp:~$ █
-</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">user@comp:~$ █
+</code></pre></div>
 <p>menjadi seperti</p>
-
-<p><code>
-( ~ ) &gt; █
-</code></p>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">( ~ ) &gt; █
+</code></pre></div>
 <p>Membuat <em>function</em> menggunakan <strong>bash script</strong> dapat dilakukan dengan cara seperti
 biasa menulis program menggunakan bahasa pemrograman lainnya.</p>
-
-<p><code>
-function _prompt_command(){
+<div class="highlight"><pre><code class="language-text" data-lang="text">function _prompt_command(){
 }
-</code></p>
-
+</code></pre></div>
 <p>Untuk mengubah tampilan <em>prompt</em> diperlukan variabel <strong>bash</strong> yang dikenal dengan
 <em>identifier</em> <code>PS1</code>. Cara <em>assign</em> nilai pada variabel <strong>bash</strong> memerlukan
 kata kunci <code>export</code>. Membuat tampilan <code>( ~ )</code> faktanya memerlukan kode
@@ -152,7 +143,7 @@ ini dengan cara <em>append</em> nilai ke variabel. Fungsi lengkap nya akan tampa
 <p>Langkah selanjutnya adalah menambahkan integrasi ke <strong>Git</strong>. Supaya lebih rapi
 saya membuat sebuah fungsi lagi khusus untuk fungsionalitas deteksi <strong>Git</strong> ini.
 Dan nantinya fungsi tersebut dapat dengah mudah dimasukan kedalam fungsi 
-<em>_promp_command</em>.</p>
+<em><em>promp</em>command</em>.</p>
 
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">
 <span style="color: #A90D91">function</span> _prompt_command<span style="color: #000000">()</span> <span style="color: #000000">{</span>
@@ -204,8 +195,8 @@ akan tampak seperti berikut</p>
 <span style="color: #177500"># ====================================================================</span>
 </pre></div>
 
-<p>Saya sebenarnya belum terlalu men-<em>debug</em> fungsi <em>_git_prompt</em>, kode
-tersebut merupakan hasil <em>pengembaraan</em> saya di <strong>Google</strong>, sudah cukup lama
+<p>Saya sebenarnya belum terlalu men-<em>debug</em> fungsi <em>&#95;git<em>prompt</em>, kode
+tersebut merupakan hasil _pengembaraan</em> saya di <strong>Google</strong>, sudah cukup lama
 sehingga saya lupa sumber aslinya. Seluruh tampilan karakter dalam variabel
 <code>PS1</code> juga bisa diubah, dan disesuaikan dengan keinginan.</p>
 

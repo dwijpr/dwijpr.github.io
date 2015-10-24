@@ -6,124 +6,66 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Sep 2015 10:42:37 +0700</pubDate>
-    <lastBuildDate>Wed, 09 Sep 2015 10:42:37 +0700</lastBuildDate>
+    <pubDate>Sat, 24 Oct 2015 20:35:15 +0700</pubDate>
+    <lastBuildDate>Sat, 24 Oct 2015 20:35:15 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Aplikasi Daftar Nama</title>
-        <description>&lt;h1 id=&quot;aplikasi-daftar-nama&quot;&gt;Aplikasi Daftar Nama&lt;/h1&gt;
+        <title>Menggunakan RedCarpet Pada Jekyll</title>
+        <description>&lt;h1&gt;Menggunakan RedCarpet Pada Jekyll&lt;/h1&gt;
 
-&lt;style&gt;
-    table#names-container tr td.name{
-       width: 70%; 
-    }
-&lt;/style&gt;
+&lt;p&gt;Menulis baris contoh &lt;em&gt;code&lt;/em&gt; pada penyunting teks &lt;strong&gt;SublimeText&lt;/strong&gt; dengan
+menggunakan &lt;strong&gt;Jekyll&lt;/strong&gt; sebagai permukaan penulisan artikel saya untuk &lt;em&gt;blog&lt;/em&gt;,
+memunculkan masalah baru bagi saya setelah menemukan plugin bernama
+&lt;strong&gt;Markdown Extended&lt;/strong&gt; yang mana membuat &lt;em&gt;syntax coloring&lt;/em&gt; menjadi nyata
+langsung saat menulis kode tersebut pada &lt;em&gt;text editor&lt;/em&gt; ini.&lt;/p&gt;
 
-&lt;div&gt;
-    &lt;table id=&quot;names-container&quot;&gt;&lt;/table&gt;
-&lt;/div&gt;
+&lt;p&gt;Kurang lebih kode akan terlihat seperti berikut...&lt;/p&gt;
 
-&lt;script&gt;
-    function List(){
-        var dataStore = [];
-        var pos = 0;
-        this.add = function(item){
-            dataStore.push(item);
-        }
-        this.all = function(){
-            return dataStore;
-        }
-        this.start = function(){
-            pos = 0;
-        }
-        this.next = function(){
-            if(++pos &lt; dataStore.length){
-                return true;
-            }
-            return false;
-        }
-        this.get = function(){
-            if(pos &gt; -1 &amp;&amp; pos &lt; dataStore.length){
-                return dataStore[pos];
-            }
-        }
-    }
+&lt;p&gt;&lt;img src=&quot;assets/img/other/triple-backtick-language-name.png&quot;&gt;&lt;/p&gt;
 
-    function Button(symbol, onclick){
-        var button = $(&quot;&lt;button&gt;&quot;+symbol+&quot;&lt;/button&gt;&quot;);
-        if(typeof onclick === &#39;function&#39;){
-            button.on(&#39;click&#39;, onclick);
-        }
-        return button;
-    }
+&lt;p&gt;Namun sayangnya, jekyll yang masih polos tidak bisa mem-&lt;em&gt;parsing&lt;/em&gt; &lt;em&gt;language name&lt;/em&gt;
+yang ada di belakang &lt;em&gt;triple backtick&lt;/em&gt; &lt;em&gt;```&lt;strong&gt;js&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
 
-    function Item(value, buttons){
-        var tr = $(&quot;&lt;tr&gt;&lt;td class=&#39;name&#39;&gt;&lt;/td&gt;&lt;td class=&#39;buttons&#39;&gt;&lt;/td&gt;&lt;/tr&gt;&quot;);
-        var tdName = tr.find(&#39;.name&#39;);
-        var tdButtons = tr.find(&#39;.buttons&#39;);
-        if(typeof value === &#39;string&#39;){
-            tdName.html(value);
-        }else{
-            tdName.append(value);
-        }
-        buttons.forEach(function(button){
-            tdButtons.append(button);
-        });
-        return tr.get(0);
-    }
+&lt;h2&gt;Pokok Permasalahan&lt;/h2&gt;
 
-    function NameItem(name){
-        return new Item(
-            name
-            , [
-                (new Button(&quot;↓&quot;)),
-                (new Button(&quot;↑&quot;)),
-                (new Button(&quot;x&quot;))
-            ]
-        );
-    }
+&lt;p&gt;Jadi inti permasalahan yang ada disini adalah, keindahan yang didapat dari hasil
+kombinasi &lt;strong&gt;SublimeText&lt;/strong&gt; dengan &lt;em&gt;plugin&lt;/em&gt;nya &lt;strong&gt;Makrdown Extended&lt;/strong&gt; (screenshoot
+diatas), tidak akan bisa dinikmati pada saat blog di&lt;em&gt;parsing&lt;/em&gt; dan &lt;em&gt;language name&lt;/em&gt;nya
+tidak menjadi kode &lt;strong&gt;html&lt;/strong&gt; dan malah merusak kode sebenarnya, sedangkan untuk
+melihat &lt;em&gt;syntax coloring&lt;/em&gt;nya langsung pada &lt;em&gt;text editor&lt;/em&gt; memerlukan &lt;em&gt;language name&lt;/em&gt;
+tersebut sehingga akan sesuai dengan bahasa yang disebutkan.&lt;/p&gt;
 
-    function InputItem(){
-        var input = $(&quot;&lt;input&gt;&quot;);
-        return new Item(
-            input
-            , [
-                (new Button(&quot;+&quot;, function(){
-                    console.log(input.val())
-                })),
-            ]
-        );
-    }
+&lt;p&gt;&lt;img src=&quot;assets/img/other/output-js.png&quot;&gt;&lt;/p&gt;
 
-    var list = new List();
-    var names = [&#39;Dwi&#39;, &#39;Juli&#39;, &#39;Prabowo&#39;];
-    for(var i = 0;i &lt; names.length;i++){
-        list.add(names[i]);
-    }
+&lt;h2&gt;Solusi&lt;/h2&gt;
 
-    var namesContainer = $(&quot;#names-container&quot;);
+&lt;p&gt;Setelah beberapa saat mencari, saya berhasil mengatasi masalah ini. Seperti
+judul artikel ini, RedCarpet (gem ruby), telah membantu saya untuk mem&lt;em&gt;parsing&lt;/em&gt;
+&lt;em&gt;language name&lt;/em&gt; yang ada dibelakang &lt;em&gt;triple backtick&lt;/em&gt; menjadi seperti berikut ...&lt;/p&gt;
 
-    list.start();
-    do{
-        var element = new NameItem(list.get());
-        namesContainer.append(element);
-    }while(list.next());
-    var inputElement = new InputItem();
-    namesContainer.append(inputElement);
-&lt;/script&gt;
+&lt;p&gt;&lt;img src=&quot;assets/img/other/html-redcarpet.png&quot;&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Language name&lt;/em&gt; yang tadinya tidak ter-&lt;em&gt;parse&lt;/em&gt; oleh jekyll sekarang menjadi kode
+html yang lebih komplek, dari yang tadinya hanya berupa &lt;em&gt;tag&lt;/em&gt; &lt;strong&gt;code&lt;/strong&gt; diikuti
+&lt;em&gt;language name&lt;/em&gt;-nya.&lt;/p&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#RedCarpet #Jekyll #SublimeText #MarkdownExtended&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 10 Aug 2015 23:58:25 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/aplikasi-daftar-nama.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/aplikasi-daftar-nama.html</guid>
+        <link>http://dwiprabowo.github.io/menggunakan-redcarpet-pada-jekyll.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/menggunakan-redcarpet-pada-jekyll.html</guid>
         
         
       </item>
     
       <item>
         <title>Cara Cepat Memulai Pemrograman Komputer</title>
-        <description>&lt;h1 id=&quot;cara-cepat-memulai-pemrograman-komputer&quot;&gt;Cara Cepat Memulai Pemrograman Komputer&lt;/h1&gt;
+        <description>&lt;h1&gt;Cara Cepat Memulai Pemrograman Komputer&lt;/h1&gt;
 
 &lt;p&gt;Selama lebih dari 5 tahun menggeluti dunia pemrograman komputer, saya telah
 menggunakan sedikitnya 3 bahasa pemrograman. Bahasa pemrograman tersebut antara
@@ -137,18 +79,18 @@ mengajarkan saya tentang betapa luasnya dunia pemrograman komputer ini.&lt;/p&gt
 &lt;p&gt;Namun jika ada pertanyaan&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Bahasa Pemrograman apa yang paling baik untuk mulai belajar pemrograman?&lt;/p&gt;
+&lt;p&gt;Bahasa Pemrograman apa yang paling baik untuk mulai belajar pemrograman?&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Maka saya akan menjawab &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;kenapa-javascript&quot;&gt;Kenapa JavaScript?&lt;/h3&gt;
+&lt;h3&gt;Kenapa JavaScript?&lt;/h3&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;cepat-untuk-memulai&quot;&gt;Cepat Untuk Memulai&lt;/h5&gt;
+&lt;h5&gt;Cepat Untuk Memulai&lt;/h5&gt;
 
 &lt;p&gt;Setiap kali melakukan &lt;em&gt;fresh install&lt;/em&gt; sistem operasi, baik itu &lt;strong&gt;windows&lt;/strong&gt; atau
 &lt;strong&gt;ubuntu&lt;/strong&gt;, hampir bisa dipastikan jika sistem operasi tersebut sudah memiliki
@@ -156,7 +98,7 @@ program yang biasa disebut dengan &lt;strong&gt;&lt;em&gt;browser&lt;/em&gt;&lt;
 hampir semuanya memiliki fitur &lt;em&gt;JavaScript Console&lt;/em&gt;. Fitur ini dapat digunakan
 untuk menulis kode &lt;em&gt;JavaScript&lt;/em&gt; dan juga meng-&lt;em&gt;interpret&lt;/em&gt; kode tersebut.&lt;/p&gt;
 
-&lt;h5 id=&quot;multi-platform&quot;&gt;&lt;em&gt;Multi Platform&lt;/em&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;em&gt;Multi Platform&lt;/em&gt;&lt;/h5&gt;
 
 &lt;p&gt;Selama &lt;em&gt;browser&lt;/em&gt; yang digunakan memiliki fitur &lt;em&gt;JavaScript Console&lt;/em&gt; ini, kode
 javascript bisa dijalankan tanpa memperdulikan sistem operasi apa yang
@@ -181,14 +123,10 @@ saya pelajari.&lt;/p&gt;
 &lt;p&gt;Jadi langkah tercepat untuk belajar pemrograman adalah,&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Jalankan aplikasi &lt;em&gt;Browser&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Buka &lt;strong&gt;JavaScript Console&lt;/strong&gt; / &lt;strong&gt;Browser Console&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Buat program untuk menuliskan “Hello World” &lt;code&gt;console.log(&#39;Hello World&#39;);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Jalankan aplikasi &lt;em&gt;Browser&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Buka &lt;strong&gt;JavaScript Console&lt;/strong&gt; / &lt;strong&gt;Browser Console&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Buat program untuk menuliskan &amp;quot;Hello World&amp;quot; &lt;code&gt;console.log(&amp;#39;Hello World&amp;#39;);&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;People says “Programming is easy …” It’s a Trap!!!&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
         <pubDate>Sun, 09 Aug 2015 14:23:36 +0700</pubDate>
         <link>http://dwiprabowo.github.io/cara-cepat-memulai-pemrograman-komputer.html</link>
@@ -199,7 +137,7 @@ saya pelajari.&lt;/p&gt;
     
       <item>
         <title>Script Bash untuk Integrasi dengan Git</title>
-        <description>&lt;h1 id=&quot;script-bash-untuk-intergrasi-dengan-git&quot;&gt;Script &lt;em&gt;Bash&lt;/em&gt; untuk Intergrasi dengan &lt;em&gt;Git&lt;/em&gt;&lt;/h1&gt;
+        <description>&lt;h1&gt;Script &lt;em&gt;Bash&lt;/em&gt; untuk Intergrasi dengan &lt;em&gt;Git&lt;/em&gt;&lt;/h1&gt;
 
 &lt;p&gt;Sehari-hari saya menggunakan &lt;strong&gt;gnome-terminal&lt;/strong&gt; untuk melakukan pekerjaan
 saya. Selain itu saya juga hampir selalu menggunakan program untuk
@@ -208,7 +146,7 @@ muncul keinginan untuk mengintegrasikan keduanya,
 bagaimana agar kedua
 program ini bisa terintegrasi sehingga dapat mempermudah pekerjaan saya?&lt;/p&gt;
 
-&lt;h5 id=&quot;begin-with-the-end&quot;&gt;&lt;em&gt;Begin with the End&lt;/em&gt;&lt;/h5&gt;
+&lt;h5&gt;&lt;em&gt;Begin with the End&lt;/em&gt;&lt;/h5&gt;
 
 &lt;p&gt;Nantinya &lt;strong&gt;gnome-terminal&lt;/strong&gt; akan mampu mendeteksi apakah dia berada pada sebuah 
 direktori yang terhubung dengan &lt;strong&gt;Git&lt;/strong&gt; atau tidak, mampu mendeteksi nama &lt;em&gt;branch&lt;/em&gt;
@@ -227,32 +165,23 @@ tersebut.&lt;/p&gt;
         }
     &lt;/style&gt;
 
-    &lt;video width=&quot;550&quot; height=&quot;300&quot; controls=&quot;&quot;&gt;
-      &lt;source src=&quot;/assets/vid/bash-git.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    &lt;video width=&quot;550&quot; height=&quot;300&quot; controls&gt;
+      &lt;source src=&quot;/assets/vid/bash-git.mp4&quot; type=&quot;video/mp4&quot;&gt;
       Your browser does not support the video tag.
     &lt;/video&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Pertama-tama &lt;em&gt;script&lt;/em&gt; dimulai dengan memodifikasi tampilan &lt;strong&gt;bash prompt&lt;/strong&gt;, yang biasa nya terlihat seperti&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-user@comp:~$ █
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;user@comp:~$ █
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;menjadi seperti&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-( ~ ) &amp;gt; █
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;( ~ ) &amp;gt; █
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Membuat &lt;em&gt;function&lt;/em&gt; menggunakan &lt;strong&gt;bash script&lt;/strong&gt; dapat dilakukan dengan cara seperti
 biasa menulis program menggunakan bahasa pemrograman lainnya.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-function _prompt_command(){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function _prompt_command(){
 }
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Untuk mengubah tampilan &lt;em&gt;prompt&lt;/em&gt; diperlukan variabel &lt;strong&gt;bash&lt;/strong&gt; yang dikenal dengan
 &lt;em&gt;identifier&lt;/em&gt; &lt;code&gt;PS1&lt;/code&gt;. Cara &lt;em&gt;assign&lt;/em&gt; nilai pada variabel &lt;strong&gt;bash&lt;/strong&gt; memerlukan
 kata kunci &lt;code&gt;export&lt;/code&gt;. Membuat tampilan &lt;code&gt;( ~ )&lt;/code&gt; faktanya memerlukan kode
@@ -272,7 +201,7 @@ ini dengan cara &lt;em&gt;append&lt;/em&gt; nilai ke variabel. Fungsi lengkap ny
 &lt;p&gt;Langkah selanjutnya adalah menambahkan integrasi ke &lt;strong&gt;Git&lt;/strong&gt;. Supaya lebih rapi
 saya membuat sebuah fungsi lagi khusus untuk fungsionalitas deteksi &lt;strong&gt;Git&lt;/strong&gt; ini.
 Dan nantinya fungsi tersebut dapat dengah mudah dimasukan kedalam fungsi 
-&lt;em&gt;_promp_command&lt;/em&gt;.&lt;/p&gt;
+&lt;em&gt;&lt;em&gt;promp&lt;/em&gt;command&lt;/em&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot; style=&quot;background: #ffffff&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;
 &lt;span style=&quot;color: #A90D91&quot;&gt;function&lt;/span&gt; _prompt_command&lt;span style=&quot;color: #000000&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;{&lt;/span&gt;
@@ -324,8 +253,8 @@ akan tampak seperti berikut&lt;/p&gt;
 &lt;span style=&quot;color: #177500&quot;&gt;# ====================================================================&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Saya sebenarnya belum terlalu men-&lt;em&gt;debug&lt;/em&gt; fungsi &lt;em&gt;_git_prompt&lt;/em&gt;, kode
-tersebut merupakan hasil &lt;em&gt;pengembaraan&lt;/em&gt; saya di &lt;strong&gt;Google&lt;/strong&gt;, sudah cukup lama
+&lt;p&gt;Saya sebenarnya belum terlalu men-&lt;em&gt;debug&lt;/em&gt; fungsi &lt;em&gt;&amp;#95;git&lt;em&gt;prompt&lt;/em&gt;, kode
+tersebut merupakan hasil _pengembaraan&lt;/em&gt; saya di &lt;strong&gt;Google&lt;/strong&gt;, sudah cukup lama
 sehingga saya lupa sumber aslinya. Seluruh tampilan karakter dalam variabel
 &lt;code&gt;PS1&lt;/code&gt; juga bisa diubah, dan disesuaikan dengan keinginan.&lt;/p&gt;
 </description>
@@ -338,22 +267,19 @@ sehingga saya lupa sumber aslinya. Seluruh tampilan karakter dalam variabel
     
       <item>
         <title>Mencoba Bit Field</title>
-        <description>&lt;h1 id=&quot;mencoba-bit-field&quot;&gt;Mencoba &lt;em&gt;Bit Field&lt;/em&gt;&lt;/h1&gt;
+        <description>&lt;h1&gt;Mencoba &lt;em&gt;Bit Field&lt;/em&gt;&lt;/h1&gt;
 
 &lt;p&gt;Beberapa waktu lalu saya mencari dan mencoba memahami tentang salah satu konsep
 pemrograman yang sebenarnya sudah saya ketahui beberapa waktu lalu namun belum
 sepenuhnya paham dan belum sempat untuk mengimplementasikannya pada sebuah
 kasus. Setelah beberapa kali membaca dari sumber-sumber yang saya dapat, artikel
-ini akan membahas tentang &lt;em&gt;bit field&lt;/em&gt; menurut se-&lt;em&gt;penangkap&lt;/em&gt;-an saya …&lt;/p&gt;
+ini akan membahas tentang &lt;em&gt;bit field&lt;/em&gt; menurut se-&lt;em&gt;penangkap&lt;/em&gt;-an saya ...&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Bit Field&lt;/strong&gt; adalah istilah yang digunakan pada pemrograman komputer untuk pemetaan bidang pada sebuah data yang direpresentasikan dengan sebuah angka (&lt;em&gt;integral&lt;/em&gt;) dimana nantinya akan ditranslasi menjadi bilangan biner sehingga akan tampak &lt;em&gt;fields&lt;/em&gt; yang dimaksud, setiap &lt;em&gt;bit&lt;/em&gt; yang dialamatkan memiliki artian khusus menurut dengan rancangan logika pembuat kode.&lt;/p&gt;
 
 &lt;p&gt;Untuk lebih jelasnya bisa diambil contoh untuk implementasi &lt;em&gt;bit field&lt;/em&gt; ini. Contoh yang akan saya gunakan adalah tentang sistem ijin sistem operasi berbasis linux. Bisa dilihat melalui perintah&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-$ chmod 777 file.txt
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ chmod 777 file.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;dari &lt;em&gt;man page&lt;/em&gt; &lt;strong&gt;chmod&lt;/strong&gt; program tersebut berfungsi untuk mengganti &lt;em&gt;file mode
 bits&lt;/em&gt;. Dari angka 777 tersebut bisa diambil salah satunya saja yaitu angka 7,
 angka 7 disini memiliki arti nilai dari user memiliki akses untuk &lt;em&gt;read&lt;/em&gt;, &lt;em&gt;write&lt;/em&gt;,
@@ -479,11 +405,8 @@ tampak seperti bilangan biner 3 digit -&amp;gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Angka 7 tersebut merupakan hasil dari operasi &lt;em&gt;bitwise&lt;/em&gt; seperti kode berikut&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-value = 4|2|1
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;value = 4|2|1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Dengan begitu, hanya sebuah bilangan decimal dapat merepresentasi berbagai macam
 arti seperti contoh tersebut. Lalu bagaimana cara mengetahui bahwa nilai angka
 tersebut memiliki arti yang seharusnya? Contoh listing kode &lt;strong&gt;PHP&lt;/strong&gt; berikut mungkin
@@ -534,7 +457,7 @@ angka dari salah perintah sistem operasi berbasis linux tersebut.&lt;/p&gt;
     
       <item>
         <title>Menggunakan Penyunting Teks VIM</title>
-        <description>&lt;h1 id=&quot;menggunakan-penyunting-teks-vim&quot;&gt;Menggunakan Penyunting Teks VIM&lt;/h1&gt;
+        <description>&lt;h1&gt;Menggunakan Penyunting Teks VIM&lt;/h1&gt;
 
 &lt;p&gt;Vim adalah salah satu perangkat lunak komputer yang termasuk ke dalam golongan
 &lt;em&gt;text editor&lt;/em&gt; bersama dengan gedit dan notepad. Teks disini bersifat biasa atau
@@ -563,11 +486,8 @@ macam alasan yang terpaksa harus melakukan install dari awal. Perlunya mengedit
 file-file konfigurasi maka penyunting teks &lt;strong&gt;VIM&lt;/strong&gt; inilah yang saya install
 pertama kali. Pada sistem operasi yang biasa saya gunakan, menginstall vim dapat
 dilakukan dengan cukup mudah yaitu dengan cara&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-$ sudo apt-get install vim-gnome
-&lt;/code&gt;&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ sudo apt-get install vim-gnome
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;tidak seperti program penyunting teks biasa, &lt;strong&gt;VIM&lt;/strong&gt; memerlukan konfigurasi awal.
 Salah satunya adalah dengan membuat file &lt;strong&gt;.vimrc&lt;/strong&gt; yang biasa terletak pada &lt;em&gt;home&lt;/em&gt;
 direktori. File ini akan dieksekusi pada saat awal penggunaan &lt;strong&gt;VIM&lt;/strong&gt; sebelum program
@@ -703,7 +623,7 @@ autocmd &lt;span style=&quot;color: #A90D91&quot;&gt;BufNewFile&lt;/span&gt;,&lt
     
       <item>
         <title>Mulai Menulis</title>
-        <description>&lt;h1 id=&quot;mulai-menulis&quot;&gt;Mulai Menulis&lt;/h1&gt;
+        <description>&lt;h1&gt;Mulai Menulis&lt;/h1&gt;
 
 &lt;p&gt;Akhir-akhir ini saya memiliki keinginan yang sangat besar untuk menulis. Namun
 pada saat saya memulai untuk membuat beberapa artikel, tak satupun dari

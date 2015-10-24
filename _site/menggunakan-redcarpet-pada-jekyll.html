@@ -9,13 +9,13 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
     <title>
         
-            Catatan dwijpr | Aplikasi Daftar Nama
+            Catatan dwijpr | Menggunakan RedCarpet Pada Jekyll
         
     </title>
     <meta 
         name="description" 
         content="
-                Aplikasi Daftar Nama
+                Menggunakan RedCarpet Pada Jekyll
             "
     >
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
 
     <link 
         rel="canonical" 
-        href="/aplikasi-daftar-nama.html"
+        href="/menggunakan-redcarpet-pada-jekyll.html"
     >
     <link 
         rel="alternate" 
@@ -79,107 +79,49 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="main-content">
-    <h1 id="aplikasi-daftar-nama">Aplikasi Daftar Nama</h1>
+    <h1>Menggunakan RedCarpet Pada Jekyll</h1>
 
-<style>
-    table#names-container tr td.name{
-       width: 70%; 
-    }
-</style>
+<p>Menulis baris contoh <em>code</em> pada penyunting teks <strong>SublimeText</strong> dengan
+menggunakan <strong>Jekyll</strong> sebagai permukaan penulisan artikel saya untuk <em>blog</em>,
+memunculkan masalah baru bagi saya setelah menemukan plugin bernama
+<strong>Markdown Extended</strong> yang mana membuat <em>syntax coloring</em> menjadi nyata
+langsung saat menulis kode tersebut pada <em>text editor</em> ini.</p>
 
-<div>
-    <table id="names-container"></table>
-</div>
+<p>Kurang lebih kode akan terlihat seperti berikut...</p>
 
-<script>
-    function List(){
-        var dataStore = [];
-        var pos = 0;
-        this.add = function(item){
-            dataStore.push(item);
-        }
-        this.all = function(){
-            return dataStore;
-        }
-        this.start = function(){
-            pos = 0;
-        }
-        this.next = function(){
-            if(++pos < dataStore.length){
-                return true;
-            }
-            return false;
-        }
-        this.get = function(){
-            if(pos > -1 && pos < dataStore.length){
-                return dataStore[pos];
-            }
-        }
-    }
+<p><img src="assets/img/other/triple-backtick-language-name.png"></p>
 
-    function Button(symbol, onclick){
-        var button = $("<button>"+symbol+"</button>");
-        if(typeof onclick === 'function'){
-            button.on('click', onclick);
-        }
-        return button;
-    }
+<p>Namun sayangnya, jekyll yang masih polos tidak bisa mem-<em>parsing</em> <em>language name</em>
+yang ada di belakang <em>triple backtick</em> <em>```<strong>js</strong></em>.</p>
 
-    function Item(value, buttons){
-        var tr = $("<tr><td class='name'></td><td class='buttons'></td></tr>");
-        var tdName = tr.find('.name');
-        var tdButtons = tr.find('.buttons');
-        if(typeof value === 'string'){
-            tdName.html(value);
-        }else{
-            tdName.append(value);
-        }
-        buttons.forEach(function(button){
-            tdButtons.append(button);
-        });
-        return tr.get(0);
-    }
+<h2>Pokok Permasalahan</h2>
 
-    function NameItem(name){
-        return new Item(
-            name
-            , [
-                (new Button("↓")),
-                (new Button("↑")),
-                (new Button("x"))
-            ]
-        );
-    }
+<p>Jadi inti permasalahan yang ada disini adalah, keindahan yang didapat dari hasil
+kombinasi <strong>SublimeText</strong> dengan <em>plugin</em>nya <strong>Makrdown Extended</strong> (screenshoot
+diatas), tidak akan bisa dinikmati pada saat blog di<em>parsing</em> dan <em>language name</em>nya
+tidak menjadi kode <strong>html</strong> dan malah merusak kode sebenarnya, sedangkan untuk
+melihat <em>syntax coloring</em>nya langsung pada <em>text editor</em> memerlukan <em>language name</em>
+tersebut sehingga akan sesuai dengan bahasa yang disebutkan.</p>
 
-    function InputItem(){
-        var input = $("<input>");
-        return new Item(
-            input
-            , [
-                (new Button("+", function(){
-                    console.log(input.val())
-                })),
-            ]
-        );
-    }
+<p><img src="assets/img/other/output-js.png"></p>
 
-    var list = new List();
-    var names = ['Dwi', 'Juli', 'Prabowo'];
-    for(var i = 0;i < names.length;i++){
-        list.add(names[i]);
-    }
+<h2>Solusi</h2>
 
-    var namesContainer = $("#names-container");
+<p>Setelah beberapa saat mencari, saya berhasil mengatasi masalah ini. Seperti
+judul artikel ini, RedCarpet (gem ruby), telah membantu saya untuk mem<em>parsing</em>
+<em>language name</em> yang ada dibelakang <em>triple backtick</em> menjadi seperti berikut ...</p>
 
-    list.start();
-    do{
-        var element = new NameItem(list.get());
-        namesContainer.append(element);
-    }while(list.next());
-    var inputElement = new InputItem();
-    namesContainer.append(inputElement);
-</script>
+<p><img src="assets/img/other/html-redcarpet.png"></p>
 
+<p><em>Language name</em> yang tadinya tidak ter-<em>parse</em> oleh jekyll sekarang menjadi kode
+html yang lebih komplek, dari yang tadinya hanya berupa <em>tag</em> <strong>code</strong> diikuti
+<em>language name</em>-nya.</p>
+
+<p><hr></p>
+
+<blockquote>
+<p>#RedCarpet #Jekyll #SublimeText #MarkdownExtended</p>
+</blockquote>
 
 </div>
 

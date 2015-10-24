@@ -63,5 +63,3 @@ Jadi langkah tercepat untuk belajar pemrograman adalah,
 1. Jalankan aplikasi _Browser_
 2. Buka **JavaScript Console** / **Browser Console**
 3. Buat program untuk menuliskan "Hello World" ```console.log('Hello World');```
-
-> People says "Programming is easy ..." It's a Trap!!!
