@@ -76,9 +76,23 @@
         display: inline-block;
         padding: 2px 10px;
     }
-</style>
 
-<div style="margin-top: 20px;"></div>
+    #useless-front{
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        padding-bottom: 32px;
+
+        background: rgba(226,226,226,1);
+        background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(69%, rgba(245,245,245,0.95)), color-stop(85%, rgba(250,250,250,0.9)), color-stop(94%, rgba(252,252,252,0.8)), color-stop(100%, rgba(254,254,254,0)));
+        background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
+        background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
+        background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
+        background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(245,245,245,0.95) 69%, rgba(250,250,250,0.9) 85%, rgba(252,252,252,0.8) 94%, rgba(254,254,254,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+    }
+</style>
 
 <div class="container container-front-page" id="useless-front">
     <div class="row">
@@ -122,6 +136,7 @@
         </div>
     </div>
 </div>
+<div style="padding-top: 320px;"></div>
 
         </div>
         <div id="the-blog">
@@ -147,10 +162,32 @@
             </div>
             <div class="page-content">
                 <div class="wrapper">
-                    <br>
+                    <style>
+  @media (min-width: 768px){
+    .page-content > .wrapper{
+      border: 1px solid transparent;
+    }
+  }
+</style>
+
+<!--
+<br>
 <h1 class="text-primary">Daftar Isi</h1>
+-->
 
 <div class="toc">
+  
+    <div class="row">
+      <div class="col-sm-3 visible-sm-offset-3 hidden-xs text-info">
+        Aug 11, 2015
+      </div>
+      <div class="col-xs-4 visible-xs text-info">
+        11/8 2015
+      </div>
+      <div class="col-xs-8 col-sm-9">
+            <a href="tahap-demi-tahap-menambahkan-navigation-drawer-membuat-aplikasi-android.html">Tahap Demi Tahap Menambahkan Navigation Drawer - Membuat Aplikasi Android</a>
+      </div>
+    </div>
   
     <div class="row">
       <div class="col-sm-3 visible-sm-offset-3 hidden-xs text-info">

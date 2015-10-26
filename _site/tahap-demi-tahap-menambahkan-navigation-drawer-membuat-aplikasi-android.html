@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
+    <title>
+        
+            Catatan dwijpr | Tahap Demi Tahap Menambahkan Navigation Drawer - Membuat Aplikasi Android
+        
+    </title>
+    <meta 
+        name="description" 
+        content="
+                Tahap Demi Tahap Menambahkan Navigation Drawer - Membuat Aplikasi Android
+            "
+    >
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--
+    <link 
+        rel="stylesheet" 
+        href="assets/thirdparty/twbs-bootstrap/css/bootstrap.min.css"
+    >
+    -->
+    <link rel="stylesheet" href="css/global.css">
+    <link 
+        rel="stylesheet" 
+        href="assets/thirdparty/smiley.js/smileys.css"
+    >
+    <link rel="stylesheet" href="css/font.css">
+
+    <link 
+        rel="canonical" 
+        href="/tahap-demi-tahap-menambahkan-navigation-drawer-membuat-aplikasi-android.html"
+    >
+    <link 
+        rel="alternate" 
+        type="application/rss+xml" 
+        title="Catatan dwijpr" 
+        href="feed.xml" 
+    />
+
+    <script src="assets/thirdparty/jquery-1.11.2.js"></script>
+    <script src="assets/thirdparty/twbs-bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/thirdparty/smiley.js/smileys.js"></script>
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+    <a href="/">
+        <div class="hidden-xs wrapper">
+            <div class="home">~</div>
+            <div class="site-title">Catatan dwijpr</div>
+            <div class="photoframe">
+                <img src="assets/img/myphoto-small.png">
+            </div>
+        </div>
+        <div class="visible-xs wrapper">
+            <div class="site-title">Catatan dwijpr</div>
+            <div class="photoframe">
+                <img src="assets/img/myphoto-small.png">
+            </div>
+        </div>
+    </a>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="main-content">
+    <h1>Tahap Demi Tahap Menambahkan Navigation Drawer - Membuat Aplikasi Android</h1>
+
+<p><strong>Navigation Drawer</strong> adalah sebuah panel yang menunjukan navigasi utama sebuah
+aplikasi (android) yang berada diujung kiri tampilan. Banyak aplikasi populer
+untuk sistem operasi android yang menggunakan menu / <em>navigation drawer</em> ini,
+dan menurut saya pribadi, tampilan menu dengan model seperti ini sangat efektif
+untuk sebuah aplikasi. Kurang lebih nanti hasilnya akan seperti ini ...</p>
+
+<div id="bash-git-video-wrapper">
+    <style>
+        #bash-git-video-wrapper{
+            max-width: 100%;
+            overflow-x: auto;
+            text-align: center;
+        }
+        #bash-git-video-wrapper video{
+            display: inline-block;
+        }
+    </style>
+
+    <video width="400" height="250" controls>
+      <source src="/assets/vid/and-result.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</div>
+
+<p>Untuk membuat tampilan menu seperti video diatas hanya memerlukan sebuah <em>class</em>
+<strong>java</strong> dan sebuah <em>layout</em>. Untuk memulai langsung saja menuju kode <em>layout</em>,
+Elemen dengan strata tertinggi pada <em>layout</em> kali ini adalah
+<code>android.support.v4.widget.DrawLayout</code></p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.v4.widget.DrawerLayout</span>
+    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/drawer_layout&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/android.support.v4.widget.DrawerLayout&gt;</span>
+</code></pre></div>
+<p>Selanjutnya adalah menambahkan elemen <code>ListView</code> sebagai <em>drawer</em>-nya</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ListView</span>
+    <span class="na">android:layout_width=</span><span class="s">&quot;200dp&quot;</span>
+    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+    <span class="na">android:id=</span><span class="s">&quot;@+id/navList&quot;</span>
+    <span class="na">android:layout_gravity=</span><span class="s">&quot;left|start&quot;</span>
+    <span class="na">android:background=</span><span class="s">&quot;#ffeeeeee&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+<p>ListView (atau apapun yang <em>view</em> yang digunakan sebagai drawer), sebaiknya tidak
+lebih dari 320dp untuk atribut <code>android:layout_width</code> - nya, sehingga
+kemunculan <em>drawer</em> tidak akan menutup seluruh permukaan aplikasi.</p>
+
+<p>Supaya tampilan sama berikut adalah kode lengkap untuk <em>layout</em>-nya ...</p>
+
+<div class="highlight-wrapper" style="max-height: 200px;">
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;android.support.v4.widget.DrawerLayout</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/drawer_layout"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;RelativeLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:paddingLeft=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+        <span class="na">android:paddingRight=</span><span class="s">"@dimen/activity_horizontal_margin"</span>
+        <span class="na">android:paddingTop=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+        <span class="na">android:paddingBottom=</span><span class="s">"@dimen/activity_vertical_margin"</span>
+        <span class="na">android:background=</span><span class="s">"#ffffffff"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_centerHorizontal=</span><span class="s">"true"</span>
+            <span class="na">android:text=</span><span class="s">"@string/text_main"</span>
+            <span class="na">android:textSize=</span><span class="s">"24sp"</span>
+            <span class="na">android:gravity=</span><span class="s">"center"</span>
+            <span class="na">android:layout_marginTop=</span><span class="s">"100dp"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;ImageView</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:src=</span><span class="s">"@android:drawable/sym_def_app_icon"</span>
+            <span class="na">android:layout_alignParentBottom=</span><span class="s">"true"</span>
+            <span class="na">android:layout_centerHorizontal=</span><span class="s">"true"</span>
+            <span class="na">android:contentDescription=</span><span class="s">"@string/gambar_asal"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/RelativeLayout&gt;</span>
+    <span class="nt">&lt;ListView</span>
+        <span class="na">android:layout_width=</span><span class="s">"200dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">android:id=</span><span class="s">"@+id/navList"</span>
+        <span class="na">android:layout_gravity=</span><span class="s">"left|start"</span>
+        <span class="na">android:background=</span><span class="s">"#ffeeeeee"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/android.support.v4.widget.DrawerLayout&gt;</span>
+</code></pre></div>
+</div>
+
+<p>Setelah <em>layout</em>-nya selesai, sekarang saatnya untuk memasuki tahap selanjutnya
+yaitu mengetik kode <strong>java</strong>.</p>
+
+<p>Kelas <strong>java</strong> yang digunakan disini merupakan <em>extends</em> dari kelas <strong>AppCompatActivity</strong>
+(kemungkinan update menjadi <em>deprecated</em> bisa disesuaikan dengan kode terbaru).</p>
+
+<p><em>Drawer</em> yang digunakan kali ini adalah sebuah <strong>ListView</strong>, sehingga properti pada
+kode java nya pun akan disesuaikan dengan elemen tersebut. Pada kode java akan
+digunakan sebuah <em>array</em> <em>String</em> sebagai tempat data <em>list</em> disimpan, dan sebuah
+<strong>ArrayAdapter</strong> untuk variabel konversinya.</p>
+
+<p>Mulai, tambahkan 2 anggota baru sebagai variabel ke dalam <em>Activity</em>-nya:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">ListView</span> <span class="n">mDrawerList</span><span class="o">;</span>
+<span class="kd">private</span> <span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">mAdapter</span><span class="o">;</span>
+</code></pre></div>
+<p>Kemudian arahkan variabel <strong>ListView</strong>(mDrawerList) dengan elemen yang ada pada
+<em>layout</em> didalam <em>method</em> <strong>onCreate()</strong>:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">mDrawerList</span> <span class="o">=</span> <span class="o">(</span><span class="n">ListView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">navList</span><span class="o">);</span>
+</code></pre></div>
+<p>Daftar menu akan dipisah menjadi sebuah <em>helper method</em> tersendiri sehingga kode lebih
+rapi dan dipanggil didalam <code>onCreate()</code>:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">addDrawerItems</span><span class="o">(){</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">osArray</span> <span class="o">=</span> <span class="o">{</span><span class="s">&quot;Ayam Goreng&quot;</span><span class="o">,</span> <span class="s">&quot;Sate&quot;</span><span class="o">,</span> <span class="s">&quot;Rendang&quot;</span><span class="o">,</span> <span class="s">&quot;Bakso&quot;</span><span class="o">,</span> <span class="s">&quot;Gorengan&quot;</span><span class="o">};</span>
+    <span class="n">mAdapter</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayAdapter</span><span class="o">&lt;&gt;(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_list_item_1</span><span class="o">,</span> <span class="n">osArray</span><span class="o">));</span>
+    <span class="n">mDrawerList</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mAdapter</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Sampai disini, <em>drawer</em> sudah bisa di-<em>draw</em> ... dan selanjutnya</p>
+
+<h2><em>Toggle</em> tampilan menu (tombol hamburger &#8801; / &#8592; tombol kembali)</h2>
+
+<p>Tahap ini lebih kepada pendekatan desain, jadi menu akan tampil sesuai dengan
+petunjuk simbol ini - &#8801; (menu belum tampil) , &#8592; (menu tampil).</p>
+
+<p>tambahkan kode berikut pada <em>method</em> <code>onCreate()</code>:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+    <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setDisplayHomeAsUpEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+    <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setHomeButtonEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Supaya tampilan bekerja seperti seharusnya dibutuhkan sesuatu yang disebut dengan
+<strong>ActionBarDrawerToggle</strong>. Dimulai dengan beberapa tambahan variabel untuk membantu
+objek ini bekerja, sebuah variabel untuk <em>toggle</em>, sebuah untuk <strong>DrawerLayout</strong>
+representasi, dan sebuah <em>String</em> untuk pembaharuan judul pada daerah <strong>ActionBar</strong>:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">ActionBarDrawerToggle</span> <span class="n">mDrawerToggle</span><span class="o">;</span>
+<span class="kd">private</span> <span class="n">DrawerLayout</span> <span class="n">mDrawerLayout</span><span class="o">;</span>
+<span class="kd">private</span> <span class="n">String</span> <span class="n">mActivityTitle</span><span class="o">;</span>
+</code></pre></div>
+<p>Masukan kedalam <em>method</em> <code>onCreate()</code>:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">mDrawerLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">DrawerLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">drawer_layout</span><span class="o">);</span>
+<span class="n">mActivityTitle</span> <span class="o">=</span> <span class="n">getTitle</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+</code></pre></div>
+<p>Buat sebuah <em>helper method</em> kembali khusus untuk pembentukan <em>drawer</em>, <em>method</em>
+ini kurang lebih bercerita tentang men-<em>toggle</em>-kan <strong>ActionBar</strong>, ketika <em>drawer</em>
+dibuka judul <strong>ActionBar</strong> = &quot;Menunya&quot;, ketika <em>drawer</em> tertutup <strong>ActionBar</strong> =
+(judul sesuai dengan nilai dari <em>mActivityTitle</em>). Jangan lupa panggil
+<code>setupDrawer()</code> didalam <code>onCreate()</code></p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupDrawer</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">mDrawerToggle</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ActionBarDrawerToggle</span><span class="o">(</span>
+            <span class="k">this</span>
+            <span class="o">,</span> <span class="n">mDrawerLayout</span>
+            <span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">drawer_open</span>
+            <span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">drawer_close</span>
+    <span class="o">){</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerOpened</span><span class="o">(</span><span class="n">View</span> <span class="n">drawerView</span><span class="o">){</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">onDrawerOpened</span><span class="o">(</span><span class="n">drawerView</span><span class="o">);</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;Menunya&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">invalidateOptionsMenu</span><span class="o">();</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerClosed</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">onDrawerClosed</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="n">mActivityTitle</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">invalidateOptionsMenu</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Sayangnya, <em>toggle</em> yang telah dibuat masih belum bekerja dengan baik, dibutuhkan
+2 baris kode lagi untuk memungkinkan simbol &#8801; berfungsi yang kemudian
+memasang objek <em>toggle</em> baru pada <em>layout drawer</em>. Tambahkan kode berikut kedalam
+<code>onCreate()</code>:</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">setDrawerIndicatorEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">mDrawerLayout</span><span class="o">.</span><span class="na">setDrawerListener</span><span class="o">(</span><span class="n">mDrawerToggle</span><span class="o">);</span>
+</code></pre></div>
+<p>Akhirnya, aktifkan hal berikut pada <em>method</em> <code>onOptionsItemSelected()</code>.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">();</span>
+
+    <span class="k">return</span>
+            <span class="n">id</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">action_settings</span>
+                    <span class="o">||</span> <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">)</span>
+                    <span class="o">||</span> <span class="kd">super</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<h2>Indahnya Sinkronisasi</h2>
+
+<p>Dapat diperhatikan bahwa kode sementara belum bekerja secara sempurna antara
+<em>drawer</em> dengan pergantian simbol dan ketika terjadi pergantian <em>state</em> didalam
+<strong>Activity</strong> (<em>orientation changes</em>). Untuk melengkapi tambahkan kode berikut ...</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onPostCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+    <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">syncState</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onConfigurationChanged</span><span class="o">(</span><span class="n">Configuration</span> <span class="n">newConfig</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">super</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
+    <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Kode lengkap untuk <strong>Activity</strong>-nya:</p>
+
+<div class="highlight-wrapper" style="max-height: 250px;">
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">dwi</span><span class="o">.</span><span class="na">nd</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.content.res.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v4.widget.DrawerLayout</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.ActionBarDrawerToggle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.Menu</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.MenuItem</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.AdapterView</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.ArrayAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.ListView</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">ListView</span> <span class="n">mDrawerList</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ThreadLocal</span><span class="o">&lt;</span><span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">mAdapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ThreadLocal</span><span class="o">&lt;&gt;();</span>
+
+    <span class="kd">private</span> <span class="n">ActionBarDrawerToggle</span> <span class="n">mDrawerToggle</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">DrawerLayout</span> <span class="n">mDrawerLayout</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mActivityTitle</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">drawer_layout</span><span class="o">);</span>
+
+        <span class="n">mDrawerList</span> <span class="o">=</span> <span class="o">(</span><span class="n">ListView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">navList</span><span class="o">);</span>
+        <span class="n">addDrawerItems</span><span class="o">();</span>
+
+        <span class="n">mDrawerList</span><span class="o">.</span><span class="na">setOnItemClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AdapterView</span><span class="o">.</span><span class="na">OnItemClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onItemClick</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span>
+                        <span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span>
+                        <span class="o">,</span> <span class="s">"Menu nomor-"</span> <span class="o">+</span> <span class="n">position</span> <span class="o">+</span> <span class="s">" dipilih!"</span>
+                        <span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span>
+                <span class="o">).</span><span class="na">show</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setDisplayHomeAsUpEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+            <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setHomeButtonEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">mDrawerLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">DrawerLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">drawer_layout</span><span class="o">);</span>
+        <span class="n">mActivityTitle</span> <span class="o">=</span> <span class="n">getTitle</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+
+        <span class="n">setupDrawer</span><span class="o">();</span>
+
+        <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">setDrawerIndicatorEnabled</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">mDrawerLayout</span><span class="o">.</span><span class="na">setDrawerListener</span><span class="o">(</span><span class="n">mDrawerToggle</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupDrawer</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">mDrawerToggle</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ActionBarDrawerToggle</span><span class="o">(</span>
+                <span class="k">this</span>
+                <span class="o">,</span> <span class="n">mDrawerLayout</span>
+                <span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">drawer_open</span>
+                <span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">drawer_close</span>
+        <span class="o">){</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerOpened</span><span class="o">(</span><span class="n">View</span> <span class="n">drawerView</span><span class="o">){</span>
+                <span class="kd">super</span><span class="o">.</span><span class="na">onDrawerOpened</span><span class="o">(</span><span class="n">drawerView</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                    <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"Menunya"</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">invalidateOptionsMenu</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerClosed</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>
+                <span class="kd">super</span><span class="o">.</span><span class="na">onDrawerClosed</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                    <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="n">mActivityTitle</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="n">invalidateOptionsMenu</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">addDrawerItems</span><span class="o">(){</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">osArray</span> <span class="o">=</span> <span class="o">{</span><span class="s">"Ayam Goreng"</span><span class="o">,</span> <span class="s">"Sate"</span><span class="o">,</span> <span class="s">"Rendang"</span><span class="o">,</span> <span class="s">"Bakso"</span><span class="o">,</span> <span class="s">"Gorengan"</span><span class="o">};</span>
+        <span class="n">mAdapter</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayAdapter</span><span class="o">&lt;&gt;(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_list_item_1</span><span class="o">,</span> <span class="n">osArray</span><span class="o">));</span>
+        <span class="n">mDrawerList</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mAdapter</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onCreateOptionsMenu</span><span class="o">(</span><span class="n">Menu</span> <span class="n">menu</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">getMenuInflater</span><span class="o">().</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">menu</span><span class="o">.</span><span class="na">menu_main</span><span class="o">,</span> <span class="n">menu</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">();</span>
+
+        <span class="k">return</span>
+                <span class="n">id</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">action_settings</span>
+                        <span class="o">||</span> <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">)</span>
+                        <span class="o">||</span> <span class="kd">super</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPostCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">syncState</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onConfigurationChanged</span><span class="o">(</span><span class="n">Configuration</span> <span class="n">newConfig</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
+        <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+
+<p><hr></p>
+
+<blockquote>
+<p>#Android #NavigationDrawer</p>
+</blockquote>
+
+</div>
+
+<script>
+    $(".smileys").smilify();
+    $(".site-header").focus();
+</script>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+    <div class="wrapper">
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+            <ul class="contact-list">
+                <li>
+                    <a href="/">
+                        Catatan dwijpr
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:dwijpr@gmail.com">
+                        dwijpr@gmail.com
+                    </a>
+                </li>
+            </ul>
+            </div>
+            <div class="footer-col  footer-col-2">
+                <ul class="social-media-list">
+                    
+                        <li>
+                            <a 
+                                href="https://github.com/dwijpr"
+                            >
+                                <span class="icon  icon--github">
+                                    <svg viewBox="0 0 16 16">
+                                        <path 
+                                            fill="#828282" 
+                                            d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"
+                                        />
+                                    </svg>
+                                </span>
+                                <span class="username">
+                                    dwijpr
+                                </span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li>
+                            <a 
+                                href="https://twitter.com/dwjpr"
+                            >
+                                <span class="icon  icon--twitter">
+                                    <svg viewBox="0 0 16 16">
+                                        <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                                        c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                                    </svg>
+                                </span>
+                                <span class="username">
+                                    dwjpr
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="footer-col  footer-col-3">
+                <p class="text">Sedikit demi sedikit lama-lama menjadi bukit
+</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  </body>
+
+</html>
