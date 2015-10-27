@@ -6,9 +6,291 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Oct 2015 14:46:44 +0700</pubDate>
-    <lastBuildDate>Mon, 26 Oct 2015 14:46:44 +0700</lastBuildDate>
+    <pubDate>Tue, 27 Oct 2015 10:12:27 +0700</pubDate>
+    <lastBuildDate>Tue, 27 Oct 2015 10:12:27 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Tic Tac Toe</title>
+        <description>&lt;style&gt;
+    .tictactoe-arena-wrapper{
+        text-align: center;
+    }
+    .tictactoe-arena{
+        display: inline-block;
+        width: 128px;
+        height: 128px;
+        word-spacing: 0;
+        text-align: left;
+    }
+    .tictactoe-arena .block{
+        width: 42px;
+        height: 42px;
+        border: 1px solid black;
+        float: left;
+    }
+
+    .tictactoe-arena .top .block{
+        border-top-color: transparent;
+        text-align: center;
+    }
+    .tictactoe-arena .left{
+        border-left-color: transparent;
+    }
+    .tictactoe-arena .right{
+        border-right-color: transparent;
+    }
+    .tictactoe-arena .bottom .block{
+        border-bottom-color: transparent;
+    }
+    .tictactoe-arena .item{
+        font-size: 32px;
+    }
+    .tictactoe-arena table{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+    }
+&lt;/style&gt;
+
+&lt;h1&gt;Tic Tac Toe&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;~&lt;/strong&gt; adalah permainan yang dilakukan oleh dua orang menggunakan
+alat tulis (pensil dan kertas). Pada kertas, dibentuklah arena
+dengan ukuran 3x3 kotak, kurang lebih seperti ini ...&lt;/p&gt;
+
+&lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
+    &lt;div class=&quot;tictactoe-arena&quot;&gt;
+        &lt;div class=&quot;top&quot;&gt;
+            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;center&quot;&gt;
+            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bottom&quot;&gt;
+            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Game&lt;/em&gt; ini menggunakan 2 buah simbol seperti
+&lt;i class=&quot;fa fa-close&quot;&gt;&lt;/i&gt; dan &lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;
+yang digunakan oleh masing-masing pemain secara konsisten
+(tidak berganti-ganti simbol)
+, setiap kotak akan berisi sebuah simbol saja 
+dan diisi dengan bergantian oleh setiap pemain.&lt;/p&gt;
+
+&lt;div class=&quot;tictactoe-arena-wrapper initial-play&quot;&gt;
+    &lt;div class=&quot;tictactoe-arena&quot;&gt;
+        &lt;div class=&quot;top&quot;&gt;
+            &lt;div class=&quot;block left&quot;&gt;
+                &lt;table class=&quot;step-7&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;block center&quot;&gt;
+                &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;block right&quot;&gt;
+                &lt;table class=&quot;step-6&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;center&quot;&gt;
+            &lt;div class=&quot;block left&quot;&gt;
+                &lt;table class=&quot;step-4&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;block center&quot;&gt;
+                &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;block right&quot;&gt;
+                &lt;table class=&quot;step-3&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;bottom&quot;&gt;
+            &lt;div class=&quot;block left&quot;&gt;
+                &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;block right&quot;&gt;
+                &lt;table class=&quot;step-8&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    .initial-play table{
+        display: none;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+    var initialPlayStep = 1;
+    setInterval(function() {
+        if(initialPlayStep &gt; 8){
+            $(&quot;.initial-play table&quot;).each(function(){
+                $(this).css(&#39;display&#39;, &#39;none&#39;);
+            });
+            initialPlayStep = 0;
+        }else{
+            $(&quot;.initial-play table.step-&quot;+initialPlayStep)
+                .css(&#39;display&#39;, &#39;table&#39;);
+        }
+        initialPlayStep++;
+    }, 500);
+&lt;/script&gt;
+
+&lt;p&gt;Cara memenangkan sebuah pertandingan &lt;em&gt;&lt;strong&gt;tic tac toe&lt;/strong&gt;&lt;/em&gt; adalah
+dengan menyusun simbol yang sama secara berurutan baik itu
+horizontal, vertikal, maupun diagonal&lt;/p&gt;
+
+&lt;table style=&quot;width: 100%;&quot;&gt;
+    &lt;tr&gt;
+        &lt;td style=&quot;width: 33%;&quot;&gt;
+            &lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
+                &lt;div class=&quot;tictactoe-arena&quot;&gt;
+                    &lt;div class=&quot;top&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;center&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;
+                            &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                            &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;
+                            &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bottom&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width: 33%;&quot;&gt;
+            &lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
+                &lt;div class=&quot;tictactoe-arena&quot;&gt;
+                    &lt;div class=&quot;top&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                            &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;center&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                            &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bottom&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                            &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td style=&quot;width: 33%;&quot;&gt;
+            &lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
+                &lt;div class=&quot;tictactoe-arena&quot;&gt;
+                    &lt;div class=&quot;top&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;
+                            &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;center&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                            &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bottom&quot;&gt;
+                        &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;block center&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;block right&quot;&gt;
+                            &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
+                                &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Begitulah sedikit tentang permainan &lt;strong&gt;&lt;em&gt;tic tac toe&lt;/em&gt;&lt;/strong&gt; ini,
+&lt;em&gt;game&lt;/em&gt; yang cukup simpel dan menyenangkan untuk dimainkan,
+tertarik untuk mencoba bermain?&lt;/p&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#&lt;em&gt;Game&lt;/em&gt; #&lt;em&gt;TicTacToe&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Wed, 12 Aug 2015 19:30:44 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/tic-tac-toe.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/tic-tac-toe.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Tahap Demi Tahap Menambahkan Navigation Drawer - Membuat Aplikasi Android</title>
