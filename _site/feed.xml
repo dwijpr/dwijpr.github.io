@@ -6,9 +6,221 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2015 19:54:58 +0700</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2015 19:54:58 +0700</lastBuildDate>
+    <pubDate>Tue, 24 Nov 2015 19:22:39 +0700</pubDate>
+    <lastBuildDate>Tue, 24 Nov 2015 19:22:39 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Bermain Tic Tac Toe</title>
+        <description>&lt;p&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css&quot;&gt;
+&lt;script src=&quot;assets/thirdparty/jquery-1.11.2.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;style&gt;
+    td.area-block:hover{
+        background: rgba(0, 0, 0, .2);
+    }
+&lt;/style&gt;
+
+&lt;div style=&quot;text-align: center;margin-top: 64px;&quot;&gt;
+    &lt;div style=&quot;display: inline-block;&quot;&gt;
+        &lt;h2 id=&quot;game-state&quot;&gt;&lt;/h2&gt;
+
+        &lt;table 
+            class=&quot;area&quot; 
+            width=&quot;210px&quot; 
+            height=&quot;210px&quot; 
+            cellpadding=&quot;0&quot; 
+            cellspacing=&quot;0&quot;
+            style=&quot;font-size: 32px;table-layout: fixed;&quot; 
+        &gt;
+            &lt;tr&gt;
+                &lt;td 
+                    class=&quot;area-block&quot; 
+                    width=&quot;(100/3)%&quot;
+                    height=&quot;(100/3)%&quot;
+                    style=&quot;border: 1px solid black;border-top-color: transparent;border-left-color: transparent;&quot; 
+                    data-map=&quot;0-0&quot;
+                &gt;&lt;/td&gt;
+                &lt;td 
+                    class=&quot;area-block&quot; 
+                    width=&quot;(100/3)%&quot;
+                    height=&quot;(100/3)%&quot;
+                    style=&quot;border: 1px solid black;border-top-color: transparent;&quot; 
+                    data-map=&quot;0-1&quot;
+                &gt;&lt;/td&gt;
+                &lt;td 
+                    class=&quot;area-block&quot; 
+                    width=&quot;(100/3)%&quot;
+                    height=&quot;(100/3)%&quot;
+                    style=&quot;border: 1px solid black;border-top-color: transparent;border-right-color: transparent;&quot; 
+                    data-map=&quot;0-2&quot;
+                &gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td
+                    class=&quot;area-block&quot; 
+                    style=&quot;border: 1px solid black;border-left-color: transparent;&quot; 
+                    data-map=&quot;1-0&quot;
+                &gt;&lt;/td&gt;
+                &lt;td
+                    class=&quot;area-block&quot; 
+                    style=&quot;border: 1px solid black;&quot; 
+                    data-map=&quot;1-1&quot;
+                &gt;&lt;/td&gt;
+                &lt;td
+                    class=&quot;area-block&quot; 
+                    style=&quot;border: 1px solid black;border-right-color: transparent;&quot; 
+                    data-map=&quot;1-2&quot;
+                &gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td
+                    class=&quot;area-block&quot; 
+                    style=&quot;border: 1px solid black;border-bottom-color: transparent;border-left-color: transparent;&quot; 
+                    data-map=&quot;2-0&quot;
+                &gt;&lt;/td&gt;
+                &lt;td
+                    class=&quot;area-block&quot; 
+                    style=&quot;border: 1px solid black;border-bottom-color: transparent;&quot; 
+                    data-map=&quot;2-1&quot;
+                &gt;&lt;/td&gt;
+                &lt;td
+                    class=&quot;area-block&quot; 
+                    style=&quot;border: 1px solid black;border-bottom-color: transparent;border-right-color: transparent;&quot; 
+                    data-map=&quot;2-2&quot;
+                &gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;br&gt;
+        &lt;table style=&quot;text-align: center;&quot; width=&quot;210px;&quot;&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Player(&lt;i class=&quot;fa fa-close&quot;&gt;&lt;/i&gt;)&lt;/th&gt;
+                &lt;th&gt;Ties&lt;/th&gt;
+                &lt;th&gt;Player(&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;)&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;0&lt;/td&gt;
+                &lt;td&gt;0&lt;/td&gt;
+                &lt;td&gt;0&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var turn = true;
+function setGameMessage(text){
+    $(&quot;#game-state&quot;).html(text);
+}
+var iconClassName = &quot;fa-question&quot;;
+if(turn){
+    iconClassName = &quot;fa-close&quot;;
+}else{
+    iconClassName = &quot;fa-circle-o&quot;;
+}
+setGameMessage(&quot;Player(&quot;+&quot;&lt;i class=&#39;fa &quot;+iconClassName+&quot;&#39;&gt;&lt;/i&gt;) Turn&quot;);
+
+$(&quot;table.area td.area-block&quot;).each(function(){
+    $(this).css(&#39;vertical-align&#39;, &#39;middle&#39;);
+    $(this).css(&#39;text-align&#39;, &#39;center&#39;);
+    $(this).css(&#39;margin&#39;, &#39;0&#39;);
+    $(this).css(&#39;padding&#39;, &#39;0&#39;);
+    $(this).html(&quot;&amp;nbsp;&quot;);
+    $(this).html(&quot;&lt;i class=&#39;fa fa-question&#39; style=&#39;visibility: hidden;&#39;&gt;&lt;/i&gt;&quot;);
+    $(this).click(function(){
+        action(this);
+    });
+});
+function action(block){
+    if(!$(block).hasClass(&quot;filled&quot;)){
+        var el = $(block).find(&quot;i&quot;);
+        el.removeClass(&quot;fa-question&quot;);
+        var iconClassName = &quot;fa-question&quot;;
+        if(turn){
+            iconClassName = &quot;fa-circle-o&quot;;
+            el.addClass(&quot;fa-close&quot;);
+        }else{
+            iconClassName = &quot;fa-close&quot;;
+            el.addClass(&quot;fa-circle-o&quot;);
+        }
+        el.css(&quot;visibility&quot;, &quot;visible&quot;);
+        var win = checkWin();
+        turn = !turn;
+        $(block).addClass(&quot;filled&quot;);
+        if(!win)
+            setGameMessage(&quot;Player(&quot;+&quot;&lt;i class=&#39;fa &quot;+iconClassName+&quot;&#39;&gt;&lt;/i&gt;) Turn&quot;);
+    }
+}
+function checkWin(){
+    var map = [];
+    var nodes = [];
+    $(&quot;table.area td.area-block&quot;).each(function(){
+        var rowCol = $(this).data(&#39;map&#39;);
+        var row = rowCol.split(&quot;-&quot;)[0];
+        var col = rowCol.split(&quot;-&quot;)[1];
+        var value = $(this).find(&quot;i&quot;).hasClass(&quot;fa-close&quot;)?
+            &quot;x&quot;:($(this).find(&quot;i&quot;).hasClass(&quot;fa-circle-o&quot;)?&quot;o&quot;:&quot;-&quot;);
+        if(map[row] == undefined){
+            map[row] = [];
+        }
+        map[row][col] = value;
+    });
+    var classToFind = &quot;fa-question&quot;;
+    if(turn){
+        classToFind = &quot;fa-close&quot;;
+    }else{
+        classToFind = &quot;fa-circle-o&quot;;
+    }
+    $(&quot;table.area td.area-block&quot;).each(function(){
+        var rowCol = $(this).data(&#39;map&#39;);
+        if($(this).find(&quot;i&quot;).hasClass(classToFind)){
+            nodes.push(rowCol);
+        }
+    });
+    var winNodes = [
+        [&quot;0-0&quot;, &quot;0-1&quot;, &quot;0-2&quot;],
+        [&quot;1-0&quot;, &quot;1-1&quot;, &quot;1-2&quot;],
+        [&quot;2-0&quot;, &quot;2-1&quot;, &quot;2-2&quot;],
+        [&quot;0-0&quot;, &quot;1-0&quot;, &quot;2-0&quot;],
+        [&quot;0-1&quot;, &quot;1-1&quot;, &quot;2-1&quot;],
+        [&quot;0-2&quot;, &quot;1-2&quot;, &quot;2-2&quot;],
+        [&quot;0-0&quot;, &quot;1-1&quot;, &quot;2-2&quot;],
+        [&quot;0-2&quot;, &quot;1-1&quot;, &quot;2-0&quot;],
+    ];
+    var win = false;
+    var winNode = [];
+    for(var i = 0;i &lt; winNodes.length;i++){
+        var winCount = 0;
+        for(var _i = 0;_i &lt; winNodes[i].length;_i++){
+            for(var __i = 0;__i &lt; nodes.length;__i++){
+                if(winNodes[i][_i] == nodes[__i]){
+                    winCount++;
+                }
+                if(winCount &gt; 2){
+                    win = true;
+                    winNode = winNodes[i];
+                    break;
+                }
+            }
+        }
+    }
+    if(win){
+        setGameMessage(
+            &quot;Player (&lt;i class=&#39;fa &quot;+classToFind+&quot;&#39;&gt;&lt;/i&gt;) Win! &quot;
+            +&quot;&lt;button&gt;OK&lt;/button&gt;&quot;
+        );
+    }
+    console.log(&quot;win&quot;, win, winNode);
+    return win;
+}
+&lt;/script&gt;
+</description>
+        <pubDate>Thu, 13 Aug 2015 23:42:32 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/bermain-tictactoe.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/bermain-tictactoe.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Tic Tac Toe</title>
