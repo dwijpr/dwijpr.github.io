@@ -158,115 +158,117 @@ Cara memenangkan sebuah pertandingan _**tic tac toe**_ adalah
 dengan menyusun simbol yang sama secara berurutan baik itu
 horizontal, vertikal, maupun diagonal
 
-<table style="width: 100%;">
-    <tr>
-        <td style="width: 33%;">
-            <div class="tictactoe-arena-wrapper">
-                <div class="tictactoe-arena">
-                    <div class="top">
-                        <div class="block left"></div>
-                        <div class="block center">
+<div style="overflow-x: auto;">
+    <table style="width: 100%;">
+        <tr>
+            <td style="width: 33%;">
+                <div class="tictactoe-arena-wrapper">
+                    <div class="tictactoe-arena">
+                        <div class="top">
+                            <div class="block left"></div>
+                            <div class="block center">
+                            </div>
+                            <div class="block right"></div>
                         </div>
-                        <div class="block right"></div>
-                    </div>
-                    <div class="center">
-                        <div class="block left">
-                            <table class="step-1"><tr><td>
-                                <i class="fa fa-close item"></i>
-                            </td></tr></table>
+                        <div class="center">
+                            <div class="block left">
+                                <table class="step-1"><tr><td>
+                                    <i class="fa fa-close item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block center">
+                                <table class="step-2"><tr><td>
+                                    <i class="fa fa-close item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block right">
+                                <table class="step-5"><tr><td>
+                                    <i class="fa fa-close item"></i>
+                                </td></tr></table>
+                            </div>
                         </div>
-                        <div class="block center">
-                            <table class="step-2"><tr><td>
-                                <i class="fa fa-close item"></i>
-                            </td></tr></table>
-                        </div>
-                        <div class="block right">
-                            <table class="step-5"><tr><td>
-                                <i class="fa fa-close item"></i>
-                            </td></tr></table>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="block left"></div>
-                        <div class="block center">
-                        </div>
-                        <div class="block right"></div>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td style="width: 33%;">
-            <div class="tictactoe-arena-wrapper">
-                <div class="tictactoe-arena">
-                    <div class="top">
-                        <div class="block left"></div>
-                        <div class="block center">
-                            <table class="step-1"><tr><td>
-                                <i class="fa fa-circle-o item"></i>
-                            </td></tr></table>
-                        </div>
-                        <div class="block right"></div>
-                    </div>
-                    <div class="center">
-                        <div class="block left"></div>
-                        <div class="block center">
-                            <table class="step-2"><tr><td>
-                                <i class="fa fa-circle-o item"></i>
-                            </td></tr></table>
-                        </div>
-                        <div class="block right"></div>
-                    </div>
-                    <div class="bottom">
-                        <div class="block left"></div>
-                        <div class="block center">
-                            <table class="step-5"><tr><td>
-                                <i class="fa fa-circle-o item"></i>
-                            </td></tr></table>
-                        </div>
-                        <div class="block right"></div>
-                    </div>
-                </div>
-            </div>
-        </td>
-        <td style="width: 33%;">
-            <div class="tictactoe-arena-wrapper">
-                <div class="tictactoe-arena">
-                    <div class="top">
-                        <div class="block left">
-                            <table class="step-1"><tr><td>
-                                <i class="fa fa-close item"></i>
-                            </td></tr></table>
-                        </div>
-                        <div class="block center">
-                        </div>
-                        <div class="block right"></div>
-                    </div>
-                    <div class="center">
-                        <div class="block left">
-                        </div>
-                        <div class="block center">
-                            <table class="step-2"><tr><td>
-                                <i class="fa fa-close item"></i>
-                            </td></tr></table>
-                        </div>
-                        <div class="block right">
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="block left"></div>
-                        <div class="block center">
-                        </div>
-                        <div class="block right">
-                            <table class="step-5"><tr><td>
-                                <i class="fa fa-close item"></i>
-                            </td></tr></table>
+                        <div class="bottom">
+                            <div class="block left"></div>
+                            <div class="block center">
+                            </div>
+                            <div class="block right"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </td>
-    </tr>
-</table>
+            </td>
+            <td style="width: 33%;">
+                <div class="tictactoe-arena-wrapper">
+                    <div class="tictactoe-arena">
+                        <div class="top">
+                            <div class="block left"></div>
+                            <div class="block center">
+                                <table class="step-1"><tr><td>
+                                    <i class="fa fa-circle-o item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block right"></div>
+                        </div>
+                        <div class="center">
+                            <div class="block left"></div>
+                            <div class="block center">
+                                <table class="step-2"><tr><td>
+                                    <i class="fa fa-circle-o item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block right"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="block left"></div>
+                            <div class="block center">
+                                <table class="step-5"><tr><td>
+                                    <i class="fa fa-circle-o item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block right"></div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td style="width: 33%;">
+                <div class="tictactoe-arena-wrapper">
+                    <div class="tictactoe-arena">
+                        <div class="top">
+                            <div class="block left">
+                                <table class="step-1"><tr><td>
+                                    <i class="fa fa-close item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block center">
+                            </div>
+                            <div class="block right"></div>
+                        </div>
+                        <div class="center">
+                            <div class="block left">
+                            </div>
+                            <div class="block center">
+                                <table class="step-2"><tr><td>
+                                    <i class="fa fa-close item"></i>
+                                </td></tr></table>
+                            </div>
+                            <div class="block right">
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="block left"></div>
+                            <div class="block center">
+                            </div>
+                            <div class="block right">
+                                <table class="step-5"><tr><td>
+                                    <i class="fa fa-close item"></i>
+                                </td></tr></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
 
 Begitulah sedikit tentang permainan **_tic tac toe_** ini,
 _game_ yang cukup simpel dan menyenangkan untuk dimainkan,
