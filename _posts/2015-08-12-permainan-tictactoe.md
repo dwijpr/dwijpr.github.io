@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tic Tac Toe"
+title: "Permainan TicTacToe"
 date: 2015-08-12 12:30:44
 ---
 
@@ -270,7 +270,8 @@ horizontal, vertikal, maupun diagonal
 
 Begitulah sedikit tentang permainan **_tic tac toe_** ini,
 _game_ yang cukup simpel dan menyenangkan untuk dimainkan,
-tertarik untuk mencoba bermain?
+tertarik untuk mencoba bermain? coba 
+<a href="{% post_url 2015-08-13-bermain-tictactoe %}">disini</a>.
 
 <hr>
 

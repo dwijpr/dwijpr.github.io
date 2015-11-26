@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bermain Tic Tac Toe"
+title: "Bermain TicTacToe"
 date: 2015-08-13 16:42:32
 ---
 
