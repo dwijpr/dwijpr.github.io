@@ -6,9 +6,108 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Nov 2015 19:14:35 +0700</pubDate>
-    <lastBuildDate>Thu, 26 Nov 2015 19:14:35 +0700</lastBuildDate>
+    <pubDate>Fri, 27 Nov 2015 07:29:37 +0700</pubDate>
+    <lastBuildDate>Fri, 27 Nov 2015 07:29:37 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Timer App</title>
+        <description>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;style&gt;
+    body{
+        margin-top: 80px;
+    }
+    #main{
+        border: 16px solid rgba(0, 0, 0, .1);
+        display: inline-block;
+        padding: 82px 32px;
+        border-radius: 100%;
+    }
+    #button-group{
+        position: relative;
+        top: -32px;
+    }
+    #button-group .btn{
+        box-shadow: 0px 4px 16px #777;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;col-xs-12 text-center&quot;&gt;
+    &lt;h1 id=&quot;main&quot;&gt;
+        00:00:00.0
+    &lt;/h1&gt;
+    &lt;div id=&quot;button-group&quot; class=&quot;text-center&quot;&gt;
+        &lt;button 
+            class=&quot;btn btn-danger&quot; 
+            id=&quot;reset&quot; 
+        &gt;
+            &lt;i class=&quot;fa fa-repeat&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;button class=&quot;btn btn-lg btn-primary&quot; id=&quot;trigger&quot;&gt;
+            &lt;i class=&quot;fa fa-play&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var run = false;
+    $(&quot;#reset&quot;).click(function(){
+        var proceed = confirm(&quot;Are You sure?&quot;);
+        if(proceed){
+            counter = 0;
+            run = false;
+            $(&quot;#main&quot;).text(&quot;00:00:00.0&quot;);
+            var ic = $(&quot;#trigger&quot;).find(&#39;i&#39;);
+            if(ic.hasClass(&#39;fa-pause&#39;)){
+                ic.removeClass(&#39;fa-pause&#39;);
+                ic.addClass(&#39;fa-play&#39;);
+            }
+        }
+    })
+    $(&quot;#trigger&quot;).click(function(){
+        var ic = $(this).find(&#39;i&#39;);
+        if(ic.hasClass(&#39;fa-play&#39;)){
+            ic.removeClass(&#39;fa-play&#39;);
+            ic.addClass(&#39;fa-pause&#39;);
+        }else{
+            ic.removeClass(&#39;fa-pause&#39;);
+            ic.addClass(&#39;fa-play&#39;);
+        }
+        run = !run;
+    });
+    var counter = 0;
+    setInterval(function(){
+        if(!run)return;
+        var ms = (counter*100);
+        var seconds = Math.floor(ms/1000);
+        var minutes = Math.floor(seconds/60);
+        var hours = Math.floor(minutes/60);
+
+        var ms = ms%1000;
+        var second = seconds%60;
+        var minute = minutes%60;
+
+        var time = {
+            hours: hours,
+            minutes: minute,
+            seconds: second,
+            milliseconds: ms,
+        };
+
+        var value = moment(time).format(&quot;HH:mm:ss.S&quot;);
+        $(&quot;#main&quot;).text(value);
+
+        counter++;
+    }, 100);
+&lt;/script&gt;
+</description>
+        <pubDate>Fri, 14 Aug 2015 14:18:18 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/timer-app.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/timer-app.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Bermain TicTacToe</title>
