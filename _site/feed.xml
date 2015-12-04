@@ -6,8 +6,8 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Nov 2015 07:29:37 +0700</pubDate>
-    <lastBuildDate>Fri, 27 Nov 2015 07:29:37 +0700</lastBuildDate>
+    <pubDate>Fri, 04 Dec 2015 20:52:50 +0700</pubDate>
+    <lastBuildDate>Fri, 04 Dec 2015 20:52:50 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -44,42 +44,67 @@
         &gt;
             &lt;i class=&quot;fa fa-repeat&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
-        &lt;button class=&quot;btn btn-lg btn-primary&quot; id=&quot;trigger&quot;&gt;
+        &lt;button class=&quot;btn btn-lg btn-primary&quot; id=&quot;action-trigger&quot;&gt;
             &lt;i class=&quot;fa fa-play&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;script&gt;
-    var run = false;
+    var startTime = null, startPauses = [], endPauses = [];
     $(&quot;#reset&quot;).click(function(){
         var proceed = confirm(&quot;Are You sure?&quot;);
         if(proceed){
-            counter = 0;
-            run = false;
+            startTime = null, startPauses = [], endPauses = [];
             $(&quot;#main&quot;).text(&quot;00:00:00.0&quot;);
-            var ic = $(&quot;#trigger&quot;).find(&#39;i&#39;);
+            var ic = $(&quot;#action-trigger&quot;).find(&#39;i&#39;);
             if(ic.hasClass(&#39;fa-pause&#39;)){
                 ic.removeClass(&#39;fa-pause&#39;);
                 ic.addClass(&#39;fa-play&#39;);
             }
         }
-    })
-    $(&quot;#trigger&quot;).click(function(){
+    });
+    $(&quot;#action-trigger&quot;).click(function(){
         var ic = $(this).find(&#39;i&#39;);
         if(ic.hasClass(&#39;fa-play&#39;)){
             ic.removeClass(&#39;fa-play&#39;);
             ic.addClass(&#39;fa-pause&#39;);
+            if(startTime != null){
+                endPauses[endPauses.length] = curr();
+            }
         }else{
             ic.removeClass(&#39;fa-pause&#39;);
             ic.addClass(&#39;fa-play&#39;);
+            startPauses[startPauses.length] = curr();
         }
-        run = !run;
+        if(startTime == null){
+            startTime = curr();
+        }
     });
-    var counter = 0;
+
+    function calculateTime(){
+        var totalPausesTime = 0;
+        for(var i = 0;i &lt; startPauses.length;i++){
+            totalPausesTime += endPauses[i].diff(startPauses[i]);
+        }
+        var valueStartTime = moment(startTime);
+        var totalTime = valueStartTime.add(totalPausesTime, &#39;milliseconds&#39;);
+        var elapsedTime = new Time(curr().diff(totalTime));
+        return moment(elapsedTime).format(&quot;HH:mm:ss.S&quot;);
+    }
+
     setInterval(function(){
-        if(!run)return;
-        var ms = (counter*100);
+        if(startTime != null &amp;&amp; startPauses.length == endPauses.length){
+            $(&quot;#main&quot;).text(calculateTime());
+        }
+    }, 100);
+
+    function curr(){
+        return moment();
+    }
+
+    function Time(timeInMS){
+        var ms = timeInMS;
         var seconds = Math.floor(ms/1000);
         var minutes = Math.floor(seconds/60);
         var hours = Math.floor(minutes/60);
@@ -94,12 +119,8 @@
             seconds: second,
             milliseconds: ms,
         };
-
-        var value = moment(time).format(&quot;HH:mm:ss.S&quot;);
-        $(&quot;#main&quot;).text(value);
-
-        counter++;
-    }, 100);
+        return time;
+    }
 &lt;/script&gt;
 </description>
         <pubDate>Fri, 14 Aug 2015 14:18:18 +0700</pubDate>
