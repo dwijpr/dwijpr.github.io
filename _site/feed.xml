@@ -6,9 +6,107 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Dec 2015 09:31:51 +0700</pubDate>
-    <lastBuildDate>Sat, 05 Dec 2015 09:31:51 +0700</lastBuildDate>
+    <pubDate>Sat, 05 Dec 2015 21:20:07 +0700</pubDate>
+    <lastBuildDate>Sat, 05 Dec 2015 21:20:07 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Flat Color Picker</title>
+        <description>&lt;script 
+    src=&quot;//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js&quot;
+&gt;&lt;/script&gt;
+
+&lt;style&gt;
+    .wrapper .row div[class^=&quot;col-sm-&quot;]{
+        min-height: 128px;
+        color: #ecf0f1;
+    }
+    .wrapper .row div[class^=&quot;col-sm-&quot;] table{
+        width: 100%;
+        position: relative;
+        min-height: 128px;
+    }
+    .wrapper .row div[class^=&quot;col-sm-&quot;] td{
+        vertical-align: middle;
+        text-align: center;
+    }
+&lt;/style&gt;
+
+&lt;div class=&quot;wrapper&quot;&gt;
+    &lt;h3 class=&quot;text-center&quot;&gt;
+        Click the color to Copy!
+    &lt;/h3&gt;
+    &lt;div class=&quot;row&quot; id=&quot;colors-wrapper&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var colors = [
+        {name: &quot;Turquoise&quot;, value: &quot;#1abc9c&quot;},
+        {name: &quot;Emerald&quot;, value: &quot;#2ecc71&quot;},
+        {name: &quot;Peter River&quot;, value: &quot;#3498db&quot;},
+        {name: &quot;Amethyst&quot;, value: &quot;#9b59b6&quot;},
+        {name: &quot;Wet Asphalt&quot;, value: &quot;#34495e&quot;},
+
+        {name: &quot;Sun Flower&quot;, value: &quot;#f1c40f&quot;},
+        {name: &quot;Carrot&quot;, value: &quot;#e67e22&quot;},
+        {name: &quot;Alizarin&quot;, value: &quot;#e74c3c&quot;},
+        {name: &quot;Clouds&quot;, value: &quot;#ecf0f1&quot;, color: &quot;#bdc3c7&quot;},
+        {name: &quot;Concrete&quot;, value: &quot;#95a5a6&quot;},
+
+        {name: &quot;Green Sea&quot;, value: &quot;#16a085&quot;},
+        {name: &quot;Nephritis&quot;, value: &quot;#27ae60&quot;},
+        {name: &quot;Belize Hole&quot;, value: &quot;#2980b9&quot;},
+        {name: &quot;Wisteria&quot;, value: &quot;#8e44ad&quot;},
+        {name: &quot;Midnight Blue&quot;, value: &quot;#2c3e50&quot;},
+
+        {name: &quot;Orange&quot;, value: &quot;#f39c12&quot;},
+        {name: &quot;Pumpkin&quot;, value: &quot;#d35400&quot;},
+        {name: &quot;Pomegranate&quot;, value: &quot;#c0392b&quot;},
+        {name: &quot;Silver&quot;, value: &quot;#bdc3c7&quot;},
+        {name: &quot;Asbestos&quot;, value: &quot;#7f8c8d&quot;},
+    ];
+
+    for(var i = 0;i &lt; colors.length;i++){
+        $(&quot;#colors-wrapper&quot;).append(new ColorView(colors[i]));
+    }
+
+    function ColorView(color){
+        var el = $(&quot;&lt;div &quot;+
+            &quot;class=&#39;col-sm-3&#39;&quot;+
+            &quot;data-clipboard-text=&#39;&quot;+color.value+
+            &quot;&#39;&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&quot;
+        );
+        var target = el.find(&quot;td&quot;);
+        target.html(&quot;&lt;b&gt;&quot;+color.name+&quot;&lt;/b&gt;&quot;);
+        if(color.color != null){
+            target.find(&quot;b&quot;).css(&quot;color&quot;, color.color);
+        }
+        el.css(&#39;background-color&#39;, color.value);
+        toCopy(el[0]);
+        return el;
+    }
+
+    function toCopy(el){
+        var client = new ZeroClipboard(el);
+        client.on(&quot;ready&quot;, function(readyEvent){
+            client.on(&quot;aftercopy&quot;, function(event){
+                var value = $(event.target).find(&quot;b&quot;).html();
+                $(event.target).find(&quot;b&quot;).text(&quot;Copied!&quot;);
+                setTimeout(function(){
+                    $(event.target).find(&quot;b&quot;).html(value);
+                }, 1000);
+            });
+        });
+    }
+&lt;/script&gt;
+</description>
+        <pubDate>Mon, 17 Aug 2015 02:43:07 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/flat-color-picker.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/flat-color-picker.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Terminal Output Menjadi HTML Menggunakan AHA</title>
@@ -72,6 +170,54 @@ juga mendapatkan warna/gaya &lt;em&gt;font&lt;/em&gt; sebagai &lt;em&gt;inline s
         <pubDate>Sat, 15 Aug 2015 15:58:46 +0700</pubDate>
         <link>http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Cerita Tentang Kita - Peterpan</title>
+        <description>&lt;h1&gt;Cerita Tentang Kita&lt;/h1&gt;
+
+&lt;h2&gt;Peterpan&lt;/h2&gt;
+
+&lt;style&gt;
+    span.chord{
+        color: #ff0000;
+    }
+&lt;/style&gt;
+
+&lt;pre&gt;
+A        E      F#m      C#m
+Waktu terasa semakin berlalu
+     D        A       F#m    E
+Tinggalkan cerita tentang kita
+
+A     E        F#m      C#m
+Akan tiada lagi kini tawamu
+     D        A      F#m      E
+Tuk hapuskan semua sepi di hati
+
+Reff:
+
+  A      E         F#m      C#m
+Ada cerita tentang aku dan dia
+     D       A         F#m    E
+Dan kita bersama saat dulu kala
+
+  A      E         F#m       C#m
+Ada cerita tentang masa yang indah
+    D         A         F#m       E
+Saat kita berduka saat kita tertawa
+
+   A         E         F#m     C#m
+Teringat di saat kita tertawa bersama
+ D     A         F#m       E
+Ceritakan semua tentang kita
+&lt;/pre&gt;
+</description>
+        <pubDate>Sat, 15 Aug 2015 02:26:42 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/table-cellpading-cellspacing.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/table-cellpading-cellspacing.html</guid>
         
         
       </item>
@@ -1355,362 +1501,6 @@ sehingga saya lupa sumber aslinya. Seluruh tampilan karakter dalam variabel
         <pubDate>Thu, 30 Jul 2015 16:33:42 +0700</pubDate>
         <link>http://dwiprabowo.github.io/script-bash-untuk-integrasi-dengan-git.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/script-bash-untuk-integrasi-dengan-git.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Mencoba Bit Field</title>
-        <description>&lt;h1&gt;Mencoba &lt;em&gt;Bit Field&lt;/em&gt;&lt;/h1&gt;
-
-&lt;p&gt;Beberapa waktu lalu saya mencari dan mencoba memahami tentang salah satu konsep
-pemrograman yang sebenarnya sudah saya ketahui beberapa waktu lalu namun belum
-sepenuhnya paham dan belum sempat untuk mengimplementasikannya pada sebuah
-kasus. Setelah beberapa kali membaca dari sumber-sumber yang saya dapat, artikel
-ini akan membahas tentang &lt;em&gt;bit field&lt;/em&gt; menurut se-&lt;em&gt;penangkap&lt;/em&gt;-an saya ...&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Bit Field&lt;/strong&gt; adalah istilah yang digunakan pada pemrograman komputer untuk pemetaan bidang pada sebuah data yang direpresentasikan dengan sebuah angka (&lt;em&gt;integral&lt;/em&gt;) dimana nantinya akan ditranslasi menjadi bilangan biner sehingga akan tampak &lt;em&gt;fields&lt;/em&gt; yang dimaksud, setiap &lt;em&gt;bit&lt;/em&gt; yang dialamatkan memiliki artian khusus menurut dengan rancangan logika pembuat kode.&lt;/p&gt;
-
-&lt;p&gt;Untuk lebih jelasnya bisa diambil contoh untuk implementasi &lt;em&gt;bit field&lt;/em&gt; ini. Contoh yang akan saya gunakan adalah tentang sistem ijin sistem operasi berbasis linux. Bisa dilihat melalui perintah&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ chmod 777 file.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;dari &lt;em&gt;man page&lt;/em&gt; &lt;strong&gt;chmod&lt;/strong&gt; program tersebut berfungsi untuk mengganti &lt;em&gt;file mode
-bits&lt;/em&gt;. Dari angka 777 tersebut bisa diambil salah satunya saja yaitu angka 7,
-angka 7 disini memiliki arti nilai dari user memiliki akses untuk &lt;em&gt;read&lt;/em&gt;, &lt;em&gt;write&lt;/em&gt;,
-&lt;em&gt;execute&lt;/em&gt; (&lt;strong&gt;rwx&lt;/strong&gt;). Bagaimana mungkin yang tadinya hanya sebuah angka 7, dapat
-diartikan menjadi &lt;em&gt;user&lt;/em&gt; diberikan ijin untuk dapat membaca, memperbaharui, dan mengeksekusi file tersebut? Angka 7 tersebut merupakan kombinasi dari angka lainnya yaitu 4, 2, dan 1. Saat dilihat dari angka 4, 2, 1 tersebut mungkin belum nampak bagaimana cara &lt;strong&gt;&lt;em&gt;bit field&lt;/em&gt;&lt;/strong&gt;  ini bekerja, namun ketika mengubahnya menjadi bilangan biner maka akan terlihat sesuatu seperti ini.&lt;/p&gt;
-
-&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-sm-6&quot;&gt;
-        &lt;table class=&quot;table table-bordered table-not-full&quot;&gt;
-            &lt;tr&gt;
-                &lt;th&gt;angka&lt;/th&gt;
-                &lt;th&gt;arti&lt;/th&gt;
-                &lt;th&gt;biner&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;text-right&quot;&gt;4&lt;/td&gt;
-                &lt;td&gt;read&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;table class=&quot;table table-bordered&quot; style=&quot;margin: 0;padding: 0;&quot;&gt;
-                        &lt;tr&gt;
-                            &lt;td&gt;1&lt;/td&gt;
-                            &lt;td&gt;0&lt;/td&gt;
-                            &lt;td&gt;0&lt;/td&gt;
-                        &lt;/tr&gt;
-                    &lt;/table&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;text-right&quot;&gt;2&lt;/td&gt;
-                &lt;td&gt;write&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;table class=&quot;table table-bordered&quot; style=&quot;margin: 0;padding: 0;&quot;&gt;
-                        &lt;tr&gt;
-                            &lt;td&gt;0&lt;/td&gt;
-                            &lt;td&gt;1&lt;/td&gt;
-                            &lt;td&gt;0&lt;/td&gt;
-                        &lt;/tr&gt;
-                    &lt;/table&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;text-right&quot;&gt;1&lt;/td&gt;
-                &lt;td&gt;execute&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;table class=&quot;table table-bordered&quot; style=&quot;margin: 0;padding: 0;&quot;&gt;
-                        &lt;tr&gt;
-                            &lt;td&gt;0&lt;/td&gt;
-                            &lt;td&gt;0&lt;/td&gt;
-                            &lt;td&gt;1&lt;/td&gt;
-                        &lt;/tr&gt;
-                    &lt;/table&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;col-sm-6 text-center&quot;&gt;
-        &lt;table class=&quot;table table-bordered table-not-full&quot;&gt;
-            &lt;tr&gt;
-                &lt;td&gt;read&lt;/td&gt;
-                &lt;td&gt;write&lt;/td&gt;
-                &lt;td&gt;execute&lt;/td&gt;
-                &lt;th&gt;field&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td colspan=&quot;3&quot; class=&quot;text-center&quot;&gt;7&lt;/td&gt;
-                &lt;th&gt;nilai&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;text-center&quot;&gt;1&lt;/td&gt;
-                &lt;td class=&quot;text-center&quot;&gt;1&lt;/td&gt;
-                &lt;td class=&quot;text-center&quot;&gt;1&lt;/td&gt;
-                &lt;th&gt;nilai biner&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Dari table tersebut dapat terlihat dengan lebih jelas maksud dibalik angka 7
-itu. Pada saat dikonversi menjadi bilangan biner angka tersebut akan menjadi
-tampak seperti bilangan biner 3 digit -&amp;gt;&lt;/p&gt;
-
-&lt;style&gt;
-    .biner-wrapper td, .biner-wrapper th{
-        padding: 2px 8px;
-    }
-    .biner-wrapper .separator-or{
-        border-top: 1px solid black;
-    }
-    .biner-wrapper th.biner-represent{
-        border-left: 1px solid black;
-    }
-&lt;/style&gt;
-
-&lt;div&gt;
-    &lt;table class=&quot;biner-wrapper&quot;&gt;
-        &lt;tr&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;td&gt;0&lt;/td&gt;
-            &lt;td&gt;0&lt;/td&gt;
-            &lt;th class=&quot;biner-represent&quot;&gt;4&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;0&lt;/td&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;td&gt;0&lt;/td&gt;
-            &lt;th class=&quot;biner-represent&quot;&gt;2&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;0&lt;/td&gt;
-            &lt;td&gt;0&lt;/td&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;th class=&quot;biner-represent&quot;&gt;1&lt;/th&gt;
-            &lt;th rowspan=&quot;2&quot;&gt;| (or)&lt;/th&gt;
-        &lt;/tr&gt;
-        &lt;tr class=&quot;separator-or&quot;&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;th class=&quot;biner-represent&quot;&gt;7&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Angka 7 tersebut merupakan hasil dari operasi &lt;em&gt;bitwise&lt;/em&gt; seperti kode berikut&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;value = 4|2|1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Dengan begitu, hanya sebuah bilangan decimal dapat merepresentasi berbagai macam
-arti seperti contoh tersebut. Lalu bagaimana cara mengetahui bahwa nilai angka
-tersebut memiliki arti yang seharusnya? Contoh listing kode &lt;strong&gt;PHP&lt;/strong&gt; berikut mungkin
-akan memberikan gambaran bagaimana cara mem-&lt;em&gt;parsing&lt;/em&gt; arti dari sebuah angka
-tersebut.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot; style=&quot;background: #ffffff&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;&lt;span style=&quot;color: #633820&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;define&lt;/span&gt;(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;PERMISSION_READ&amp;#39;&lt;/span&gt;, &lt;span style=&quot;color: #1C01CE&quot;&gt;4&lt;/span&gt;);
-&lt;span style=&quot;color: #A90D91&quot;&gt;define&lt;/span&gt;(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;PERMISSION_WRITE&amp;#39;&lt;/span&gt;, &lt;span style=&quot;color: #1C01CE&quot;&gt;2&lt;/span&gt;);
-&lt;span style=&quot;color: #A90D91&quot;&gt;define&lt;/span&gt;(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;PERMISSION_EXECUTE&amp;#39;&lt;/span&gt;, &lt;span style=&quot;color: #1C01CE&quot;&gt;1&lt;/span&gt;);
-
-&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_READ&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;|&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_WRITE&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;|&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_EXECUTE&lt;/span&gt;;
-&lt;span style=&quot;color: #000000&quot;&gt;check_permission&lt;/span&gt;(&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt;);
-
-&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_READ&lt;/span&gt;;
-&lt;span style=&quot;color: #000000&quot;&gt;check_permission&lt;/span&gt;(&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt;);
-
-&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_EXECUTE&lt;/span&gt;;
-&lt;span style=&quot;color: #000000&quot;&gt;check_permission&lt;/span&gt;(&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt;);
-
-&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_READ&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;|&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_READ&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;|&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_EXECUTE&lt;/span&gt;;
-&lt;span style=&quot;color: #000000&quot;&gt;check_permission&lt;/span&gt;(&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt;);
-
-&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_READ&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;|&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_WRITE&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;|&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_EXECUTE&lt;/span&gt;;
-&lt;span style=&quot;color: #000000&quot;&gt;check_permission&lt;/span&gt;(&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt;);
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;function&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;check_permission&lt;/span&gt;(&lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt;){
-    &lt;span style=&quot;color: #A90D91&quot;&gt;echo&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;representation $value means &amp;quot;&lt;/span&gt;;
-    &lt;span style=&quot;color: #A90D91&quot;&gt;echo&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_READ&lt;/span&gt;       &lt;span style=&quot;color: #000000&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;r&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;;
-    &lt;span style=&quot;color: #A90D91&quot;&gt;echo&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_WRITE&lt;/span&gt;      &lt;span style=&quot;color: #000000&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;w&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;;
-    &lt;span style=&quot;color: #A90D91&quot;&gt;echo&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;$value&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;PERMISSION_EXECUTE&lt;/span&gt;    &lt;span style=&quot;color: #000000&quot;&gt;?&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span style=&quot;color: #000000&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;-&amp;quot;&lt;/span&gt;;
-    &lt;span style=&quot;color: #A90D91&quot;&gt;echo&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;;
-}
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Yang perlu diketahui adalah saya sebenarnya tidak terlalu meng-&lt;em&gt;oprek&lt;/em&gt; kedalam
-kode tentang sistem ijin ini. Kemungkinan logika yang dipakai berbeda dengan
-pemahaman saya, namun yang saya lihat adalah betapa jelasnya contoh sistem ini
-jika bekerja menggunakan konsep &lt;em&gt;bit field&lt;/em&gt;, jadi saya menggunakan contoh
-angka dari salah perintah sistem operasi berbasis linux tersebut.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 28 Jul 2015 13:29:23 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/mencoba-bit-field.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/mencoba-bit-field.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Menggunakan Penyunting Teks VIM</title>
-        <description>&lt;h1&gt;Menggunakan Penyunting Teks VIM&lt;/h1&gt;
-
-&lt;p&gt;Vim adalah salah satu perangkat lunak komputer yang termasuk ke dalam golongan
-&lt;em&gt;text editor&lt;/em&gt; bersama dengan gedit dan notepad. Teks disini bersifat biasa atau
-dikenal dengan istilah &lt;em&gt;plain text&lt;/em&gt;. Jadi konten teks yang kita lihat sesuai
-dengan isi sebenarnya yang ada pada berkas, hal ini berbeda dengan berkas teks
-yang terformat seperti yang biasa disunting menggunakan &lt;em&gt;word processor&lt;/em&gt; atau 
-program yang biasa kita gunakan seperti &lt;strong&gt;Microsoft Word&lt;/strong&gt; atau 
-&lt;strong&gt;LibreOffice Writer&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Software&lt;/em&gt; ini merupakan salah satu penyunting teks favorit saya selain 
-&lt;strong&gt;Sublime Text&lt;/strong&gt;. Sayangnya program ini terlalu kompleks untuk saya gunakan
-sehari-hari. Namun selain mengedit kode program yang saya biasa lakukan sehari
--hari keperluan mengedit teks saya sering menggunakan program ini.&lt;/p&gt;
-
-&lt;p&gt;Kompleks yang saya maksud disini adalah fitur yang dibutuhkan setiap program
-penyunting teks pasti bisa ditemui pada &lt;em&gt;software&lt;/em&gt; ini. Namun yang saya rasakan
-adalah, beberapa perintah terlalu sulit dilakukan untuk melakukan hal sederhana.
-Saat ini yang saya lakukan adalah memperbanyak pengetahuan tentang program ini
-sehingga nantinya saya tidak memerlukan program penyunting teks lain. Untuk saat
-ini &lt;strong&gt;Sublime Text&lt;/strong&gt; masih menjadi pilihan utama untuk mengedit kode program.&lt;/p&gt;
-
-&lt;p&gt;Meng-&lt;em&gt;install&lt;/em&gt; sistem operasi cukup sering saya lakukan, entah dikarenakan
-terjadi &lt;em&gt;error&lt;/em&gt; pada sistem operasi karena salah dalam setting konfigurasi yang
-dilakukan oleh saya sendiri, atau distro baru yang ingin dicoba, dan berbagai
-macam alasan yang terpaksa harus melakukan install dari awal. Perlunya mengedit
-file-file konfigurasi maka penyunting teks &lt;strong&gt;VIM&lt;/strong&gt; inilah yang saya install
-pertama kali. Pada sistem operasi yang biasa saya gunakan, menginstall vim dapat
-dilakukan dengan cukup mudah yaitu dengan cara&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ sudo apt-get install vim-gnome
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;tidak seperti program penyunting teks biasa, &lt;strong&gt;VIM&lt;/strong&gt; memerlukan konfigurasi awal.
-Salah satunya adalah dengan membuat file &lt;strong&gt;.vimrc&lt;/strong&gt; yang biasa terletak pada &lt;em&gt;home&lt;/em&gt;
-direktori. File ini akan dieksekusi pada saat awal penggunaan &lt;strong&gt;VIM&lt;/strong&gt; sebelum program
-mulai digunakan. &lt;strong&gt;VIM&lt;/strong&gt; akan terkonfigurasi sesuai dengan script yang ada pada file
-tersebut. Berikut adalah script &lt;strong&gt;.vimrc&lt;/strong&gt; yang saya gunakan&lt;/p&gt;
-
-&lt;div class=&quot;highlight-wrapper&quot;&gt;
-&lt;div class=&quot;highlight&quot; style=&quot;background: #ffffff&quot;&gt;&lt;pre style=&quot;line-height: 125%&quot;&gt;&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; An example for a vimrc file.&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Maintainer: Bram Moolenaar &amp;lt;Bram@vim.org&amp;gt;&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Last change:    2014 Feb 05&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; To use it, copy it to&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;     for Unix and OS/2:  ~/.vimrc&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;       for Amiga:  s:.vimrc&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;  for MS-DOS and Win32:  $VIM\_vimrc&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;     for OpenVMS:  sys$login:.vimrc&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; When started as &amp;quot;evim&amp;quot;, evim.vim will already have done these settings.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;v&lt;/span&gt;:progname =~? &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;evim&amp;quot;&lt;/span&gt;
-  &lt;span style=&quot;color: #A90D91&quot;&gt;finish&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Use Vim settings, rather than Vi settings (much better!).&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; This must be first, because it changes other options as a side effect.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;nocompatible&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; allow backspacing over everything in insert mode&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;backspace&lt;/span&gt;=indent,&lt;span style=&quot;color: #A90D91&quot;&gt;eol&lt;/span&gt;,&lt;span style=&quot;color: #A90D91&quot;&gt;start&lt;/span&gt;
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; has(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;vms&amp;quot;&lt;/span&gt;)
-  &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;nobackup&lt;/span&gt;      &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; do not keep a backup file, use versions instead&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;else&lt;/span&gt;
-  &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;backup&lt;/span&gt;        &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; keep a backup file (restore to previous version)&lt;/span&gt;
-  &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;undofile&lt;/span&gt;      &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; keep an undo file (undo changes after closing)&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;history&lt;/span&gt;=&lt;span style=&quot;color: #1C01CE&quot;&gt;50&lt;/span&gt;      &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; keep 50 lines of command line history&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;ruler&lt;/span&gt;       &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; show the cursor position all the time&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;showcmd&lt;/span&gt;     &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; display incomplete commands&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;incsearch&lt;/span&gt;       &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; do incremental searching&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; For Win32 GUI: remove &amp;#39;t&amp;#39; flag from &amp;#39;guioptions&amp;#39;: no tearoff menu entries&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; let &amp;amp;guioptions = substitute(&amp;amp;guioptions, &amp;quot;t&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;g&amp;quot;)&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Don&amp;#39;t use Ex mode, use Q for formatting&lt;/span&gt;
-map Q gq
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; so that you can undo CTRL-U after inserting a line break.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;inoremap&lt;/span&gt; &amp;lt;C-U&amp;gt; &amp;lt;C-G&amp;gt;&lt;span style=&quot;color: #A90D91&quot;&gt;u&lt;/span&gt;&amp;lt;C-U&amp;gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; In many terminal emulators the mouse works just fine, thus enable it.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; has(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;mouse&amp;#39;&lt;/span&gt;)
-  &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;mouse&lt;/span&gt;=&lt;span style=&quot;color: #A90D91&quot;&gt;a&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Switch syntax highlighting on, when the terminal has colors&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Also switch on highlighting the last used search pattern.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; &amp;amp;&lt;span style=&quot;color: #A90D91&quot;&gt;t_Co&lt;/span&gt; &amp;gt; &lt;span style=&quot;color: #1C01CE&quot;&gt;2&lt;/span&gt; || has(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;gui_running&amp;quot;&lt;/span&gt;)
-  &lt;span style=&quot;color: #A90D91&quot;&gt;syntax&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;on&lt;/span&gt;
-  &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;hlsearch&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Only do this part when compiled with support for autocommands.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; has(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;autocmd&amp;quot;&lt;/span&gt;)
-
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; Enable file type detection.&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; Use the default filetype settings, so that mail gets &amp;#39;tw&amp;#39; set to 72,&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; &amp;#39;cindent&amp;#39; is on in C files, etc.&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; Also load indent files, to automatically do language-dependent indenting.&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; filetype plugin indent on&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; Put these in an autocmd group, so that we can delete them easily.&lt;/span&gt;
-  augroup vimrcEx
-  &lt;span style=&quot;color: #A90D91&quot;&gt;au&lt;/span&gt;!
-
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; For all text files set &amp;#39;textwidth&amp;#39; to 78 characters.&lt;/span&gt;
-  autocmd &lt;span style=&quot;color: #A90D91&quot;&gt;FileType&lt;/span&gt; text,markdown &lt;span style=&quot;color: #A90D91&quot;&gt;setlocal&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;textwidth&lt;/span&gt;=&lt;span style=&quot;color: #1C01CE&quot;&gt;78&lt;/span&gt;
-
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; When editing a file, always jump to the last known cursor position.&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; Don&amp;#39;t do it when the position is invalid or when inside an event handler&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; (happens when dropping a file on gvim).&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; Also don&amp;#39;t do it when the mark is in the first line, that is the default&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;  &amp;quot; position when opening a file.&lt;/span&gt;
-  autocmd &lt;span style=&quot;color: #A90D91&quot;&gt;BufReadPost&lt;/span&gt; *
-    \ &lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; line(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&amp;#39;\&amp;quot;&amp;quot;&lt;/span&gt;) &amp;gt; &lt;span style=&quot;color: #1C01CE&quot;&gt;1&lt;/span&gt; &amp;amp;&amp;amp; line(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;&amp;#39;\&amp;quot;&amp;quot;&lt;/span&gt;) &amp;lt;= line(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;$&amp;quot;&lt;/span&gt;) |
-    \   exe &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;normal! g`\&amp;quot;&amp;quot;&lt;/span&gt; |
-    \ &lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt;
-
-  augroup END
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;else&lt;/span&gt;
-
-  &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;autoindent&lt;/span&gt;        &lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; always set autoindenting on&lt;/span&gt;
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt; &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot; has(&amp;quot;&lt;/span&gt;autocmd&amp;quot;)
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Convenient command to see the difference between the current buffer and the&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; file it was loaded from, thus the changes you made.&lt;/span&gt;
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot; Only define it when not defined already.&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;if&lt;/span&gt; !exists(&lt;span style=&quot;color: #C41A16&quot;&gt;&amp;quot;:DiffOrig&amp;quot;&lt;/span&gt;)
-  command DiffOrig &lt;span style=&quot;color: #A90D91&quot;&gt;vert&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;new&lt;/span&gt; | &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;bt&lt;/span&gt;=nofile | &lt;span style=&quot;color: #A90D91&quot;&gt;r&lt;/span&gt; ++edit # | &lt;span style=&quot;color: #1C01CE&quot;&gt;0&lt;/span&gt;d_ | &lt;span style=&quot;color: #A90D91&quot;&gt;diffthis&lt;/span&gt;
-          \ | &lt;span style=&quot;color: #A90D91&quot;&gt;wincmd&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;p&lt;/span&gt; | &lt;span style=&quot;color: #A90D91&quot;&gt;diffthis&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;endif&lt;/span&gt;
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;tabstop&lt;/span&gt;=&lt;span style=&quot;color: #1C01CE&quot;&gt;4&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;shiftwidth&lt;/span&gt;=&lt;span style=&quot;color: #1C01CE&quot;&gt;4&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;expandtab&lt;/span&gt;
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;number&lt;/span&gt;
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;relativenumber&lt;/span&gt;
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;autoindent&lt;/span&gt;
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;colorscheme&lt;/span&gt; elflord
-
-&lt;span style=&quot;color: #177500&quot;&gt;&amp;quot;set foldcolumn=4&lt;/span&gt;
-
-execute pathogen#infect()
-
-&lt;span style=&quot;color: #A90D91&quot;&gt;let&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;g&lt;/span&gt;:netrw_bufsettings = &lt;span style=&quot;color: #C41A16&quot;&gt;&amp;#39;nu relativenumber&amp;#39;&lt;/span&gt;
-
-autocmd &lt;span style=&quot;color: #A90D91&quot;&gt;BufNewFile&lt;/span&gt;,&lt;span style=&quot;color: #A90D91&quot;&gt;BufRead&lt;/span&gt; *.md &lt;span style=&quot;color: #A90D91&quot;&gt;set&lt;/span&gt; &lt;span style=&quot;color: #A90D91&quot;&gt;filetype&lt;/span&gt;=markdown
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 17 Jul 2015 15:29:32 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/menggunakan-text-editor-vim.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/menggunakan-text-editor-vim.html</guid>
         
         
       </item>
