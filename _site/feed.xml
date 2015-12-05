@@ -6,9 +6,75 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Dec 2015 20:52:50 +0700</pubDate>
-    <lastBuildDate>Fri, 04 Dec 2015 20:52:50 +0700</lastBuildDate>
+    <pubDate>Sat, 05 Dec 2015 09:31:51 +0700</pubDate>
+    <lastBuildDate>Sat, 05 Dec 2015 09:31:51 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Terminal Output Menjadi HTML Menggunakan AHA</title>
+        <description>&lt;h1&gt;Terminal Output Menjadi HTML Menggunakan AHA&lt;/h1&gt;
+
+&lt;p&gt;Sering bekerja menggunakan terminal? Ada &lt;em&gt;output&lt;/em&gt; yang perlu dijadikan
+sebagai bahan presentasi atau sekedar &lt;em&gt;share&lt;/em&gt; informasi dengan teman?
+Bisa saja &lt;em&gt;text output&lt;/em&gt; yang didapatkan dari terminal di-&lt;em&gt;copy&lt;/em&gt; dan &lt;em&gt;paste&lt;/em&gt;
+atau dengan cara &lt;em&gt;screenshot&lt;/em&gt; yang akhirnya menjadi sebuah gambar.&lt;/p&gt;
+
+&lt;p&gt;Cara &lt;em&gt;copy paste&lt;/em&gt; text mungkin menjadi cara paling mudah ketika ingin
+berbagi hasil &lt;em&gt;output terminal&lt;/em&gt;, namun akan menjadi sulit terbaca ketika
+&lt;em&gt;platform&lt;/em&gt; tempat berbagi memformat teks tersebut. &lt;em&gt;Screenshot&lt;/em&gt; juga
+merupakan cara yang cukup baik untuk ini, orang yang mendapatkan informasi
+juga melihat presentasi yang sama dengan apa yang terjadi pada layar,
+namun teks tidak dapat dengan mudah digunakan kembali (tidak bisa di
+&lt;em&gt;copy paste&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Setelah mencari alternatif dengan keadaan yang saya alami saat itu,
+saya menemukan program &lt;strong&gt;AHA&lt;/strong&gt;, &lt;strong&gt;AHA&lt;/strong&gt; 
+adalah singkatan dari &lt;em&gt;Ansi Html Adapter&lt;/em&gt;, sebuah program yang
+saya temukan pada sistem operasi Ubuntu. Cara penggunaannya pun
+cukup sederhana, tidak kalah simpel dibandingkan dengan cara
+&lt;em&gt;copy paste&lt;/em&gt; atau &lt;em&gt;screenshot&lt;/em&gt;. Cukup dengan mengetikan sebaris
+perintah pada terminal seperti,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la --color&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; aha &amp;gt; ls.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;
+total 28
+drwxrwxr-x  2 dwi dwi 4096 Nov 24 15:55 &lt;span style=&quot;color:blue;font-weight:bold;&quot;&gt;.&lt;/span&gt;
+drwxrwxr-x 13 dwi dwi 4096 Des  5 09:15 &lt;span style=&quot;color:blue;font-weight:bold;&quot;&gt;..&lt;/span&gt;
+-rw-rw-r--  1 dwi dwi  248 Sep  8 16:18 default.html
+-rw-rw-rw-  1 dwi dwi   14 Nov 24 15:55 empty.html
+-rw-rw-rw-  1 dwi dwi 1041 Sep  8 16:52 front.html
+-rw-rw-r--  1 dwi dwi  207 Agu  9 09:07 page.html
+-rw-rw-r--  1 dwi dwi  156 Jul 31 20:48 post.html
+&lt;/pre&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tree -C _includes/ &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; aha &amp;gt; tree.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;
+&lt;span style=&quot;color:blue;font-weight:bold;&quot;&gt;_includes/&lt;/span&gt;
+├── footer.html
+├── ganteng.html
+├── header.html
+├── head.html
+└── &lt;span style=&quot;color:blue;font-weight:bold;&quot;&gt;styles&lt;/span&gt;
+    └── style1.html
+
+1 directory, 5 files
+&lt;/pre&gt;
+
+&lt;p&gt;Program ini mengubah &lt;em&gt;terminal output&lt;/em&gt; kedalam bentuk &lt;strong&gt;html&lt;/strong&gt;, bisa
+juga mendapatkan warna/gaya &lt;em&gt;font&lt;/em&gt; sebagai &lt;em&gt;inline style&lt;/em&gt; pada dokumen.&lt;/p&gt;
+
+&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#&lt;em&gt;aha&lt;/em&gt; #&lt;em&gt;AnsiHTMLAdapter&lt;/em&gt; #&lt;em&gt;linux&lt;/em&gt; #&lt;em&gt;ubuntu&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 15 Aug 2015 15:58:46 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Timer App</title>
@@ -1645,48 +1711,6 @@ autocmd &lt;span style=&quot;color: #A90D91&quot;&gt;BufNewFile&lt;/span&gt;,&lt
         <pubDate>Fri, 17 Jul 2015 15:29:32 +0700</pubDate>
         <link>http://dwiprabowo.github.io/menggunakan-text-editor-vim.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/menggunakan-text-editor-vim.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Mulai Menulis</title>
-        <description>&lt;h1&gt;Mulai Menulis&lt;/h1&gt;
-
-&lt;p&gt;Akhir-akhir ini saya memiliki keinginan yang sangat besar untuk menulis. Namun
-pada saat saya memulai untuk membuat beberapa artikel, tak satupun dari
-tulisan tersebut yang menurut saya cukup bagus dan layak untuk dibaca orang
-lain. Seperti kehilangan akal dan tidak tahu cara yang baik untuk menulis.&lt;/p&gt;
-
-&lt;p&gt;Hal ini sangat aneh kalau mengingat bahwa saya sudah belajar untuk menulis
-dari awal. Sejak kecil saya sudah dikenalkan tentang kegiatan menulis ini.
-Namun memang kegiatan ini biasa saya lakukan hanya ketika berada di sekolah
-saja. Seperti menganggap remeh pada kegiatan ini. Hingga akhirnya sampai saat
-ini, ketika saya ingin mencurahkan pikiran saya pada sebuah karya tulis tak
-sebuah tulisan pun yang bisa memuaskan hasrat saya.&lt;/p&gt;
-
-&lt;p&gt;Setelah beberapa kali mengalami depresi gara-gara membuat karya tulis,
-akhirnya saya memutuskan untuk membuat sebuah media yang saya gunakan untuk
-menampung pikiran-pikiran saya dalam bentuk tulisan. Ya, mulai sekarang &lt;em&gt;blog&lt;/em&gt;
-ini saya gunakan untuk hal tersebut. Dengan harapan media ini dapat membantu
-saya dalam berlatih untuk menghasilkan karya tulis yang baik.&lt;/p&gt;
-
-&lt;p&gt;Berbicara tentang menulis, sebenarnya kegiatan saya sehari-hari juga menulis
-tapi tidak menggunakan bahasa yang biasa digunakan untuk berbincang-bincang
-seperti bahasa indonesia, bahasa inggris dan bahasa lainnya. Bahasa yang saya
-gunakan adalah bahasa untuk membuat program pada komputer. Bahasa tersebut
-biasa dikenal dengan istilah bahasa pemrograman, bahasa yang digunakan untuk
-berinteraksi dengan komputer.&lt;/p&gt;
-
-&lt;p&gt;Dengan berbekal pengetahuan saya tentang dunia pemrograman komputer yang telah
-saya tekuni beberapa tahun belakangan ini, dan mungkin beberapa hal lainnya,
-saya berharap dapat membagikan pengalaman saya melalui &lt;em&gt;blog&lt;/em&gt; ini sehingga
-mungkin dapat bermanfaat bagi pembaca, dan khususnya untuk saya sendiri, untuk
-dapat menghasilkan karya yang lebih baik kedepannya.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 27 May 2015 02:03:14 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/mulai-menulis.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/mulai-menulis.html</guid>
         
         
       </item>
