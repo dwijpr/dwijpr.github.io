@@ -110,20 +110,20 @@ untuk sebuah aplikasi. Kurang lebih nanti hasilnya akan seperti ini ...</p>
 Elemen dengan strata tertinggi pada <em>layout</em> kali ini adalah
 <code>android.support.v4.widget.DrawLayout</code></p>
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;android.support.v4.widget.DrawerLayout</span>
-    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-    <span class="na">android:id=</span><span class="s">&quot;@+id/drawer_layout&quot;</span><span class="nt">&gt;</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/drawer_layout"</span><span class="nt">&gt;</span>
 ...
 <span class="nt">&lt;/android.support.v4.widget.DrawerLayout&gt;</span>
 </code></pre></div>
 <p>Selanjutnya adalah menambahkan elemen <code>ListView</code> sebagai <em>drawer</em>-nya</p>
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ListView</span>
-    <span class="na">android:layout_width=</span><span class="s">&quot;200dp&quot;</span>
-    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-    <span class="na">android:id=</span><span class="s">&quot;@+id/navList&quot;</span>
-    <span class="na">android:layout_gravity=</span><span class="s">&quot;left|start&quot;</span>
-    <span class="na">android:background=</span><span class="s">&quot;#ffeeeeee&quot;</span><span class="nt">/&gt;</span>
+    <span class="na">android:layout_width=</span><span class="s">"200dp"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/navList"</span>
+    <span class="na">android:layout_gravity=</span><span class="s">"left|start"</span>
+    <span class="na">android:background=</span><span class="s">"#ffeeeeee"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>ListView (atau apapun yang <em>view</em> yang digunakan sebagai drawer), sebaiknya tidak
 lebih dari 320dp untuk atribut <code>android:layout_width</code> - nya, sehingga
@@ -193,8 +193,8 @@ digunakan sebuah <em>array</em> <em>String</em> sebagai tempat data <em>list</em
 </code></pre></div>
 <p>Daftar menu akan dipisah menjadi sebuah <em>helper method</em> tersendiri sehingga kode lebih
 rapi dan dipanggil didalam <code>onCreate()</code>:</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">addDrawerItems</span><span class="o">(){</span>
-    <span class="n">String</span><span class="o">[]</span> <span class="n">osArray</span> <span class="o">=</span> <span class="o">{</span><span class="s">&quot;Ayam Goreng&quot;</span><span class="o">,</span> <span class="s">&quot;Sate&quot;</span><span class="o">,</span> <span class="s">&quot;Rendang&quot;</span><span class="o">,</span> <span class="s">&quot;Bakso&quot;</span><span class="o">,</span> <span class="s">&quot;Gorengan&quot;</span><span class="o">};</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">addDrawerItems</span><span class="p">(</span><span class="o">){</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">osArray</span> <span class="o">=</span> <span class="o">{</span><span class="s">"Ayam Goreng"</span><span class="o">,</span> <span class="s">"Sate"</span><span class="o">,</span> <span class="s">"Rendang"</span><span class="o">,</span> <span class="s">"Bakso"</span><span class="o">,</span> <span class="s">"Gorengan"</span><span class="o">};</span>
     <span class="n">mAdapter</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">new</span> <span class="n">ArrayAdapter</span><span class="o">&lt;&gt;(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_list_item_1</span><span class="o">,</span> <span class="n">osArray</span><span class="o">));</span>
     <span class="n">mDrawerList</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mAdapter</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
 <span class="o">}</span>
@@ -229,22 +229,22 @@ ini kurang lebih bercerita tentang men-<em>toggle</em>-kan <strong>ActionBar</st
 dibuka judul <strong>ActionBar</strong> = &quot;Menunya&quot;, ketika <em>drawer</em> tertutup <strong>ActionBar</strong> =
 (judul sesuai dengan nilai dari <em>mActivityTitle</em>). Jangan lupa panggil
 <code>setupDrawer()</code> didalam <code>onCreate()</code></p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupDrawer</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">mDrawerToggle</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ActionBarDrawerToggle</span><span class="o">(</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setupDrawer</span><span class="p">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">mDrawerToggle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ActionBarDrawerToggle</span><span class="o">(</span>
             <span class="k">this</span>
             <span class="o">,</span> <span class="n">mDrawerLayout</span>
             <span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">drawer_open</span>
             <span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">drawer_close</span>
     <span class="o">){</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerOpened</span><span class="o">(</span><span class="n">View</span> <span class="n">drawerView</span><span class="o">){</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDrawerOpened</span><span class="o">(</span><span class="n">View</span> <span class="n">drawerView</span><span class="o">){</span>
             <span class="kd">super</span><span class="o">.</span><span class="na">onDrawerOpened</span><span class="o">(</span><span class="n">drawerView</span><span class="o">);</span>
             <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-                <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="s">&quot;Menunya&quot;</span><span class="o">);</span>
+                <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"Menunya"</span><span class="o">);</span>
             <span class="o">}</span>
             <span class="n">invalidateOptionsMenu</span><span class="o">();</span>
         <span class="o">}</span>
 
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDrawerClosed</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDrawerClosed</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>
             <span class="kd">super</span><span class="o">.</span><span class="na">onDrawerClosed</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>
             <span class="k">if</span><span class="o">(</span><span class="n">getSupportActionBar</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
                 <span class="n">getSupportActionBar</span><span class="o">().</span><span class="na">setTitle</span><span class="o">(</span><span class="n">mActivityTitle</span><span class="o">);</span>
@@ -262,7 +262,7 @@ memasang objek <em>toggle</em> baru pada <em>layout drawer</em>. Tambahkan kode 
 <span class="n">mDrawerLayout</span><span class="o">.</span><span class="na">setDrawerListener</span><span class="o">(</span><span class="n">mDrawerToggle</span><span class="o">);</span>
 </code></pre></div>
 <p>Akhirnya, aktifkan hal berikut pada <em>method</em> <code>onOptionsItemSelected()</code>.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="p">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">();</span>
 
     <span class="k">return</span>
@@ -277,13 +277,13 @@ memasang objek <em>toggle</em> baru pada <em>layout drawer</em>. Tambahkan kode 
 <em>drawer</em> dengan pergantian simbol dan ketika terjadi pergantian <em>state</em> didalam
 <strong>Activity</strong> (<em>orientation changes</em>). Untuk melengkapi tambahkan kode berikut ...</p>
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostCreate</span><span class="p">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onPostCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
     <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">syncState</span><span class="o">();</span>
 <span class="o">}</span>
 
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onConfigurationChanged</span><span class="o">(</span><span class="n">Configuration</span> <span class="n">newConfig</span><span class="o">)</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onConfigurationChanged</span><span class="p">(</span><span class="n">Configuration</span> <span class="n">newConfig</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
     <span class="n">mDrawerToggle</span><span class="o">.</span><span class="na">onConfigurationChanged</span><span class="o">(</span><span class="n">newConfig</span><span class="o">);</span>
 <span class="o">}</span>

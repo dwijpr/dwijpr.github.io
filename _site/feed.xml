@@ -6,9 +6,59 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Dec 2015 21:20:07 +0700</pubDate>
-    <lastBuildDate>Sat, 05 Dec 2015 21:20:07 +0700</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Tue, 08 Dec 2015 07:36:36 +0700</pubDate>
+    <lastBuildDate>Tue, 08 Dec 2015 07:36:36 +0700</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Membuat Rumah Baru di Ubuntu</title>
+        <description>&lt;h1&gt;Membuat Rumah Baru di Ubuntu&lt;/h1&gt;
+
+&lt;p&gt;Belum punya uang untuk membuat rumah sendiri, untuk masa
+depan yang indah? Paling tidak membuat rumah baru di &lt;strong&gt;Ubuntu&lt;/strong&gt;
+merupakan sesuatu yang sangat mudah dilakukan.&lt;/p&gt;
+
+&lt;p&gt;Sering bekerja dengan banyak &lt;em&gt;environment&lt;/em&gt;, untuk pekerjaan
+pribadi, pekerjaan kantor, yang kantornya lebih dari satu, dan
+memiliki pekerjaan secara &lt;em&gt;freelance&lt;/em&gt;. Hal tersebut sering
+membuat komputer yang digunakan untuk bekerja memiliki
+berkas-berkas yang tersebar dimana-mana. Hingga akhirnya
+ketika dirasa terlalu &amp;quot;berantakan&amp;quot; dan tidak tau mana 
+&lt;em&gt;file&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt; yang masih penting dan tidak, membuat saya
+sering memutuskan untuk meng-&lt;em&gt;install&lt;/em&gt; ulang komputer.&lt;/p&gt;
+
+&lt;p&gt;Namun, belakangan ini saya mulai menemukan metode baru untuk
+menyelesaikan masalah ini. Saya rasa meng-&lt;em&gt;install&lt;/em&gt; ulang
+terlalu riskan hanya untuk alasan tersebut, cara terbaru
+yang saya lakukan adalah &lt;strong&gt;&lt;em&gt;membuat rumah baru&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Membuat Pengguna&lt;/h4&gt;
+
+&lt;p&gt;Satu-satunya tahap yang dilakukan adalah dengan menjalankan
+&lt;em&gt;command&lt;/em&gt; berikut pada terminal:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo adduser iwd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Mengeksekusi program &lt;strong&gt;adduser&lt;/strong&gt; harus memiliki &lt;em&gt;sudo&lt;/em&gt;,
+&lt;strong&gt;addUser: Only root may add a user or group to the system&lt;/strong&gt;.
+Salah satu cara membuat pengguna mendapatkan akses &lt;em&gt;root&lt;/em&gt;
+ini adalah dengan,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo adduser iwd sudo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dengan begitu rumah baru pada sistem operasi &lt;strong&gt;Ubuntu&lt;/strong&gt; telah
+terbuat, hal ini akan sangat membantu pada saat bekerja
+untuk beberapa hal yang besar. Namun masalah selanjutnya yang
+muncul adalah, &lt;em&gt;&lt;strong&gt;cara untuk kreatif membuat sebuah nama?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#Ubuntu #sudo #namingThings #adduser&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Mon, 17 Aug 2015 07:00:18 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/membuat-rumah-baru-di-ubuntu.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/membuat-rumah-baru-di-ubuntu.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Flat Color Picker</title>
@@ -101,7 +151,7 @@
     }
 &lt;/script&gt;
 </description>
-        <pubDate>Mon, 17 Aug 2015 02:43:07 +0700</pubDate>
+        <pubDate>Sun, 16 Aug 2015 19:43:07 +0700</pubDate>
         <link>http://dwiprabowo.github.io/flat-color-picker.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/flat-color-picker.html</guid>
         
@@ -132,7 +182,7 @@ saya temukan pada sistem operasi Ubuntu. Cara penggunaannya pun
 cukup sederhana, tidak kalah simpel dibandingkan dengan cara
 &lt;em&gt;copy paste&lt;/em&gt; atau &lt;em&gt;screenshot&lt;/em&gt;. Cukup dengan mengetikan sebaris
 perintah pada terminal seperti,&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ls -la --color&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; aha &amp;gt; ls.html
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls -la --color&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;always | aha &amp;gt; ls.html
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;pre&gt;
 total 28
@@ -144,7 +194,7 @@ drwxrwxr-x 13 dwi dwi 4096 Des  5 09:15 &lt;span style=&quot;color:blue;font-wei
 -rw-rw-r--  1 dwi dwi  207 Agu  9 09:07 page.html
 -rw-rw-r--  1 dwi dwi  156 Jul 31 20:48 post.html
 &lt;/pre&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tree -C _includes/ &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; aha &amp;gt; tree.html
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tree -C _includes/ | aha &amp;gt; tree.html
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;pre&gt;
 &lt;span style=&quot;color:blue;font-weight:bold;&quot;&gt;_includes/&lt;/span&gt;
@@ -170,54 +220,6 @@ juga mendapatkan warna/gaya &lt;em&gt;font&lt;/em&gt; sebagai &lt;em&gt;inline s
         <pubDate>Sat, 15 Aug 2015 15:58:46 +0700</pubDate>
         <link>http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Cerita Tentang Kita - Peterpan</title>
-        <description>&lt;h1&gt;Cerita Tentang Kita&lt;/h1&gt;
-
-&lt;h2&gt;Peterpan&lt;/h2&gt;
-
-&lt;style&gt;
-    span.chord{
-        color: #ff0000;
-    }
-&lt;/style&gt;
-
-&lt;pre&gt;
-A        E      F#m      C#m
-Waktu terasa semakin berlalu
-     D        A       F#m    E
-Tinggalkan cerita tentang kita
-
-A     E        F#m      C#m
-Akan tiada lagi kini tawamu
-     D        A      F#m      E
-Tuk hapuskan semua sepi di hati
-
-Reff:
-
-  A      E         F#m      C#m
-Ada cerita tentang aku dan dia
-     D       A         F#m    E
-Dan kita bersama saat dulu kala
-
-  A      E         F#m       C#m
-Ada cerita tentang masa yang indah
-    D         A         F#m       E
-Saat kita berduka saat kita tertawa
-
-   A         E         F#m     C#m
-Teringat di saat kita tertawa bersama
- D     A         F#m       E
-Ceritakan semua tentang kita
-&lt;/pre&gt;
-</description>
-        <pubDate>Sat, 15 Aug 2015 02:26:42 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/table-cellpading-cellspacing.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/table-cellpading-cellspacing.html</guid>
         
         
       </item>
@@ -937,20 +939,20 @@ untuk sebuah aplikasi. Kurang lebih nanti hasilnya akan seperti ini ...&lt;/p&gt
 Elemen dengan strata tertinggi pada &lt;em&gt;layout&lt;/em&gt; kali ini adalah
 &lt;code&gt;android.support.v4.widget.DrawLayout&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.v4.widget.DrawerLayout&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;match_parent&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;match_parent&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@+id/drawer_layout&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/drawer_layout&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 ...
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/android.support.v4.widget.DrawerLayout&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Selanjutnya adalah menambahkan elemen &lt;code&gt;ListView&lt;/code&gt; sebagai &lt;em&gt;drawer&lt;/em&gt;-nya&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ListView&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;200dp&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;match_parent&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;@+id/navList&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;left|start&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;#ffeeeeee&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/navList&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left|start&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#ffeeeeee&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;ListView (atau apapun yang &lt;em&gt;view&lt;/em&gt; yang digunakan sebagai drawer), sebaiknya tidak
 lebih dari 320dp untuk atribut &lt;code&gt;android:layout_width&lt;/code&gt; - nya, sehingga
@@ -1020,8 +1022,8 @@ digunakan sebuah &lt;em&gt;array&lt;/em&gt; &lt;em&gt;String&lt;/em&gt; sebagai 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Daftar menu akan dipisah menjadi sebuah &lt;em&gt;helper method&lt;/em&gt; tersendiri sehingga kode lebih
 rapi dan dipanggil didalam &lt;code&gt;onCreate()&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addDrawerItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;osArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Ayam Goreng&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Sate&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Rendang&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Bakso&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Gorengan&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addDrawerItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;osArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Ayam Goreng&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Sate&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Rendang&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Bakso&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Gorengan&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;mAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;simple_list_item_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;osArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;mDrawerList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -1056,22 +1058,22 @@ ini kurang lebih bercerita tentang men-&lt;em&gt;toggle&lt;/em&gt;-kan &lt;stron
 dibuka judul &lt;strong&gt;ActionBar&lt;/strong&gt; = &amp;quot;Menunya&amp;quot;, ketika &lt;em&gt;drawer&lt;/em&gt; tertutup &lt;strong&gt;ActionBar&lt;/strong&gt; =
 (judul sesuai dengan nilai dari &lt;em&gt;mActivityTitle&lt;/em&gt;). Jangan lupa panggil
 &lt;code&gt;setupDrawer()&lt;/code&gt; didalam &lt;code&gt;onCreate()&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setupDrawer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mDrawerToggle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ActionBarDrawerToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setupDrawer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mDrawerToggle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ActionBarDrawerToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mDrawerLayout&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawer_open&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawer_close&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onDrawerOpened&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;drawerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDrawerOpened&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;drawerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
             &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onDrawerOpened&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drawerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getSupportActionBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;getSupportActionBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Menunya&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;getSupportActionBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Menunya&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
             &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;n&quot;&gt;invalidateOptionsMenu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onDrawerClosed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDrawerClosed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
             &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onDrawerClosed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getSupportActionBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
                 &lt;span class=&quot;n&quot;&gt;getSupportActionBar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mActivityTitle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -1089,7 +1091,7 @@ memasang objek &lt;em&gt;toggle&lt;/em&gt; baru pada &lt;em&gt;layout drawer&lt;
 &lt;span class=&quot;n&quot;&gt;mDrawerLayout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDrawerListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mDrawerToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Akhirnya, aktifkan hal berikut pada &lt;em&gt;method&lt;/em&gt; &lt;code&gt;onOptionsItemSelected()&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onOptionsItemSelected&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MenuItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onOptionsItemSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MenuItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getItemId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
@@ -1104,13 +1106,13 @@ memasang objek &lt;em&gt;toggle&lt;/em&gt; baru pada &lt;em&gt;layout drawer&lt;
 &lt;em&gt;drawer&lt;/em&gt; dengan pergantian simbol dan ketika terjadi pergantian &lt;em&gt;state&lt;/em&gt; didalam
 &lt;strong&gt;Activity&lt;/strong&gt; (&lt;em&gt;orientation changes&lt;/em&gt;). Untuk melengkapi tambahkan kode berikut ...&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onPostCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onPostCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onPostCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;mDrawerToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;syncState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onConfigurationChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Configuration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onConfigurationChanged&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Configuration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onConfigurationChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;mDrawerToggle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onConfigurationChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -1412,14 +1414,14 @@ tersebut.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Pertama-tama &lt;em&gt;script&lt;/em&gt; dimulai dengan memodifikasi tampilan &lt;strong&gt;bash prompt&lt;/strong&gt;, yang biasa nya terlihat seperti&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;user@comp:~$ █
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;user@comp:~$ █
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;menjadi seperti&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;( ~ ) &amp;gt; █
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;( ~ ) &amp;gt; █
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Membuat &lt;em&gt;function&lt;/em&gt; menggunakan &lt;strong&gt;bash script&lt;/strong&gt; dapat dilakukan dengan cara seperti
 biasa menulis program menggunakan bahasa pemrograman lainnya.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function _prompt_command(){
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;function _prompt_command(){
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Untuk mengubah tampilan &lt;em&gt;prompt&lt;/em&gt; diperlukan variabel &lt;strong&gt;bash&lt;/strong&gt; yang dikenal dengan
