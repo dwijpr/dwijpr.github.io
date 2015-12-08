@@ -1,11 +1,18 @@
 <style>
+    .shadowed {
+        -webkit-filter: drop-shadow(1px 2px 4px rgba(0,0,0,0.8));
+        filter: url(#drop-shadow);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    }
+
     .container-front-page h1{
         font-family: Ubuntu, Arial;
         letter-spacing: .1725em;
         font-weight: lighter;
     }
     #main-image{
-        max-width: 180px;
+        width: 128px;
         display: inline-block;
         /*border: 1px solid rgba(0, 0, 0, .3);*/
     }
@@ -17,6 +24,7 @@
         text-align: center;
         display: inline-block;
         padding: 2px 10px;
+        line-height: .1em;
     }
 
     #useless-front{
@@ -37,51 +45,53 @@
 </style>
 
 <div class="container container-front-page" id="useless-front">
-    <div class="row">
-        <div class="col-xs-12 text-center">
-            <h1>
-                <u>
-                    Catatan dwijpr
-                </u>
-                <img 
-                    src="assets/img/dwi.png" 
-                    id="main-image" 
-                    class="img-responsive"
-                >
-            </h1>
-            <div id="main-image-wrapper">
-                <p class="lead">
-                    <div class="fade-big-wrapper">
-                        <span class="fade-big text-info">#BelajarMenulis</span> 
-                    </div>
-                    <div class="fade-big-wrapper">
-                        <span class="fade-big text-info">#Blogging</span> 
-                    </div>
-                    <div class="fade-big-wrapper">
-                        <span class="fade-big text-info">#Programming</span> 
-                    </div>
-                    <div class="fade-big-wrapper">
-                        <span class="fade-big text-info">#Komputer</span> 
-                    </div>
-                    <div class="fade-big-wrapper">
-                        <span class="fade-big text-info">#Koding</span> 
-                    </div>
-                    <div class="fade-big-wrapper">
-                        <span class="fade-big text-info">#<i>Game</i></span> 
-                    </div>
-                </p>
-                <!--
-                    <a href="javascript:void(0);">
-                        <div class="btn btn-primary btn-sm" id="toggle-catatan">
-                            <span>
-                                <i class="fa fa-paperclip"></i> 
-                            </span>
-                            catatan
+    <div class="wrapper" style="margin-top: 24px;">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div 
+                        class="col-sm-8 text-right" 
+                    >
+                        <h1
+                            style="
+                                border-bottom: 1px solid rgba(0, 0, 0, .3);
+                                margin-bottom: 0;
+                            "
+                        >Catatan dwijpr</h1>
+                        <div 
+                            id="main-image-wrapper"
+                            style="padding-top: 8px;" 
+                        >
+                            <div class="fade-big-wrapper">
+                                <span class="fade-big text-info">#BelajarMenulis</span> 
+                            </div>
+                            <div class="fade-big-wrapper">
+                                <span class="fade-big text-info">#Blogging</span> 
+                            </div>
+                            <div class="fade-big-wrapper">
+                                <span class="fade-big text-info">#Programming</span> 
+                            </div>
+                            <div class="fade-big-wrapper">
+                                <span class="fade-big text-info">#Komputer</span> 
+                            </div>
+                            <div class="fade-big-wrapper">
+                                <span class="fade-big text-info">#Koding</span> 
+                            </div>
+                            <div class="fade-big-wrapper">
+                                <span class="fade-big text-info">#<i>Game</i></span> 
+                            </div>
                         </div>
-                    </a>
-                -->
+                    </div>
+                    <div class="col-sm-4">
+                        <img 
+                            src="assets/img/dwi.png" 
+                            id="main-image" 
+                            class="img-responsive shadowed"
+                        >
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div style="padding-top: 256px;"></div>
+<div style="padding-top: 200px;"></div>
