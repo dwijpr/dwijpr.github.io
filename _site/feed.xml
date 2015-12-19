@@ -6,9 +6,51 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Dec 2015 22:45:02 +0700</pubDate>
-    <lastBuildDate>Fri, 18 Dec 2015 22:45:02 +0700</lastBuildDate>
+    <pubDate>Sat, 19 Dec 2015 08:35:35 +0700</pubDate>
+    <lastBuildDate>Sat, 19 Dec 2015 08:35:35 +0700</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Meringkas JavaScript Web console.log</title>
+        <description>&lt;h1&gt;Meringkas JavaScript Web console.log&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;console.log&lt;/strong&gt; merupakan salah satu fungsi dari javascript yang berguna untuk
+proses &lt;em&gt;debugging&lt;/em&gt;. Menurut saya menulis &lt;strong&gt;console.log&lt;/strong&gt; berulang kali merupakan
+hal yang cukup melelahkan, jadi saya mencoba untuk membungkus kembali fungsi ini
+dan men-&lt;em&gt;setting&lt;/em&gt;-nya menjadi seperti yang saya inginkan. Paling tidak saya ingin
+menyingkat &lt;strong&gt;console.log&lt;/strong&gt; menjadi sesuatu yang lebih pendek seperti hanya
+menuliskan &lt;strong&gt;d(logThis)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Yang bisa dilakukan untuk mendapatkan hal ini adalah dengan cara sebagai berikut&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;dan mencobanya dengan menulis&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;something&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;tapi tampil error dengan pesan seperti &lt;span class=&quot;text-danger&quot;&gt;
+Uncaught TypeError: Illegal invocation(…)A&lt;/span&gt;, maka cara diatas tidak bisa
+dilakukan. Hal ini dikarenakan didalam fungsi &lt;strong&gt;console.log&lt;/strong&gt; bergantung pada
+&lt;em&gt;keyword&lt;/em&gt; &lt;strong&gt;this&lt;/strong&gt;, dan ketika di&lt;em&gt;assign&lt;/em&gt; kepada &lt;code&gt;var d&lt;/code&gt;, &lt;strong&gt;this&lt;/strong&gt; != (object)
+&lt;strong&gt;console&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4&gt;Fungsi bind&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Function#bind&lt;/strong&gt; dapat memecahkan masalah seperti ini. Fungsi ini berfungsi untuk
+meng-&lt;em&gt;assign&lt;/em&gt; variabel &lt;strong&gt;this&lt;/strong&gt; dengan &lt;em&gt;object&lt;/em&gt; yang sesuai, dalam kasus ini
+adalah objek &lt;strong&gt;window.console&lt;/strong&gt; atau &lt;strong&gt;console&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;something&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;written&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;#javascript #function #console.log #debug #browser&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 20 Aug 2015 07:49:45 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/meringkas-javascript-console-log.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/meringkas-javascript-console-log.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Breakout Game</title>
@@ -1356,59 +1398,6 @@ memasang objek &lt;em&gt;toggle&lt;/em&gt; baru pada &lt;em&gt;layout drawer&lt;
         <pubDate>Tue, 11 Aug 2015 21:37:09 +0700</pubDate>
         <link>http://dwiprabowo.github.io/tahap-demi-tahap-menambahkan-navigation-drawer-membuat-aplikasi-android.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/tahap-demi-tahap-menambahkan-navigation-drawer-membuat-aplikasi-android.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Menggunakan RedCarpet Pada Jekyll</title>
-        <description>&lt;h1&gt;Menggunakan RedCarpet Pada Jekyll&lt;/h1&gt;
-
-&lt;p&gt;Menulis baris contoh &lt;em&gt;code&lt;/em&gt; pada penyunting teks &lt;strong&gt;SublimeText&lt;/strong&gt; dengan
-menggunakan &lt;strong&gt;Jekyll&lt;/strong&gt; sebagai permukaan penulisan artikel saya untuk &lt;em&gt;blog&lt;/em&gt;,
-memunculkan masalah baru bagi saya setelah menemukan plugin bernama
-&lt;strong&gt;Markdown Extended&lt;/strong&gt; yang mana membuat &lt;em&gt;syntax coloring&lt;/em&gt; menjadi nyata
-langsung saat menulis kode tersebut pada &lt;em&gt;text editor&lt;/em&gt; ini.&lt;/p&gt;
-
-&lt;p&gt;Kurang lebih kode akan terlihat seperti berikut...&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/img/other/triple-backtick-language-name.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Namun sayangnya, jekyll yang masih polos tidak bisa mem-&lt;em&gt;parsing&lt;/em&gt; &lt;em&gt;language name&lt;/em&gt;
-yang ada di belakang &lt;em&gt;triple backtick&lt;/em&gt; &lt;em&gt;```&lt;strong&gt;js&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Pokok Permasalahan&lt;/h2&gt;
-
-&lt;p&gt;Jadi inti permasalahan yang ada disini adalah, keindahan yang didapat dari hasil
-kombinasi &lt;strong&gt;SublimeText&lt;/strong&gt; dengan &lt;em&gt;plugin&lt;/em&gt;nya &lt;strong&gt;Makrdown Extended&lt;/strong&gt; (screenshoot
-diatas), tidak akan bisa dinikmati pada saat blog di&lt;em&gt;parsing&lt;/em&gt; dan &lt;em&gt;language name&lt;/em&gt;nya
-tidak menjadi kode &lt;strong&gt;html&lt;/strong&gt; dan malah merusak kode sebenarnya, sedangkan untuk
-melihat &lt;em&gt;syntax coloring&lt;/em&gt;nya langsung pada &lt;em&gt;text editor&lt;/em&gt; memerlukan &lt;em&gt;language name&lt;/em&gt;
-tersebut sehingga akan sesuai dengan bahasa yang disebutkan.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/img/other/output-js.png&quot;&gt;&lt;/p&gt;
-
-&lt;h2&gt;Solusi&lt;/h2&gt;
-
-&lt;p&gt;Setelah beberapa saat mencari, saya berhasil mengatasi masalah ini. Seperti
-judul artikel ini, RedCarpet (gem ruby), telah membantu saya untuk mem&lt;em&gt;parsing&lt;/em&gt;
-&lt;em&gt;language name&lt;/em&gt; yang ada dibelakang &lt;em&gt;triple backtick&lt;/em&gt; menjadi seperti berikut ...&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;assets/img/other/html-redcarpet.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Language name&lt;/em&gt; yang tadinya tidak ter-&lt;em&gt;parse&lt;/em&gt; oleh jekyll sekarang menjadi kode
-html yang lebih komplek, dari yang tadinya hanya berupa &lt;em&gt;tag&lt;/em&gt; &lt;strong&gt;code&lt;/strong&gt; diikuti
-&lt;em&gt;language name&lt;/em&gt;-nya.&lt;/p&gt;
-
-&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;#RedCarpet #Jekyll #SublimeText #MarkdownExtended&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Mon, 10 Aug 2015 23:58:25 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/menggunakan-redcarpet-pada-jekyll.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/menggunakan-redcarpet-pada-jekyll.html</guid>
         
         
       </item>
