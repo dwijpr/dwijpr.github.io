@@ -9,13 +9,13 @@
     <link rel="shortcut icon" type="image/png" href="assets/img/dwi.png"/>
     <title>
         
-            Catatan dwijpr | Menggunakan RedCarpet Pada Jekyll
+            Catatan dwijpr | Template CV
         
     </title>
     <meta 
         name="description" 
         content="
-                Menggunakan RedCarpet Pada Jekyll
+                Template CV
             "
     >
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
 
     <link 
         rel="canonical" 
-        href="/menggunakan-redcarpet-pada-jekyll.html"
+        href="/template-cv.html"
     >
     <link 
         rel="alternate" 
@@ -79,48 +79,57 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="main-content">
-    <h1>Menggunakan RedCarpet Pada Jekyll</h1>
+    <h1>Template CV</h1>
 
-<p>Menulis baris contoh <em>code</em> pada penyunting teks <strong>SublimeText</strong> dengan
-menggunakan <strong>Jekyll</strong> sebagai permukaan penulisan artikel saya untuk <em>blog</em>,
-memunculkan masalah baru bagi saya setelah menemukan plugin bernama
-<strong>Markdown Extended</strong> yang mana membuat <em>syntax coloring</em> menjadi nyata
-langsung saat menulis kode tersebut pada <em>text editor</em> ini.</p>
+<p>CV merupakan singkatan dari <em>Curriculum Vitae</em> yang berarti <strong>daftar riwayat hidup</strong>
+adalah dokumen yang memberikan gambaran mengenai pengalaman seseorang dan kualifikasi
+lainnya. Di beberapa negara, suatu CV biasanya merupakan hal utama yang dijumpai
+seorang <em>employee</em> potensial tentang pencari kerja dan sering digunakan untuk menyaring
+aplikan ketika mencari pekerjaan, biasanya dilanjutkan dengan wawancara.</p>
 
-<p>Kurang lebih kode akan terlihat seperti berikut...</p>
+<p>Disini saya telah menyediakan sebuah <em>template</em> yang nantinya akan tampak seperti
+ini,</p>
 
-<p><img src="assets/img/other/triple-backtick-language-name.png"></p>
+<table>
+    <tr>
+        <td>
+            <img src="assets/img/cvs/dwi.png">
+        </td>
+        <td>
+            <img src="assets/img/cvs/emma.png">
+        </td>
+    </tr>
+</table>
 
-<p>Namun sayangnya, jekyll yang masih polos tidak bisa mem-<em>parsing</em> <em>language name</em>
-yang ada di belakang <em>triple backtick</em> <em>```<strong>js</strong></em>.</p>
+<p>Yang diperlukan disini adalah:</p>
 
-<h2>Pokok Permasalahan</h2>
+<ul>
+<li>Membuat folder di dalam direktori <strong>/data</strong></li>
+<li>Menambahkan <code>data.json</code> + <code>user.png</code></li>
+<li>Mengganti config pada data.json -&gt; <code>for</code> : sesuai nama folder pada
+perintah #1</li>
+</ul>
 
-<p>Jadi inti permasalahan yang ada disini adalah, keindahan yang didapat dari hasil
-kombinasi <strong>SublimeText</strong> dengan <em>plugin</em>nya <strong>Makrdown Extended</strong> (screenshoot
-diatas), tidak akan bisa dinikmati pada saat blog di<em>parsing</em> dan <em>language name</em>nya
-tidak menjadi kode <strong>html</strong> dan malah merusak kode sebenarnya, sedangkan untuk
-melihat <em>syntax coloring</em>nya langsung pada <em>text editor</em> memerlukan <em>language name</em>
-tersebut sehingga akan sesuai dengan bahasa yang disebutkan.</p>
-
-<p><img src="assets/img/other/output-js.png"></p>
-
-<h2>Solusi</h2>
-
-<p>Setelah beberapa saat mencari, saya berhasil mengatasi masalah ini. Seperti
-judul artikel ini, RedCarpet (gem ruby), telah membantu saya untuk mem<em>parsing</em>
-<em>language name</em> yang ada dibelakang <em>triple backtick</em> menjadi seperti berikut ...</p>
-
-<p><img src="assets/img/other/html-redcarpet.png"></p>
-
-<p><em>Language name</em> yang tadinya tidak ter-<em>parse</em> oleh jekyll sekarang menjadi kode
-html yang lebih komplek, dari yang tadinya hanya berupa <em>tag</em> <strong>code</strong> diikuti
-<em>language name</em>-nya.</p>
-
-<p><hr></p>
+<p>Opsional:
+- Menjalankan script php dengan built-in php Server:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nv">$php</span> -S localhost:8081
+</code></pre></div>
+<h3>Membuat Menjadi PDF</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nv">$wkhtmltopdf</span> http://localhost:8081/ cv.pdf
+</code></pre></div>
+<div>
+    <a href="https://github.com/dwijpr/cv-template" target="_blank">Github source</a>
+    <br>
+    <a 
+        href="https://github.com/dwijpr/cv-template/blob/master/pdf-samples/cv-dwi.pdf"
+        target="_blank"
+    >
+    Sample PDF
+    </a>
+</div>
 
 <blockquote>
-<p>#RedCarpet #Jekyll #SublimeText #MarkdownExtended</p>
+<p>#cv #curriculumVitae #wkhtmltopdf #PHP #cli #JSON</p>
 </blockquote>
 
 </div>
