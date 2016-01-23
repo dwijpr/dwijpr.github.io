@@ -6,9 +6,52 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Jan 2016 10:12:21 +0700</pubDate>
-    <lastBuildDate>Tue, 19 Jan 2016 10:12:21 +0700</lastBuildDate>
+    <pubDate>Sat, 23 Jan 2016 23:18:40 +0700</pubDate>
+    <lastBuildDate>Sat, 23 Jan 2016 23:18:40 +0700</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Mengetahui Ukuran Sebuah Halaman Web Menggunakan Google Chrome</title>
+        <description>&lt;h1&gt;Mengetahui Ukuran Sebuah Halaman Web Menggunakan Google Chrome&lt;/h1&gt;
+
+&lt;p&gt;Membuka sebuah halaman &lt;em&gt;Web&lt;/em&gt; secara &lt;em&gt;online&lt;/em&gt; pastinya memerlukan koneksi internet.
+Dan ketika menggunakan koneksi internet yang ber-&lt;strong&gt;kuota&lt;/strong&gt; maka perlu diperhatikan
+apakah sebuah halaman &lt;em&gt;Web&lt;/em&gt; yang diakses membutuhkan &lt;strong&gt;data&lt;/strong&gt; yang besar? Untuk
+memastikannya berapakah &lt;strong&gt;data&lt;/strong&gt; yang &lt;em&gt;&amp;quot;termakan&amp;quot;&lt;/em&gt; ketika membuka sebuah halaman
+&lt;em&gt;Web&lt;/em&gt; dapat menggunakan browser &lt;strong&gt;Google Chrome&lt;/strong&gt; dan &lt;em&gt;tool&lt;/em&gt;-bawaannya
+&lt;strong&gt;Chrome DevTools&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Caranya adalah sebagai berikut:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Buka &lt;em&gt;tab&lt;/em&gt; baru&lt;/li&gt;
+&lt;li&gt;Pasang &lt;strong&gt;Chrome DevTools&lt;/strong&gt; dengan &lt;em&gt;shortcut&lt;/em&gt; &lt;button&gt;Ctrl&lt;/button&gt;
+&lt;button&gt;Shift&lt;/button&gt; &lt;button&gt;i&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;Arahkan &lt;em&gt;tab&lt;/em&gt; dari &lt;strong&gt;Chrome DevTools&lt;/strong&gt; ke bagian &lt;em&gt;&lt;strong&gt;Network&lt;/strong&gt;&lt;/em&gt;
+&lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/other/devtool-network.png&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Ketikan alamat yang akan dituju, kemudian tekan &lt;button&gt;Enter&lt;/button&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Hasilnya kurang lebih akan seperti ini ...&lt;/h3&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;/assets/img/other/sample-network-usage.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Pada bagian paling bawah &lt;em&gt;panel devTools&lt;/em&gt; bagian ke-2 akan tampak sebuah informasi
+mengenai berapa besar jumlah data yang telah ter-transfer kedalam komputer yang
+digunakan. Hal ini adalah salah satu manfaat dari sekian banyak kegunaan dari
+&lt;em&gt;browser&lt;/em&gt; &lt;strong&gt;Chrome&lt;/strong&gt;, ketika mengembangkan sebuah halaman &lt;em&gt;Web&lt;/em&gt; maka akan
+sangat terbantu dengan menggunakan alat ini.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#GoogleChrome #Web #Browser #Internet #ChromeDevTools&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 22 Aug 2015 22:52:32 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/mengetahui-ukuran-sebuah-halaman-web.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/mengetahui-ukuran-sebuah-halaman-web.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Template CV</title>
@@ -829,291 +872,6 @@ $(&quot;.continue-game&quot;).click(function(){
         <pubDate>Thu, 13 Aug 2015 23:42:32 +0700</pubDate>
         <link>http://dwiprabowo.github.io/bermain-tictactoe.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/bermain-tictactoe.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Permainan TicTacToe</title>
-        <description>&lt;style&gt;
-    .tictactoe-arena-wrapper{
-        text-align: center;
-    }
-    .tictactoe-arena{
-        display: inline-block;
-        width: 128px;
-        height: 128px;
-        word-spacing: 0;
-        text-align: left;
-    }
-    .tictactoe-arena .block{
-        width: 42px;
-        height: 42px;
-        border: 1px solid black;
-        float: left;
-    }
-
-    .tictactoe-arena .top .block{
-        border-top-color: transparent;
-        text-align: center;
-    }
-    .tictactoe-arena .left{
-        border-left-color: transparent;
-    }
-    .tictactoe-arena .right{
-        border-right-color: transparent;
-    }
-    .tictactoe-arena .bottom .block{
-        border-bottom-color: transparent;
-    }
-    .tictactoe-arena .item{
-        font-size: 32px;
-    }
-    .tictactoe-arena table{
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        vertical-align: middle;
-    }
-&lt;/style&gt;
-
-&lt;h1&gt;Tic Tac Toe&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;~&lt;/strong&gt; adalah permainan yang dilakukan oleh dua orang menggunakan
-alat tulis (pensil dan kertas). Pada kertas, dibentuklah arena
-dengan ukuran 3x3 kotak, kurang lebih seperti ini ...&lt;/p&gt;
-
-&lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
-    &lt;div class=&quot;tictactoe-arena&quot;&gt;
-        &lt;div class=&quot;top&quot;&gt;
-            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;center&quot;&gt;
-            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;bottom&quot;&gt;
-            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;Game&lt;/em&gt; ini menggunakan 2 buah simbol seperti
-&lt;i class=&quot;fa fa-close&quot;&gt;&lt;/i&gt; dan &lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;
-yang digunakan oleh masing-masing pemain secara konsisten
-(tidak berganti-ganti simbol)
-, setiap kotak akan berisi sebuah simbol saja 
-dan diisi dengan bergantian oleh setiap pemain.&lt;/p&gt;
-
-&lt;div class=&quot;tictactoe-arena-wrapper initial-play&quot;&gt;
-    &lt;div class=&quot;tictactoe-arena&quot;&gt;
-        &lt;div class=&quot;top&quot;&gt;
-            &lt;div class=&quot;block left&quot;&gt;
-                &lt;table class=&quot;step-7&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;block center&quot;&gt;
-                &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;block right&quot;&gt;
-                &lt;table class=&quot;step-6&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;center&quot;&gt;
-            &lt;div class=&quot;block left&quot;&gt;
-                &lt;table class=&quot;step-4&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;block center&quot;&gt;
-                &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;block right&quot;&gt;
-                &lt;table class=&quot;step-3&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;bottom&quot;&gt;
-            &lt;div class=&quot;block left&quot;&gt;
-                &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;block center&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;block right&quot;&gt;
-                &lt;table class=&quot;step-8&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-    .initial-play table{
-        display: none;
-    }
-&lt;/style&gt;
-
-&lt;script&gt;
-    var initialPlayStep = 1;
-    setInterval(function() {
-        if(initialPlayStep &gt; 8){
-            $(&quot;.initial-play table&quot;).each(function(){
-                $(this).css(&#39;display&#39;, &#39;none&#39;);
-            });
-            initialPlayStep = 0;
-        }else{
-            $(&quot;.initial-play table.step-&quot;+initialPlayStep)
-                .css(&#39;display&#39;, &#39;table&#39;);
-        }
-        initialPlayStep++;
-    }, 500);
-&lt;/script&gt;
-
-&lt;p&gt;Cara memenangkan sebuah pertandingan &lt;em&gt;&lt;strong&gt;tic tac toe&lt;/strong&gt;&lt;/em&gt; adalah
-dengan menyusun simbol yang sama secara berurutan baik itu
-horizontal, vertikal, maupun diagonal&lt;/p&gt;
-
-&lt;div style=&quot;overflow-x: auto;&quot;&gt;
-    &lt;table style=&quot;width: 100%;&quot;&gt;
-        &lt;tr&gt;
-            &lt;td style=&quot;width: 33%;&quot;&gt;
-                &lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
-                    &lt;div class=&quot;tictactoe-arena&quot;&gt;
-                        &lt;div class=&quot;top&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class=&quot;center&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;
-                                &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                                &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;
-                                &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class=&quot;bottom&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/td&gt;
-            &lt;td style=&quot;width: 33%;&quot;&gt;
-                &lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
-                    &lt;div class=&quot;tictactoe-arena&quot;&gt;
-                        &lt;div class=&quot;top&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                                &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class=&quot;center&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                                &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class=&quot;bottom&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                                &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-circle-o item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/td&gt;
-            &lt;td style=&quot;width: 33%;&quot;&gt;
-                &lt;div class=&quot;tictactoe-arena-wrapper&quot;&gt;
-                    &lt;div class=&quot;tictactoe-arena&quot;&gt;
-                        &lt;div class=&quot;top&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;
-                                &lt;table class=&quot;step-1&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class=&quot;center&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                                &lt;table class=&quot;step-2&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class=&quot;bottom&quot;&gt;
-                            &lt;div class=&quot;block left&quot;&gt;&lt;/div&gt;
-                            &lt;div class=&quot;block center&quot;&gt;
-                            &lt;/div&gt;
-                            &lt;div class=&quot;block right&quot;&gt;
-                                &lt;table class=&quot;step-5&quot;&gt;&lt;tr&gt;&lt;td&gt;
-                                    &lt;i class=&quot;fa fa-close item&quot;&gt;&lt;/i&gt;
-                                &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-                            &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Begitulah sedikit tentang permainan &lt;strong&gt;&lt;em&gt;tic tac toe&lt;/em&gt;&lt;/strong&gt; ini,
-&lt;em&gt;game&lt;/em&gt; yang cukup simpel dan menyenangkan untuk dimainkan,
-tertarik untuk mencoba bermain? coba 
-&lt;a href=&quot;/bermain-tictactoe.html&quot;&gt;disini&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;hr&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;#&lt;em&gt;Game&lt;/em&gt; #&lt;em&gt;TicTacToe&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Wed, 12 Aug 2015 19:30:44 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/permainan-tictactoe.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/permainan-tictactoe.html</guid>
         
         
       </item>
