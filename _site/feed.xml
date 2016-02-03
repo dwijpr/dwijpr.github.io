@@ -6,9 +6,50 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Jan 2016 23:18:40 +0700</pubDate>
-    <lastBuildDate>Sat, 23 Jan 2016 23:18:40 +0700</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Wed, 03 Feb 2016 10:08:23 +0700</pubDate>
+    <lastBuildDate>Wed, 03 Feb 2016 10:08:23 +0700</lastBuildDate>
+    <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Error RVM Install Ruby</title>
+        <description>&lt;h1&gt;Error RVM Install Ruby&lt;/h1&gt;
+
+&lt;div class=&quot;text-danger&quot;&gt;
+    Failed Download - There has been an error fetching the ruby interpreter. Halting the installation.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RVM&lt;/strong&gt; adalah alat yang berbasis &lt;strong&gt;CLI&lt;/strong&gt; yang mana mempermudah peng-&lt;em&gt;install&lt;/em&gt;an, mengatur dan bekerja
+menggunakan beberapa &lt;em&gt;environment&lt;/em&gt; &lt;strong&gt;Ruby&lt;/strong&gt; mulai dari &lt;em&gt;interpreter&lt;/em&gt;nya, hingga kumpulan &lt;em&gt;gems&lt;/em&gt;nya.&lt;/p&gt;
+
+&lt;p&gt;Sudah beberapa waktu sejak saya menggunakan RVM untuk platform penggunaan &lt;strong&gt;Ruby&lt;/strong&gt; ini, yang nantinya
+akan meng-install &lt;strong&gt;Jekyll&lt;/strong&gt; dan meng-update &lt;em&gt;posting&lt;/em&gt; pada blog ini. Namun, waktu proses penginstallan
+kemarin, saya menemukan kesulitan untuk meng-install &lt;strong&gt;Ruby&lt;/strong&gt; &lt;em&gt;interpreter&lt;/em&gt; nya, seperti gambar
+berikut&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/other/ruby-download-error.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Awalnya, saya kira &lt;em&gt;server&lt;/em&gt; dari &lt;strong&gt;Ruby&lt;/strong&gt; &lt;em&gt;interpreter&lt;/em&gt;nya yang bermasalah, namun setelah dicoba menggunakan
+selang beberapa waktu, hasilnya tetap sama saja. Setelah mencari permasalah yang serupa berikut adalah
+solusi dari kendala yang saya alami, cukup ketikan perintah berikut dan ulangi proses install
+&lt;strong&gt;Ruby&lt;/strong&gt; &lt;em&gt;interpreter&lt;/em&gt;nya&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;rvm get head
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Perintah tersebut adalah untuk meng-upgrade &lt;strong&gt;RVM&lt;/strong&gt;, dan setelah meng-eksekusi
+&lt;em&gt;command&lt;/em&gt; itu, &lt;strong&gt;Ruby&lt;/strong&gt; &lt;em&gt;interpreter&lt;/em&gt; dapat diunduh dan di install pada komputer,
+saya kira permasalahannya ada di versi &lt;strong&gt;RVM&lt;/strong&gt;-nya.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#RVM #Ruby #Interpreter #Ubuntu #CLI&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sun, 23 Aug 2015 09:51:52 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/error-rvm-install-ruby.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/error-rvm-install-ruby.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Mengetahui Ukuran Sebuah Halaman Web Menggunakan Google Chrome</title>
@@ -595,283 +636,6 @@ juga mendapatkan warna/gaya &lt;em&gt;font&lt;/em&gt; sebagai &lt;em&gt;inline s
         <pubDate>Fri, 14 Aug 2015 14:18:18 +0700</pubDate>
         <link>http://dwiprabowo.github.io/timer-app.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/timer-app.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Bermain TicTacToe</title>
-        <description>&lt;style&gt;
-    td.area-block:hover{
-        background: rgba(0, 0, 0, .2);
-    }
-    .continue-game{
-        font-size: initial;
-    }
-&lt;/style&gt;
-
-&lt;div style=&quot;text-align: center;margin-top: 64px;&quot;&gt;
-    &lt;h2 id=&quot;game-state&quot;&gt;
-        &lt;span class=&quot;text&quot;&gt;&lt;/span&gt;
-        &lt;button 
-            class=&quot;continue-game&quot; 
-            style=&quot;display: none;&quot;&gt;OK&lt;/button&gt;
-    &lt;/h2&gt;
-    &lt;div style=&quot;display: inline-block;&quot;&gt;
-        &lt;table 
-            class=&quot;area&quot; 
-            width=&quot;210px&quot; 
-            height=&quot;210px&quot; 
-            cellpadding=&quot;0&quot; 
-            cellspacing=&quot;0&quot;
-            style=&quot;font-size: 32px;table-layout: fixed;&quot; 
-        &gt;
-            &lt;tr&gt;
-                &lt;td 
-                    class=&quot;area-block&quot; 
-                    width=&quot;(100/3)%&quot;
-                    height=&quot;(100/3)%&quot;
-                    style=&quot;border: 1px solid black;border-top-color: transparent;border-left-color: transparent;&quot; 
-                    data-map=&quot;0-0&quot;
-                &gt;&lt;/td&gt;
-                &lt;td 
-                    class=&quot;area-block&quot; 
-                    width=&quot;(100/3)%&quot;
-                    height=&quot;(100/3)%&quot;
-                    style=&quot;border: 1px solid black;border-top-color: transparent;&quot; 
-                    data-map=&quot;0-1&quot;
-                &gt;&lt;/td&gt;
-                &lt;td 
-                    class=&quot;area-block&quot; 
-                    width=&quot;(100/3)%&quot;
-                    height=&quot;(100/3)%&quot;
-                    style=&quot;border: 1px solid black;border-top-color: transparent;border-right-color: transparent;&quot; 
-                    data-map=&quot;0-2&quot;
-                &gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td
-                    class=&quot;area-block&quot; 
-                    style=&quot;border: 1px solid black;border-left-color: transparent;&quot; 
-                    data-map=&quot;1-0&quot;
-                &gt;&lt;/td&gt;
-                &lt;td
-                    class=&quot;area-block&quot; 
-                    style=&quot;border: 1px solid black;&quot; 
-                    data-map=&quot;1-1&quot;
-                &gt;&lt;/td&gt;
-                &lt;td
-                    class=&quot;area-block&quot; 
-                    style=&quot;border: 1px solid black;border-right-color: transparent;&quot; 
-                    data-map=&quot;1-2&quot;
-                &gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td
-                    class=&quot;area-block&quot; 
-                    style=&quot;border: 1px solid black;border-bottom-color: transparent;border-left-color: transparent;&quot; 
-                    data-map=&quot;2-0&quot;
-                &gt;&lt;/td&gt;
-                &lt;td
-                    class=&quot;area-block&quot; 
-                    style=&quot;border: 1px solid black;border-bottom-color: transparent;&quot; 
-                    data-map=&quot;2-1&quot;
-                &gt;&lt;/td&gt;
-                &lt;td
-                    class=&quot;area-block&quot; 
-                    style=&quot;border: 1px solid black;border-bottom-color: transparent;border-right-color: transparent;&quot; 
-                    data-map=&quot;2-2&quot;
-                &gt;&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-        &lt;br&gt;
-        &lt;table style=&quot;text-align: center;&quot; width=&quot;210px;&quot;&gt;
-            &lt;tr&gt;
-                &lt;th&gt;Player(&lt;i class=&quot;fa fa-close&quot;&gt;&lt;/i&gt;)&lt;/th&gt;
-                &lt;th&gt;Ties&lt;/th&gt;
-                &lt;th&gt;Player(&lt;i class=&quot;fa fa-circle-o&quot;&gt;&lt;/i&gt;)&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td class=&quot;game-score player-x&quot;&gt;0&lt;/td&gt;
-                &lt;td class=&quot;game-score ties&quot;&gt;0&lt;/td&gt;
-                &lt;td class=&quot;game-score player-o&quot;&gt;0&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-var turn = true;
-var gameTurn = turn;
-var state = 0;
-function setGameMessage(text, showButton){
-    $(&quot;#game-state .text&quot;).html(text);
-    console.log(&quot;showButton:&quot;, showButton);
-    if(showButton){
-        $(&quot;#game-state .continue-game&quot;).css(
-            &#39;display&#39;, &#39;inline-block&#39;
-        );
-    }else{
-        $(&quot;#game-state .continue-game&quot;).css(
-            &#39;display&#39;, &#39;none&#39;
-        );
-    }
-}
-var iconClassName = &quot;fa-question&quot;;
-if(turn){
-    iconClassName = &quot;fa-close&quot;;
-}else{
-    iconClassName = &quot;fa-circle-o&quot;;
-}
-setGameMessage(&quot;Player(&quot;+&quot;&lt;i class=&#39;fa &quot;+iconClassName+&quot;&#39;&gt;&lt;/i&gt;) Turn&quot;);
-
-$(&quot;table.area td.area-block&quot;).each(function(){
-    $(this).css(&#39;vertical-align&#39;, &#39;middle&#39;);
-    $(this).css(&#39;text-align&#39;, &#39;center&#39;);
-    $(this).css(&#39;margin&#39;, &#39;0&#39;);
-    $(this).css(&#39;padding&#39;, &#39;0&#39;);
-    $(this).html(&quot;&amp;nbsp;&quot;);
-    $(this).html(&quot;&lt;i class=&#39;fa fa-question&#39; style=&#39;visibility: hidden;&#39;&gt;&lt;/i&gt;&quot;);
-    $(this).click(function(){
-        action(this);
-    });
-});
-function action(block){
-    if(
-        $(block).find(&quot;i&quot;).hasClass(&quot;fa-question&quot;)
-        &amp;&amp; state == 0
-    ){
-        var el = $(block).find(&quot;i&quot;);
-        el.removeClass(&quot;fa-question&quot;);
-        var iconClassName = &quot;fa-question&quot;;
-        if(turn){
-            iconClassName = &quot;fa-circle-o&quot;;
-            el.addClass(&quot;fa-close&quot;);
-        }else{
-            iconClassName = &quot;fa-close&quot;;
-            el.addClass(&quot;fa-circle-o&quot;);
-        }
-        el.css(&quot;visibility&quot;, &quot;visible&quot;);
-        var win = checkWin();
-        turn = !turn;
-        if(!win){
-            setGameMessage(&quot;Player(&quot;+&quot;&lt;i class=&#39;fa &quot;+iconClassName+&quot;&#39;&gt;&lt;/i&gt;) Turn&quot;);
-        }else{
-            state = 1;
-        }
-    }
-}
-function checkWin(){
-    var map = [];
-    var nodes = [];
-    $(&quot;table.area td.area-block&quot;).each(function(){
-        var rowCol = $(this).data(&#39;map&#39;);
-        var row = rowCol.split(&quot;-&quot;)[0];
-        var col = rowCol.split(&quot;-&quot;)[1];
-        var value = $(this).find(&quot;i&quot;).hasClass(&quot;fa-close&quot;)?
-            &quot;x&quot;:($(this).find(&quot;i&quot;).hasClass(&quot;fa-circle-o&quot;)?&quot;o&quot;:&quot;-&quot;);
-        if(map[row] == undefined){
-            map[row] = [];
-        }
-        map[row][col] = value;
-    });
-    var classToFind = &quot;fa-question&quot;;
-    if(turn){
-        classToFind = &quot;fa-close&quot;;
-    }else{
-        classToFind = &quot;fa-circle-o&quot;;
-    }
-    $(&quot;table.area td.area-block&quot;).each(function(){
-        var rowCol = $(this).data(&#39;map&#39;);
-        if($(this).find(&quot;i&quot;).hasClass(classToFind)){
-            nodes.push(rowCol);
-        }
-    });
-    var winNodes = [
-        [&quot;0-0&quot;, &quot;0-1&quot;, &quot;0-2&quot;],
-        [&quot;1-0&quot;, &quot;1-1&quot;, &quot;1-2&quot;],
-        [&quot;2-0&quot;, &quot;2-1&quot;, &quot;2-2&quot;],
-        [&quot;0-0&quot;, &quot;1-0&quot;, &quot;2-0&quot;],
-        [&quot;0-1&quot;, &quot;1-1&quot;, &quot;2-1&quot;],
-        [&quot;0-2&quot;, &quot;1-2&quot;, &quot;2-2&quot;],
-        [&quot;0-0&quot;, &quot;1-1&quot;, &quot;2-2&quot;],
-        [&quot;0-2&quot;, &quot;1-1&quot;, &quot;2-0&quot;],
-    ];
-    var win = false;
-    var winNode = [];
-    for(var i = 0;i &lt; winNodes.length;i++){
-        var winCount = 0;
-        for(var _i = 0;_i &lt; winNodes[i].length;_i++){
-            for(var __i = 0;__i &lt; nodes.length;__i++){
-                if(winNodes[i][_i] == nodes[__i]){
-                    winCount++;
-                }
-                if(winCount &gt; 2){
-                    win = true;
-                    winNode = winNodes[i];
-                    break;
-                }
-            }
-        }
-    }
-    if(win){
-        setGameMessage(
-            &quot;Player (&lt;i class=&#39;fa &quot;+classToFind+&quot;&#39;&gt;&lt;/i&gt;) Win! &quot;
-            , true
-        );
-        var score = &quot;.player-o&quot;;
-        if(turn){
-            score = &quot;.player-x&quot;;
-        }
-        $(&quot;.game-score&quot;+score).html(
-            parseInt($(&quot;.game-score&quot;+score).html())+1
-        );
-    }else{
-        var unfilledCount = 0;
-        $(&quot;table.area td.area-block&quot;).each(function(){
-            if($(this).find(&quot;i&quot;).hasClass(&quot;fa-question&quot;)){
-                unfilledCount++;
-            }
-        });
-        if(unfilledCount == 0){
-            setGameMessage(
-                &quot;No Winner!&quot;
-                , true
-            );
-            state = 1;
-            win = true;
-            var score = &quot;.ties&quot;;
-            $(&quot;.game-score&quot;+score).html(
-                parseInt($(&quot;.game-score&quot;+score).html())+1
-            )
-        }
-    }
-    return win;
-}
-$(&quot;.continue-game&quot;).click(function(){
-    state = 0;
-    gameTurn = !gameTurn;
-    $(&quot;table.area td.area-block&quot;).each(function(){
-        $(this).find(&quot;i&quot;).removeClass(&quot;fa-circle-o&quot;);
-        $(this).find(&quot;i&quot;).removeClass(&quot;fa-close&quot;);
-        $(this).find(&quot;i&quot;).addClass(&quot;fa-question&quot;);
-        $(this).find(&quot;i&quot;).css(&quot;visibility&quot;, &quot;hidden&quot;);
-        var iconClassName = &quot;fa-question&quot;;
-        if(gameTurn){
-            iconClassName = &quot;fa-close&quot;;
-        }else{
-            iconClassName = &quot;fa-circle-o&quot;;
-        }
-        setGameMessage(
-            &quot;Player(&quot;+&quot;&lt;i class=&#39;fa &quot;+iconClassName+&quot;&#39;&gt;&lt;/i&gt;) Turn&quot;
-        );
-    });
-});
-&lt;/script&gt;
-</description>
-        <pubDate>Thu, 13 Aug 2015 23:42:32 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/bermain-tictactoe.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/bermain-tictactoe.html</guid>
         
         
       </item>
