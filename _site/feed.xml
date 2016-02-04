@@ -6,9 +6,83 @@
 </description>
     <link>http://dwiprabowo.github.io/</link>
     <atom:link href="http://dwiprabowo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Feb 2016 10:08:23 +0700</pubDate>
-    <lastBuildDate>Wed, 03 Feb 2016 10:08:23 +0700</lastBuildDate>
+    <pubDate>Thu, 04 Feb 2016 09:42:16 +0700</pubDate>
+    <lastBuildDate>Thu, 04 Feb 2016 09:42:16 +0700</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Menambah Ukuran File Upload Pada Aplikasi Berbasis PHP dan Nginx</title>
+        <description>&lt;h1&gt;Menambah Ukuran File Upload Pada Aplikasi Berbasis PHP dan Nginx&lt;/h1&gt;
+
+&lt;p&gt;Meng-&lt;em&gt;upload&lt;/em&gt; &lt;em&gt;file&lt;/em&gt; pada aplikasi berbasis &lt;strong&gt;PHP&lt;/strong&gt; dan &lt;strong&gt;Nginx&lt;/strong&gt; akan terbentur
+dengan masalah ukuran file yang akan diunggah. Batas ukuran dari berkas yang akan
+diunggah akan menurut pada konfigurasi pada kedua platform yang digunakan. Sehingga
+konfigurasi dari kedua &lt;em&gt;software&lt;/em&gt; tersebut harus dimodifikasi sehingga berkas
+dengan ukuran yang lebih besar dapat diunggah.&lt;/p&gt;
+
+&lt;p&gt;Pertama-tama ketika mulai meng-&lt;em&gt;upload&lt;/em&gt; berkas yang berukuran cukup besar maka
+&lt;strong&gt;Nginx&lt;/strong&gt; akan memberikan pesan &lt;em&gt;error&lt;/em&gt; seperti berikut&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;img-responsive center-block&quot; src=&quot;/assets/img/other/nginx-413-request.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Hal ini dikarenakan oleh konfigurasi &lt;em&gt;default&lt;/em&gt; &lt;strong&gt;Nginx&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+Syntax:     client_max_body_size size;
+Default:    client_max_body_size 1m;
+Context:    http, server, location
+&lt;/pre&gt;
+
+&lt;p&gt;Masalah batasan ukuran &lt;em&gt;file upload&lt;/em&gt; dapat diatasi dengan cara mengganti nilai
+dari &lt;strong&gt;client&lt;em&gt;max&lt;/em&gt;body_size&lt;/strong&gt; ke 0, yang berarti tidak ada batasan ukuran untuk
+berkas yang akan diunggah.&lt;/p&gt;
+
+&lt;pre&gt;
+client_max_body_size 0;
+&lt;/pre&gt;
+
+&lt;p&gt;Berikutnya adalah bagian &lt;strong&gt;PHP&lt;/strong&gt;, &lt;strong&gt;PHP&lt;/strong&gt; memiliki konfigurasi sendiri mengenai
+batasan &lt;em&gt;file upload&lt;/em&gt;-nya. &lt;strong&gt;PHP&lt;/strong&gt; yang digunakan bersama dengan &lt;strong&gt;Nginx&lt;/strong&gt; sedikit
+berbeda ketika digunakan bersama &lt;strong&gt;Apache&lt;/strong&gt;, &lt;strong&gt;PHP&lt;/strong&gt; yang dimaksud adalah &lt;strong&gt;PHP-FPM&lt;/strong&gt;.
+&lt;strong&gt;FPM&lt;/strong&gt; memiliki &lt;strong&gt;php.ini&lt;/strong&gt; sendiri pada &lt;code&gt;/etc/php5/fpm/php.ini&lt;/code&gt; (ubuntu).
+Cari setting untuk &lt;strong&gt;upload&lt;em&gt;max&lt;/em&gt;filesize&lt;/strong&gt;, &lt;strong&gt;post&lt;em&gt;max&lt;/em&gt;size&lt;/strong&gt; dan ganti nilainya menjadi &lt;strong&gt;0&lt;/strong&gt;.
+Tidak ada dokumentasi tentang jika mengubah nilainya menjadi &lt;strong&gt;0&lt;/strong&gt; maka tidak ada
+batasan untuk &lt;em&gt;file upload&lt;/em&gt;-nya tetapi ketika saya coba menggantinya menjadi &lt;strong&gt;0&lt;/strong&gt;
+berkas yang berukuran lebih besar menjadi bisa diunggah.&lt;/p&gt;
+
+&lt;pre&gt;
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+upload_max_filesize = 0
+
+; Maximum size of POST data that PHP will accept.
+; Its value may be 0 to disable the limit. It is ignored if POST data reading
+; is disabled through enable_post_data_reading.
+; http://php.net/post-max-size
+post_max_size = 0
+&lt;/pre&gt;
+
+&lt;p&gt;Sebuah setting terakhir dari &lt;strong&gt;PHP-FPM&lt;/strong&gt; untuk dapat mengijinkan mengunggah file
+yang besar yaitu, &lt;strong&gt;memory_limit&lt;/strong&gt;, nilai awal dari setting ini adalah &lt;strong&gt;128M&lt;/strong&gt;
+yang berarti MB (MegaByte), jika nilai yang diinginkan lebih besar nilainya bisa
+diganti dengan &lt;strong&gt;10G&lt;/strong&gt; yang berarti &lt;strong&gt;10 GigaByte&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+; Maximum amount of memory a script may consume (128MB)
+; http://php.net/memory-limit
+memory_limit = 10G
+&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;#PHP #Nginx #Upload #PHP-FPM #php.ini&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Mon, 24 Aug 2015 08:20:00 +0700</pubDate>
+        <link>http://dwiprabowo.github.io/menambah-ukuran-file-upload-pada-aplikasi-berbasis-php-dan-nginx.html</link>
+        <guid isPermaLink="true">http://dwiprabowo.github.io/menambah-ukuran-file-upload-pada-aplikasi-berbasis-php-dan-nginx.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Error RVM Install Ruby</title>
@@ -516,126 +590,6 @@ juga mendapatkan warna/gaya &lt;em&gt;font&lt;/em&gt; sebagai &lt;em&gt;inline s
         <pubDate>Sat, 15 Aug 2015 15:58:46 +0700</pubDate>
         <link>http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</link>
         <guid isPermaLink="true">http://dwiprabowo.github.io/terminal-output-menjadi-html-menggunakan-aha.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Timer App</title>
-        <description>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;style&gt;
-    body{
-        margin-top: 80px;
-    }
-    #main{
-        border: 16px solid rgba(0, 0, 0, .1);
-        display: inline-block;
-        padding: 82px 32px;
-        border-radius: 100%;
-    }
-    #button-group{
-        position: relative;
-        top: -32px;
-    }
-    #button-group .btn{
-        box-shadow: 0px 4px 16px #777;
-    }
-&lt;/style&gt;
-
-&lt;div class=&quot;col-xs-12 text-center&quot;&gt;
-    &lt;h1 id=&quot;main&quot;&gt;
-        00:00:00.0
-    &lt;/h1&gt;
-    &lt;div id=&quot;button-group&quot; class=&quot;text-center&quot;&gt;
-        &lt;button 
-            class=&quot;btn btn-danger&quot; 
-            id=&quot;reset&quot; 
-        &gt;
-            &lt;i class=&quot;fa fa-repeat&quot;&gt;&lt;/i&gt;
-        &lt;/button&gt;
-        &lt;button class=&quot;btn btn-lg btn-primary&quot; id=&quot;action-trigger&quot;&gt;
-            &lt;i class=&quot;fa fa-play&quot;&gt;&lt;/i&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    var startTime = null, startPauses = [], endPauses = [];
-    $(&quot;#reset&quot;).click(function(){
-        var proceed = confirm(&quot;Are You sure?&quot;);
-        if(proceed){
-            startTime = null, startPauses = [], endPauses = [];
-            $(&quot;#main&quot;).text(&quot;00:00:00.0&quot;);
-            var ic = $(&quot;#action-trigger&quot;).find(&#39;i&#39;);
-            if(ic.hasClass(&#39;fa-pause&#39;)){
-                ic.removeClass(&#39;fa-pause&#39;);
-                ic.addClass(&#39;fa-play&#39;);
-            }
-        }
-    });
-    $(&quot;#action-trigger&quot;).click(function(){
-        var ic = $(this).find(&#39;i&#39;);
-        if(ic.hasClass(&#39;fa-play&#39;)){
-            ic.removeClass(&#39;fa-play&#39;);
-            ic.addClass(&#39;fa-pause&#39;);
-            if(startTime != null){
-                endPauses[endPauses.length] = curr();
-            }
-        }else{
-            ic.removeClass(&#39;fa-pause&#39;);
-            ic.addClass(&#39;fa-play&#39;);
-            startPauses[startPauses.length] = curr();
-        }
-        if(startTime == null){
-            startTime = curr();
-        }
-    });
-
-    function calculateTime(){
-        var totalPausesTime = 0;
-        for(var i = 0;i &lt; startPauses.length;i++){
-            totalPausesTime += endPauses[i].diff(startPauses[i]);
-        }
-        var valueStartTime = moment(startTime);
-        var totalTime = valueStartTime.add(totalPausesTime, &#39;milliseconds&#39;);
-        var elapsedTime = new Time(curr().diff(totalTime));
-        return moment(elapsedTime).format(&quot;HH:mm:ss.S&quot;);
-    }
-
-    setInterval(function(){
-        if(startTime != null &amp;&amp; startPauses.length == endPauses.length){
-            $(&quot;#main&quot;).text(calculateTime());
-        }
-    }, 100);
-
-    function curr(){
-        return moment();
-    }
-
-    function Time(timeInMS){
-        var ms = timeInMS;
-        var seconds = Math.floor(ms/1000);
-        var minutes = Math.floor(seconds/60);
-        var hours = Math.floor(minutes/60);
-
-        var ms = ms%1000;
-        var second = seconds%60;
-        var minute = minutes%60;
-
-        var time = {
-            hours: hours,
-            minutes: minute,
-            seconds: second,
-            milliseconds: ms,
-        };
-        return time;
-    }
-&lt;/script&gt;
-</description>
-        <pubDate>Fri, 14 Aug 2015 14:18:18 +0700</pubDate>
-        <link>http://dwiprabowo.github.io/timer-app.html</link>
-        <guid isPermaLink="true">http://dwiprabowo.github.io/timer-app.html</guid>
         
         
       </item>
